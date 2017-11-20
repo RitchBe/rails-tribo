@@ -7,16 +7,16 @@ class LocationsController < ApplicationController
   end
 
   def new
-    @user = User.find(params[:user_id])
+    @user = User.find(current_user.id)
 
     @location = Location.new
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @location = @user.locations.new(product_params)
+    @user = User.find(current_user.id)
+    @location = @user.locations.new(location_params)
     if @location.save
-      redirect_to user_path(@user.id)
+      redirect_to user_path(current_user.id)
     else
       # GO BACK TO THE FORM
       puts "not working"
@@ -25,11 +25,11 @@ class LocationsController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:user_id])
+    @user = User.find(current_user.id)
   end
 
   def edit
-    @user = User.find(params[:user_id])
+    @user = User.find(current_user.id)
 
     @location = Location.find(params[:id])
   end
