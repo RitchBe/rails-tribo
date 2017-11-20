@@ -18,6 +18,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'faker'
 gem "geocoder"
+gem "pundit"
 
 group :development, :test do
   gem 'pry-byebug'
