@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20171120145817) do
     t.text "rules"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.float "lattitude"
+    t.float "latitude"
     t.float "longitude"
     t.index ["user_id"], name: "index_locations_on_user_id"
   end
