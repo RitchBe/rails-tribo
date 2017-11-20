@@ -35,9 +35,6 @@ ADDRESSES = ["Av. Duque de Ávila 201, 1050-082 Lisboa",
   "R. Gurué 35, 2775-581 Carcavelos",
   "Rua Mato da Mina 19, 2710-692 Sintra",
   "Alto do Pragal, Almada",
- ]
-
- LOCATIONADDRESSES = [
    "Praia Das Palmeiras, Almada",
   "R. Parque Infantil 1, Costa da Caparica",
   "Av. de Roma 55, Lisboa",
@@ -80,7 +77,7 @@ end
   8.times do
     location = Location.create(
       user_id: User.all.sample.id,
-      address: LOCATIONADDRESSES.sample,
+      address: ADDRESSES.sample,
       phone: Faker::PhoneNumber.phone_number,
       description: "This is a locatoin description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum id facere illo exercitationem vel neque dolores, modi ratione odio placeat eaque, eos quia labore, harum provident. Accusantium fuga, odio enim.",
       capacity: (5..40).to_a.sample,
