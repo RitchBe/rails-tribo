@@ -30,7 +30,7 @@ class LocationsController < ApplicationController
     authorize @location
 
     if @location.save
-      redirect_to user_path(current_user.id)
+      redirect_to locations_path(@location.id)
     else
       # GO BACK TO THE FORM
       puts "not working"
