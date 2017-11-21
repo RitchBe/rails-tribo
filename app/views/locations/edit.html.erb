@@ -6,6 +6,7 @@
 
   <%= f.input :address, label: 'Address of the location' %>
   <%= f.input :description, label: 'Description', required: false %>
+  <%= f.input :photos, as: :attachinary %>
   <%= f.input :phone, label: 'Phone Number', required: false %>
   <%= f.input :capacity, label: 'Capacity', type: "integer" %>
   <%= f.input :rate_by_hour, label: 'Rate by hour', type: "integer" %>

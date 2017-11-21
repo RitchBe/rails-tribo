@@ -70,8 +70,11 @@ class LocationsController < ApplicationController
   private
 
   def location_params
-    params.require(:location).permit(:name, :email, :address, :phone, :description, :capacity, :rate_by_hour, :rate_by_day, :rate_by_week, :features, :tags, :rules)
+    params.require(:location).permit(:name, :email, :address, :phone,
+     :description, :capacity, :rate_by_hour, :rate_by_day, :rate_by_week,
+      :features, :tags, :rules, photos: [])
   end
+
 
   def set_location
     @location = Location.find(params[:id])
