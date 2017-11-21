@@ -1,5 +1,6 @@
 <h2>New locatoin</h2>
 <%= simple_form_for ([@user, @location]) do |f| %>
+
 <div class="form-inputs">
   <%= f.input :name, label: 'Location Name', error: 'Please specify A location name', required: false %>
   <%= f.input :email, label: 'Email', error: 'Please specify A location name', required: false %>
