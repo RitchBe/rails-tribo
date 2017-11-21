@@ -89,8 +89,15 @@ end
       rules: "No smoking inside",
       name: Faker::Space.planet
       )
-end
 
+      urls = [
+          'https://picsum.photos/200/300/?random',
+          'https://picsum.photos/200/300/?random'
+      ]
+
+      product.photo_urls = urls # Multi-upload happens here
+      product.save!
+end
 
 puts "create 15 fake booking"
 
