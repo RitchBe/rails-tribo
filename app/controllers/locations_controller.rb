@@ -56,7 +56,6 @@ class LocationsController < ApplicationController
     @location.update(location_params)
     authorize @location
 
-
     redirect_to :back
   end
 
