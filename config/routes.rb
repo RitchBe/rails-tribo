@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, :path => 'accounts'
   resources :users, only: [:show]
   root to: 'pages#home'
+  get '/about', to: 'pages#about'
   resources :locations
   resources :users do
     resources :locations, only: [:show, :index]
