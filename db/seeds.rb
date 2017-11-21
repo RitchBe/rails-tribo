@@ -95,8 +95,8 @@ end
           'https://picsum.photos/200/300/?random'
       ]
 
-      product.photo_urls = urls # Multi-upload happens here
-      product.save!
+      location.photo_urls = urls # Multi-upload happens here
+      location.save!
 end
 
 puts "create 15 fake booking"
