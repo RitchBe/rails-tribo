@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
-  devise_for :users, :path => 'accounts'
+  devise_for :users, :path => 'accounts',
+    controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   resources :users, only: [:show]
   root to: 'pages#home'
+  get '/about', to: 'pages#about'
+  resources :locations
   resources :users do
-    resources :locations do
-      resources :bookings
+    resources :locations, only: [:show, :index]
+
+  resources :bookings
     end
   end
-    end
 
 
 

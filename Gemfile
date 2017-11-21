@@ -8,6 +8,7 @@ gem 'puma'
 gem 'rails', '5.1.4'
 gem 'redis'
 gem 'devise'
+gem 'omniauth-facebook'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
@@ -18,6 +19,13 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'faker'
 gem "geocoder"
+gem "pundit"
+gem "coffee-rails"
+gem "gmaps4rails"
+
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end
 
 group :development, :test do
   gem 'pry-byebug'
