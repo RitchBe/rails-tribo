@@ -3,8 +3,17 @@ class LocationsController < ApplicationController
   before_action :set_location, only: [:show, :edit, :update, :destroy]
 
   def index
-    @location = Location.all
-    authorize @location
+    # @location = Location.all
+
+    @location = Location.where.not(latitude: nil, longitude: nil)
+
+    @hash = Gmaps4rails.build_markers(@location) do |location, marker|
+      marker.lat location.latitude
+      marker.lng location.longitude
+      # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
+   authorize @location
+
+    end
   end
 
   def new
@@ -30,7 +39,7 @@ class LocationsController < ApplicationController
   end
 
   def show
-    @user = User.find(current_user.id)
+    # @user = User.find(current_user.id)
     authorize @location
   end
 
