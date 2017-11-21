@@ -57,7 +57,7 @@ class LocationsController < ApplicationController
     authorize @location
 
 
-    redirect_to :back
+    redirect_to locations_path(@location.id)
   end
 
   def destroy
