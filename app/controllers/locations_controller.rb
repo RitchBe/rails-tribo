@@ -55,9 +55,8 @@ class LocationsController < ApplicationController
     @location = Location.find(params[:id])
     @location.update(location_params)
     authorize @location
-
-
     redirect_to locations_path(@location.id)
+
   end
 
   def destroy
