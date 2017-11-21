@@ -93,7 +93,6 @@ end
       urls = [
           'https://picsum.photos/200/300/?random',
           'https://picsum.photos/200/300/?random'
-          'https://picsum.photos/200/300/?random'
       ]
 
       product.photo_urls = urls # Multi-upload happens here
