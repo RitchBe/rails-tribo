@@ -3,12 +3,11 @@
     <% if @messages.any? %>
 
 
-      <% @all.each do |mes| %>
-      <% if  current_user.id == mes.user_id || mes.user_id == @location.user_id %>
+      <% @messages.each do |mes| %>
 
 
       <%= render mes %>
-    <%  end %>
+<% end %>
     <% end %>
   <% end %>
   </div>

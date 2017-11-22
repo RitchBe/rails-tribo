@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'private_messages/index'
+
+  get 'conversations/index'
+
   devise_for :users, :path => 'accounts',
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   resources :users, only: [:show]
@@ -17,6 +21,11 @@ Rails.application.routes.draw do
     resources :locations, only: [:show, :index, :create, :update]
 
   resources :bookings
+    end
+
+
+    resources :conversations, only: [:index, :create] do
+      resources :private_messages, only: [:index, :create]
     end
   end
 

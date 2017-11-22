@@ -6,12 +6,12 @@
   <li>
 
 <% if @location.user_id == current_user.id %>
-    <%= link_to User.find(mes.user_id).email, location_user_message_path(location_id: @location.id,user_id: User.find(mes.user_id).id, id: @id)  %>
+    <%= link_to User.find(mes.user_id).email, location_user_message_path(location_id: @location.id,user_id: @messages.first.user_id, id: @location.user_id)  %>
 
     <% @user_email = User.find(mes.user_id).email %>
   <% else %>
 
-    <%= link_to User.find(mes.user_id).email, location_user_message_path(location_id: @location.id,user_id: @id, id: @id)  %>
+    <%= link_to User.find(mes.user_id).email, location_user_message_path(location_id: @location.id, user_id: @messages.first.user_id, id: @location.user_id) %>
     <% @user_email = User.find(mes.user_id).email %>
 
 <% end %>

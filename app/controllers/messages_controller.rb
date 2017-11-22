@@ -10,6 +10,7 @@ end
   def create
     message = current_user.messages.build(message_params)
     message.location_id = @location.id
+    message.recipient = params[:user_id]
     message.errors
     if message.save
       redirect_back(fallback_location: root_path)
@@ -21,16 +22,16 @@ end
   def show
       @user = User.find(params[:id])
 
-      @messages = @messages.where(user_id: current_user.id)
-      @other = Message.where(location: @location.id)
-      @all = []
-      @messages.each do |mes|
-        @all << mes
-      end
-      @other.each do |mes|
-        @all << mes
-      end
-      @all.sort_by!(&:created_at)
+      # @messages = @messages.where(user_id: current_user.id)
+      # @other = Message.where(location: @location.id)
+      # @all = []
+      # @messages.each do |mes|
+      #   @all << mes
+      # end
+      # @other.each do |mes|
+      #   @all << mes
+      # end
+      # @all.sort_by!(&:created_at)
 
   end
 
@@ -43,6 +44,6 @@ end
     end
 
     def message_params
-      params.require(:message).permit(:content, :location_id, :user_id)
+      params.require(:message).permit(:content, :location_id, :user_id, :recipient)
     end
 end
