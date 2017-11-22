@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171120193139) do
+ActiveRecord::Schema.define(version: 20171122105731) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,16 @@ ActiveRecord::Schema.define(version: 20171120193139) do
     t.index ["user_id"], name: "index_locations_on_user_id"
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.text "content"
+    t.bigint "user_id"
+    t.bigint "location_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["location_id"], name: "index_messages_on_location_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -82,4 +92,6 @@ ActiveRecord::Schema.define(version: 20171120193139) do
   add_foreign_key "bookings", "locations"
   add_foreign_key "bookings", "users"
   add_foreign_key "locations", "users"
+  add_foreign_key "messages", "locations"
+  add_foreign_key "messages", "users"
 end

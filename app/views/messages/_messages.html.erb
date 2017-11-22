@@ -1,0 +1,15 @@
+<div id="messages" class="messages">
+  <div id="messages-table" class="messages-table">
+    <% if @messages.any? %>
+
+
+      <% @all.each do |mes| %>
+      <% if  current_user.id == mes.user_id || mes.user_id == @location.user_id %>
+
+
+      <%= render mes %>
+    <%  end %>
+    <% end %>
+  <% end %>
+  </div>
+</div>
