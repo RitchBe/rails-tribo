@@ -1,27 +1,5 @@
-<ul>
- <% if current_user.id = @location.id %>
-<% @messages.each do |mes|%>
-<% if User.find(mes.user_id).email != current_user.email %>
-<% next if @user_email == User.find(mes.user_id).email %>
-  <li>
+<div class="message-wr">
+  <%= render 'messages' %>
+  <%= render 'message_form' %>
 
-<% if @location.user_id == current_user.id %>
-    <%= link_to User.find(mes.user_id).email, location_user_message_path(location_id: @location.id,user_id: @messages.first.user_id, id: @location.user_id)  %>
-
-    <% @user_email = User.find(mes.user_id).email %>
-  <% else %>
-
-    <%= link_to User.find(mes.user_id).email, location_user_message_path(location_id: @location.id, user_id: @messages.first.user_id, id: @location.user_id) %>
-    <% @user_email = User.find(mes.user_id).email %>
-
-<% end %>
-  </li>
-  <% end %>
-<% end %>
-<%  end %>
-</ul>
-
-
-
-
-
+</div>

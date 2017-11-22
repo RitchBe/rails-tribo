@@ -10,12 +10,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/about', to: 'pages#about'
   resources :locations do
-    resources :messages do
-      resources :users
-    end
-    resources :users do
-      resources :messages
-    end
+    resources :messages
   end
   resources :users do
     resources :locations, only: [:show, :index, :create, :update]
