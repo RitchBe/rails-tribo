@@ -9,6 +9,8 @@ gem 'rails', '5.1.4'
 gem 'redis'
 gem 'devise'
 gem 'omniauth-facebook'
+gem 'activeadmin', github: 'activeadmin/activeadmin'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
