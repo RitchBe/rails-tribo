@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   ActiveAdmin.routes(self)
+  mount Attachinary::Engine => "/attachinary"
   devise_for :users, :path => 'accounts',
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   resources :users, only: [:show]
@@ -10,8 +11,6 @@ Rails.application.routes.draw do
     resources :locations, only: [:show, :index, :create, :update]
 
   resources :bookings
-
-  mount Attachinary::Engine => "/attachinary"
     end
   end
 

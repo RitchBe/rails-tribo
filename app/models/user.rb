@@ -7,7 +7,6 @@ class User < ApplicationRecord
 
   has_many :locations
 
-
   after_create :send_welcome_email
 
   private
