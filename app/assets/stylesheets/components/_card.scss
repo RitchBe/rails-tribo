@@ -13,15 +13,68 @@
   background-repeat: no-repeat !important;
   background-size: cover !important;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.card-description{
-  width:100px;
-  height:100px;
+.card-description {
   margin:0 auto;
-  background: rgba(0,0,0,0.4);
-  position: absolute
+  background: rgba(0,0,0,0.3);
+  padding: 5px 40px;
+  margin-top: 200px;
+  text-align: center;
 }
+
+.card-description h3 {
+  color: white;
+  font-weight: 200;
+  letter-spacing: 5px;
+  margin: 0;
+  font-size: 24px;
+}
+
+.card-description  p {
+  color: white;
+  font-weight: 100;
+  letter-spacing: 3px;
+  font-size: 16px;
+  margin: 0;
+}
+
+.card-footer {
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.card-hours-text{
+  color: black;
+  font-weight: 100;
+  letter-spacing: 2px;
+  font-size: 15px;
+  padding-left: 20px;
+}
+
+.btn-medium {
+    color: #999999;
+    border: 1px solid #999999;
+    padding: 5px 10px;
+    font-size: 15px;
+    border-radius: 50px;
+    opacity: 0.6;
+    margin-right: 10px;
+    font-weight: 100;
+}
+
+.btn-medium:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: black;
+}
+
 
 
 /*.outer_card {
