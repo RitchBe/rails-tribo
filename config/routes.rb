@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   root to: 'pages#home'
   get '/about', to: 'pages#about'
+  get '/index', to: 'pages#index'
   resources :locations
   resources :users do
     resources :locations, only: [:show, :index, :create, :update]
