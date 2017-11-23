@@ -12,7 +12,8 @@ Rails.application.routes.draw do
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   resources :users, only: [:show]
 
-  root to: 'pages#home'
+  root to: 'pages#landing'
+
   get '/about', to: 'pages#about'
   resources :locations do
     resources :messages
