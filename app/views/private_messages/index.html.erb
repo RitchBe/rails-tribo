@@ -1,10 +1,20 @@
-<ul>
+
+<div class="private-message-container">
+  <div class="private-message-wrapper">
+<ul class="private-message-list">
   <% @messages.each do |message| %>
     <% if message.body %>
-      <li>
+
+
+      <li class= <%= if current_user.id === message.user_id then "private-message-sender" else "private-message-receiver" end %>>
         <h4><%= message.user.email %></h4>
         <p><%= message.body %></p>
+
+           <% avatar_url = current_user.facebook_picture_url || "https://image.freepik.com/free-photo/cute-cat-picture_1122-449.jpg" %>
+            <%= image_tag avatar_url, class: "private-message-avatar" %>
       </li>
+
+
     <% end %>
   <% end %>
 </ul>
@@ -16,3 +26,5 @@
 
   <%= f.submit "Send" %>
 <% end %>
+</div>
+</div>
