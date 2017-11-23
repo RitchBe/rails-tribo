@@ -11,9 +11,21 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Host", "#", class: "navbar-tribo-item navbar-tribo-link" %>
-      <%= link_to "Booking", "#", class: "navbar-tribo-item navbar-tribo-link" %>
+
       <%= link_to "Location", "#", class: "navbar-tribo-item navbar-tribo-link" %>
+      <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to conversations_path, class: "navbar-wagon-item navbar-wagon-link" do %>
+      <% Conversation.where("sender_id = ? OR receiver_id = ?", current_user.id, current_user.id).each do |conversation| %>
+      <span class="nav-notification"> <% if !conversation.unread_message_count(current_user).zero? %>
+        (<%= conversation.unread_message_count(current_user) %>)
+        <% end %>
+
+      </span>
+      <% end %>
+      Messages
+      <% end %>
+
+      <%= link_to "Location", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-tribo-item">
