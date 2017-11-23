@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
+
   get 'private_messages/index'
 
   get 'conversations/index'
+
+
+  ActiveAdmin.routes(self)
+  mount Attachinary::Engine => "/attachinary"
 
   devise_for :users, :path => 'accounts',
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }

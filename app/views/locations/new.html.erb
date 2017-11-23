@@ -1,11 +1,13 @@
 <h2>New locatoin</h2>
 <%= simple_form_for ([@user, @location]) do |f| %>
+
 <div class="form-inputs">
   <%= f.input :name, label: 'Location Name', error: 'Please specify A location name', required: false %>
   <%= f.input :email, label: 'Email', error: 'Please specify A location name', required: false %>
 
   <%= f.input :address, label: 'Address of the location' %>
   <%= f.input :description, label: 'Description', required: false %>
+  <%= f.input :photos, as: :attachinary %>
   <%= f.input :phone, label: 'Phone Number', required: false %>
   <%= f.input :capacity, label: 'Capacity', type: "integer" %>
   <%= f.input :rate_by_hour, label: 'Rate by hour', type: "integer" %>
@@ -14,6 +16,7 @@
   <%= f.input :features, label: 'Features (ex: "Free coffee, Wifi, Plugs")'%>
   <%= f.input :features, label: 'Tags (ex: "Calm, Nice music, Light")' %>
   <%= f.input :rules, label: 'Rules (ex: "Smoking, No smoking")' %>
+
 
 </div>
 

@@ -9,6 +9,8 @@ gem 'rails', '5.1.4'
 gem 'redis'
 gem 'devise'
 gem 'omniauth-facebook'
+gem 'activeadmin', github: 'activeadmin/activeadmin'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
@@ -23,6 +25,11 @@ gem "geocoder"
 gem "pundit"
 gem "coffee-rails"
 gem "gmaps4rails"
+
+gem 'cloudinary', '1.1.7'
+gem 'attachinary', github: 'assembler/attachinary'
+gem 'jquery-fileupload-rails'
+
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"

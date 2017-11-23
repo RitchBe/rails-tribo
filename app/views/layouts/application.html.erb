@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>TODO</title>
+    <title>Tribo - Work wherever you want - Connect</title>
+    <!-- Google result description-->
+    <meta name="description" content="Tribo is a powerfull app to find coworking spaces in Lisbon">
+
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
@@ -21,6 +24,7 @@
   <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js" %>
 
   <%= javascript_include_tag "application" %>
+  <%= cloudinary_js_config %>
   <%= yield(:after_js) %>
   </body>
 </html>

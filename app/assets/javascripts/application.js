@@ -4,8 +4,14 @@
 //= require underscore
 //= require gmaps/google
 //= require turbolinks
-//= require_tree .
+//= require jquery-fileupload/basic
+//= require cloudinary/jquery.cloudinary
+//= require attachinary
+//= require_tree ./app
 
-
+// app/assets/javascripts/init_attachinary.js
+$(document).ready(function() {
+  $('.attachinary-input').attachinary();
+});
 
 
