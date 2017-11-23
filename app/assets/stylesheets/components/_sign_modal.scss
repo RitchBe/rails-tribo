@@ -1,6 +1,5 @@
 form{
-  padding: 20px;
-      box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 15px 0 rgba(0,0,0,0.12) !important;
+  padding: 20px 20px 20px 20px;
 }
 .modal-h4{
     text-align: center;
@@ -10,11 +9,8 @@ form{
 }
 .form-control{
   border-radius: 0px;
-  margin-bottom: 10px;
 }
 p{
-  margin-bottom: 10px;
-  margin-top: 10px;
   text-align: center;
 }
 .blue{
@@ -81,4 +77,5 @@ perspective: 800;
   -webkit-transform: rotatey(-180deg);
     transform: rotatey(-180deg);
 }
-  .inner{margin:0px !important;}
+  .inner{margin:0px !important;
+}

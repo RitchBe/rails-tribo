@@ -14,3 +14,4 @@ $(document).ready(function() {
   $('.attachinary-input').attachinary();
   $('.private-message-list').scrollTop($('.private-message-list').height());
 });
+
