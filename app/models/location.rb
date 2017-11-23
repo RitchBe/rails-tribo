@@ -11,6 +11,8 @@ class Location < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 
+  FEATURES = ["Wifi", "Printer", "Headlights"]
+
   has_attachments :photos, maximum: 3
 end
 

@@ -1,3 +1,46 @@
+
+<div class="container text-center">
+	<h1>New location</h1>
+
+	<div class="col-md-8 select">
+
+		<%= simple_form_for ([@user, @location]) do |f| %>
+
+		<div class="form-inputs">
+			<%= f.input :name, label: 'Location Name', error: 'Please specify A location name', required: false %>
+			<%= f.input :email, label: 'Email', error: 'Please specify A location name', required: false %>
+
+			<%= f.input :address, label: 'Address of the location' %>
+			<%= f.input :description, label: 'Description', required: false %>
+			<!--   f.input :photos, as: :attachinary %> -->
+			<%= f.input :phone, label: 'Phone Number', required: false %>
+			<%= f.input :capacity, label: 'Capacity', type: "integer" %>
+			<%= f.input :rate_by_hour, label: 'Rate by hour', type: "integer" %>
+			<%= f.input :rate_by_day, label: 'Rate by day', type: "integer" %>
+			<%= f.input :rate_by_week, label: 'Rate by week', type: "integer" %>
+			<div class="form-group">
+			<% Location::FEATURES.each do |feature| %>
+				<%= label_tag feature %>
+				<%= check_box_tag "features[]", feature %>
+			<% end %>
+			</div>
+			<%= f.input :features, label: 'Features (ex: "Free coffee, Wifi, Plugs")'%>
+			<%= f.input :tags, label: 'Tags (ex: "Calm, Nice music, Light")' %>
+			<%= f.input :rules, label: 'Rules (ex: "Smoking, No smoking")' %>
+
+
+		</div>
+
+		<div class="form-actions">
+			<%= f.button :submit, class:"confirm-btn" %>
+		</div>
+		<% end %>
+		<%= content_for(:after_js) do %>
+
+		<% end %>
+	</div>
+</div>
+
 <div class="panel panel-default">
 	<div class="panel-heading">Become a host!</div>
 	<div class="panel-body">
@@ -71,3 +114,4 @@
 			</div>
 		</div>
 	</div>
+
