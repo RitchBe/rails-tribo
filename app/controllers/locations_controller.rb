@@ -27,8 +27,8 @@ class LocationsController < ApplicationController
   def create
     @user = User.find(current_user.id)
     @location = @user.locations.new(location_params)
+    @location.features = params[:features]
     authorize @location
-
     if @location.save
       redirect_to locations_path(@location.id)
     else
@@ -79,6 +79,8 @@ class LocationsController < ApplicationController
   def set_location
     @location = Location.find(params[:id])
   end
+
+ 
 
 end
 
