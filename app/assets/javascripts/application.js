@@ -12,6 +12,8 @@
 // app/assets/javascripts/init_attachinary.js
 $(document).ready(function() {
   $('.attachinary-input').attachinary();
+  $('.private-message-list').scrollTop($('.private-message-list').height());
 });
+
 
 
