@@ -1,12 +1,70 @@
-<h2><%= @location.name %></h2>
 
 
-  <li><%= link_to "Send a message", conversations_path(sender_id: current_user.id, receiver_id: @location.user_id), method: :post %></li>
+<div class="banner-location" style= "background-image: url(<%= if @location.photos? then @location.photos[0] else asset_path('landing/cowork-2.jpg') end %>">
+<h2 class="title-location-show"><%= @location.name %></h2>
+
+  </div>
+
+  <div class="location-wrapper">
+<div class="location-container">
+<div class="location-info-row-1">
+  <div class="location-description">
+    <h3>About the place</h3>
+    <p><%= @location.description %></p>
+  </div>
+
+  <div class="location-price-hours">
+    <h3>Opening Hours</h3>
+    <p>Monday to Saturday: <strong> 8am to 5pm </strong></p>
+  <h3>Prices</h3>
+  <p>Day: <strong><%= @location.rate_by_day %>€</strong> | Week: <strong><%= @location.rate_by_week %>€</strong></p>
+  </div>
+</div>
+
+<div class="location-info-row-2">
+  <div class="features">
+    <h3>Features</h3>
+  </div>
+</div>
+</div>
+<div class="location-container-2">
+<div class="location-map">
+<div id="map" style="width: 100%; height: 100%"></div>
+</div>
+
+<div class="location-booking-info">
+  <div class="location-booking">
+  <h3>Bookings</h3>
+  </div>
+  <div class="location-other-info">
+    <h3>Rules</h3>
+    <p><%= @location.rules %></p></br>
+    <h3>Address</h3>
+    <p><%= @location.address %></p>
+  </div>
+</div>
 
 
-
+</div>
+</div>
 
 <% @location.photos.each do |photo| %>
   <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
 <% end %>
 
+
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    var handler = Gmaps.build('Google');
+    handler.buildMap({ internal: { id: 'map' } }, function() {
+      markers = handler.addMarkers(<%= raw @hash.to_json %>);
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+      if (markers.length == 0) {
+        handler.getMap().setZoom(2);
+      } else if (markers.length == 1) {
+        handler.getMap().setZoom(14);
+      }
+    });
+  <% end %>
+<% end %>
