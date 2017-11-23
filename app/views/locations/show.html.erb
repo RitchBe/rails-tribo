@@ -1,6 +1,10 @@
 <h2><%= @location.name %></h2>
 
 
+  <li><%= link_to "Send a message", conversations_path(sender_id: current_user.id, receiver_id: @location.user_id), method: :post %></li>
+
+
 <% @product.photos.each do |photo| %>
   <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
 <% end %>
+
