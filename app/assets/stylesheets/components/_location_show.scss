@@ -1,5 +1,5 @@
 .banner-location {
-  height: 100vh;
+  height: 50vh;
   background-size: cover;
   background-position: bottom;
   display: flex;
@@ -7,8 +7,26 @@
   align-items: center;
 }
 
+
+/* CAROUSEL */
+
+#myCarousel, .carousel-inner {
+  height: 50vh;
+}
+
+
+ol li:not(:last-child) {
+  margin: 0 !important ;
+}
+
+
 .title-location-show {
-  color: white
+  color: white;
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
 }
 
 div.location-info-row-1, .location-booking-info {
@@ -25,7 +43,7 @@ div.location-info-row-1, .location-booking-info {
 }
 
 div.location-description, div.location-booking {
-  background-color: #673c4f;
+  background-color: $green;
   margin-right: 20px;
   width: 50%;
   @media screen and (max-width: 900px) {
@@ -36,7 +54,7 @@ div.location-description, div.location-booking {
 }
 
 div.location-price-hours, div.location-other-info {
-  background-color: #f2e5d7;
+  background-color: $blue;
   width: 50%;
   @media screen and (max-width: 900px) {
     width: 100%;
@@ -50,7 +68,7 @@ div.location-description > p, div.location-description > h3, div.location-bookin
   padding-right: 10%;
   padding-top: 3%;
   margin-bottom: 0;
-  color: #f2e5d7;
+  color: $blue;
 }
 
 div.location-description > p {
@@ -62,7 +80,7 @@ div.location-price-hours > p, div.location-price-hours > h3, div.location-other-
   padding-left: 10%;
   padding-top: 3%;
   margin-bottom: 0;
-  color: #673c4f;
+  color: $green;
 }
 
 
@@ -71,7 +89,7 @@ div.location-info-row-2 {
   display: flex;
   margin-top: 20px;
   justify-content: center;
-  background-color: lightgrey;
+  background-color: $brown ;
 }
 
 div.location-map {
@@ -86,6 +104,9 @@ div.features {
   padding-top: 3%;
 }
 
+.features > h3 {
+  color: $light-gray;
+}
 
 .info {
 
@@ -116,7 +137,7 @@ div.features {
 .location-wrapper {
   display: flex;
   justify-content: left;
-  margin-top: 100px;
+  margin-top: 80px;
   margin-bottom: 100px;
   margin-left: 50px;
   margin-right: 50px;
