@@ -1,20 +1,22 @@
 Rails.application.routes.draw do
 
+  mount Attachinary::Engine => "/attachinary"
+
   get 'private_messages/index'
 
   get 'conversations/index'
 
 
   ActiveAdmin.routes(self)
-  mount Attachinary::Engine => "/attachinary"
 
-  devise_for :users, :controllers => {sessions: 'sessions'},
-  controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-  # devise_for :users, :path => 'accounts',
-  #   controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-  resources :users, only: [:show] do
-    resources :bookings, only: [:index]
+
+  devise_for :users, :controllers => {sessions: 'sessions',
+   omniauth_callbacks: 'users/omniauth_callbacks' }
+
+  resources :users, only: [:show]
+   resources :bookings, only: [:index]
   end
+
 
   root to: 'pages#landing'
   get '/calendar', to: 'pages#calendar'

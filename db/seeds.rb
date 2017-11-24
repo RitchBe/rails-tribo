@@ -11,38 +11,19 @@ Booking.destroy_all
 Location.destroy_all
 User.destroy_all
 
-ADDRESSES = ["Av. Duque de Ávila 201, 1050-082 Lisboa",
-  "Av. dos Cavaleiros 20, 2790-045 Carnaxide",
-  "Largo Girassol 26, 2775-417 Carcavelos",
-  "Praça dos Pescadores 42, 2825 Costa da Caparica",
-  "Tv. São Domingos de Benfica 13, Lisboa",
-  "AVENIDA REI HUMBERTO II DE ITÁLIA, LISBOA, BOCA DO INFERNO, 2750-800 Cascais",
-  "Av. Rei Humberto II de Italia 7, 2750-800 Cascais",
-  "R. Gurué 16, 2775-581 Carcavelos",
-  "Quinta da Beloura, Rua Mato da Mina, nº19, 2710-692 Sintra",
-  "Alto do Pragal, Av. Cristo Rei, 2800-058 Almada",
-  "Praia Das Palmeiras, São João,Costa De Caparica, 2825-426 Almada",
-  "R. Parque Infantil 1, 2825-328 Costa da Caparica",
-  "Av. de Roma 50, 1700-348 Lisboa",
-  "Jardim Zoológico de Lisboa, Estr. de Benfica 1549, 1500-423 Lisboa",
-  "Rotunda Nuno Rodrigues dos Santos, 2685-220 Portela",
-  "R. Me. Deus 4, 1900-312 Lisboa",
-  "R. Amorim 2, 1950-022 Lisboa",
-  "Praça Duque da Terceira 24, 1200-014 Lisboa",
-  "São Domingos de Benfica 15, Lisboa",
-  "AVENIDA REI HUMBERTO II DE ITÁLIA, LISBOA",
-  "Av. Rei Humberto II de Italia 20, 2750-800 Cascais",
-  "R. Gurué 35, 2775-581 Carcavelos",
-  "Rua Mato da Mina 19, 2710-692 Sintra",
-  "Alto do Pragal, Almada",
-   "Praia Das Palmeiras, Almada",
-  "R. Parque Infantil 1, Costa da Caparica",
-  "Av. de Roma 55, Lisboa",
-  "Estr. de Benfica, Lisboa",
-  "Rotunda Nuno Rodrigues dos Santos, Portela",
-  "R. Me. Deus 4, Lisboa",
-  "R. Amorim 2, Lisboa",
-  "Praça Duque da Terceira 24, Lisboa"]
+FEATURES = ["High-speed Wi-Fi", "Free coffee and tea", "Beer",
+ "Printers", "Outlets","Host & Reception","Meeting Rooms",
+"Bicycle lodge", "Events","Heating", "AC","Instant Reservation",
+"Office supplies", "Whiteboards", "Lunch", "Gym"]
+
+TAGS = ["#Calm & quiet","#Trendy","#Vintage","#Industrial","Hipster",
+"#Networking","#Designers","#Developers","#Nature",
+"#City Centre","#Chill","#Nice Views","#Music","#Happy hours","#Social","#Roomy",
+"#Inspiring","#Dimly lighted","#Outside area"]
+
+
+RULES = ["Smoking not allowed","Pets allowed","Opening","Closing",
+"Full capacity","Early Dinner Access", "Cooking allowed"]
 
  puts 'Creating 16 fake users'
 
@@ -72,32 +53,213 @@ end
   )
 end
 
-  puts "Creating 8 fake locations"
 
-  8.times do
-    location = Location.create(
+  puts "Creating 8 real locations..."
+
+    restaurant = Location.create({
       user_id: User.all.sample.id,
-      address: ADDRESSES.sample,
-      phone: Faker::PhoneNumber.phone_number,
-      description: "This is a location description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum id facere illo exercitationem vel neque dolores, modi ratione odio placeat eaque, eos quia labore, harum provident. Accusantium fuga, odio enim.",
-      capacity: (5..40).to_a.sample,
-      rate_by_hour: (3..8).to_a.sample,
-      rate_by_day: (15..25).to_a.sample,
-      rate_by_week: (90..175).to_a.sample,
-      features: "Coffee, Wifi",
-      tags: "#calm, #beautiful, #charming",
-      rules: "No smoking inside",
-      name: Faker::Space.planet
-      )
-
-      urls = [
-          'https://picsum.photos/200/300/?random',
-          'https://picsum.photos/200/300/?random'
+      name: "O Bom, o Mau e o Vilão",
+      email: "bomomau@gmail.com",
+      address: "Rua do Alecrim, 21, Cais do Sodré, Lisboa",
+      phone: "308 808 340",
+      description: "Intimate and trendy atmosphere provided with afterwork Live Jazz Jam Sessions, Funky and Indie. Restored house dating from the eighteenth century, located in the heart of Cais do Sodré",
+      capacity: 20,
+      rate_by_hour: 3,
+      rate_by_day: 6,
+      rate_by_week: 12,
+      features: FEATURES.sample(7),
+      tags:  "Trendy Quiet",
+      rules: RULES.sample(2),
+      open_hour: 9,
+      close_hour: 18,
+      latitude:  38.707362,
+      longitude: -9.143454
+    })
+    restaurant.photo_urls = [
+          'https://cdn.betakit.com/wp-content/uploads/2016/08/rndmwrk-web.jpg',
       ]
+    restaurant.save
 
-      location.photo_urls = urls # Multi-upload happens here
-      location.save!
-end
+
+    restaurant = Location.create({
+      user_id: User.all.sample.id,
+      name: "The Insólito Restaurant & Bar",
+      email: "insolito@hotmail.com",
+      address:"Rua de São Pedro de Alcântara, 83, Bairro Alto, Lisboa 1250-238",
+      phone: "211303306",
+      description: "Nice nice views rooftoop with fast-wifi connection. Available to work outdoors during warm seasons",
+      capacity: "40",
+      rate_by_hour: 4,
+      rate_by_day: 10,
+      rate_by_week: 25,
+      features: FEATURES.sample(5),
+      tags: "Cool views",
+      rules: RULES.sample(1),
+      open_hour: 9,
+      close_hour: 17,
+      latitude:  38.714978,
+      longitude: -9.144686
+    })
+    restaurant.photo_urls = [
+          'https://s3-eu-west-1.amazonaws.com/hubblehq/hubble/uploads/wyswigy/greenhouse-coworking.jpg',
+          'https://cdn-images-1.medium.com/max/2000/0*gHtXCPp2nTe1-18Z.jpg'
+      ]
+    restaurant.save
+
+
+    restaurant = Location.create({
+      user_id: User.all.sample.id,
+      name: "Casa Independente",
+      email: "casaindependente@gmail.com",
+      address: "Largo Intendente Pina Manique, 45, Mouraria, Lisboa",
+      phone: "218875143",
+      description: "Founded in 2012, it was installed in the old mansion of the nº45 of Largo do Intendente where it develops its main project: the Independent House, multidisciplinary space of artistic and cultural character",
+      capacity: "50",
+      rate_by_hour: 2,
+      rate_by_day: 4,
+      rate_by_week: 10,
+      features: FEATURES.sample(7),
+      tags:  "Cultural atmosphere",
+      rules: RULES.sample(2),
+      open_hour: 9,
+      close_hour: 17,
+      latitude:  38.720856,
+      longitude: -9.134657
+    })
+    restaurant.photo_urls = [
+          'https://cdn-images-1.medium.com/max/2000/1*tzK_94Kop8eMfV8R8WRlsg.jpeg',
+          'https://thespaces.com/wp-content/uploads/2017/04/London-coworking-spaces-forge-co.jpg'
+      ]
+    restaurant.save
+
+
+    restaurant = Location.create({
+      user_id: User.all.sample.id,
+      name: "Clube Ferroviário",
+      email: "clubf@gmail.com",
+      address: "Rua de Santa Apolónia, 59, Santa Engrácia, Lisboa",
+      phone: "21111111",
+      description: "Two floors co-working space with outstanding views over the Tejo",
+      capacity: "50",
+      rate_by_hour: 3,
+      rate_by_day: 7,
+      rate_by_week: 30,
+      features: FEATURES.sample(7),
+      tags: TAGS.sample(3),
+      rules: RULES.sample(2),
+      open_hour: 10,
+      close_hour: 16,
+            latitude: 38.718354 ,
+      longitude: -9.118477
+    })
+    restaurant.photo_urls = [
+          'https://cdn.vox-cdn.com/thumbor/bQtMJLgMqAH3mGG7_ORL2XwKYyU=/0x0:4032x3024/1200x800/filters:focal(829x1330:1473x1974)/cdn.vox-cdn.com/uploads/chorus_image/image/50444117/bon_20nene.0.jpg',
+          'http://2.bp.blogspot.com/_2y06NHHK-ys/TKstseCAJUI/AAAAAAAAArA/xRzlDljcbYg/s1600/IMG_3998.jpg'
+      ]
+    restaurant.save
+
+
+    restaurant = Location.create({
+      user_id: User.all.sample.id,
+      name: "Rooftop Bar - Hotel Mundial",
+      email: "hmundial@gmail.com",
+      address: "Hotel Mundial, Praça Martim Moniz, 2, Mouraria, Lisboa",
+      phone: "218842000",
+      description: "At the last floor of Hotel Mundial we discover one of the Best Rooftoop and coworking spaces in Lisbon where you can admire views over the Tejo while networking",
+      capacity: "25",
+      rate_by_hour: 4,
+      rate_by_day: 10,
+      rate_by_week: 50,
+      features: FEATURES.sample(7),
+      tags:  TAGS.sample(2),
+      rules: RULES.sample(2),
+      open_hour: 8,
+      close_hour: 17,
+            latitude: 38.715034  ,
+      longitude: -9.137011
+    })
+    restaurant.photo_urls = [
+          'https://cdn.theculturetrip.com/wp-content/uploads/2016/02/lomi.jpg',
+          'http://1.bp.blogspot.com/-7qDYc8HacXk/VZVCBkVL9QI/AAAAAAAACe0/7ogYp19J9g0/s1600/mundial.jpg'
+      ]
+    restaurant.save
+
+
+      restaurant = Location.create({
+      user_id: User.all.sample.id,
+      name: "Red Frog",
+      email: "redfrog@gmail.com",
+      address: "Hotel Mundial, Praça Martim Moniz, 2, Mouraria, Lisboa",
+      phone: "21 5831120",
+      description: "Inspired by cocktail bars in New York and London during the dry season",
+      capacity: "20",
+      rate_by_hour: 2,
+      rate_by_day: 12,
+      rate_by_week: 30,
+      features: FEATURES.sample(2),
+      tags:  TAGS.sample(2),
+      rules: RULES.sample(2),
+      open_hour: 10,
+      close_hour: 18,
+            latitude: 38.715035 ,
+      longitude: -9.137011
+    })
+    restaurant.photo_urls = [
+          'https://cdn.theculturetrip.com/wp-content/uploads/2016/02/lomi.jpg',
+      ]
+    restaurant.save
+
+      restaurant = Location.create({
+       user_id: User.all.sample.id,
+      name: "Double9 - 9Hotel Mercy",
+      email: "double9@gmail.com",
+      address: "Hotel Mercy, Rua da Misericórdia, 76, Chiado, Lisboa",
+      phone: "221 2481480",
+      description: "A modern tea house, transformed into a coworking and chillout space, where you can work during the day and sample some cocktails made to order at night",
+      capacity: "25",
+      rate_by_hour: 4,
+      rate_by_day: 12,
+      rate_by_week: 35,
+      features: FEATURES.sample(4),
+      tags:  TAGS.sample(2),
+      rules: RULES.sample(2),
+      open_hour: 9,
+      close_hour: 17,
+            latitude: 38.712366 ,
+      longitude: -9.142971
+    })
+    restaurant.photo_urls = [
+          'https://lefooding.com/media/W1siZiIsIjIwMTUvMDcvMjkvMTBfMTJfMzlfMTY0X3Jlc3RhdXJhbnRfY2FmZV9sb21pX3BhcmlzLmpwZyJdLFsicCIsInRodW1iIiwiNjcyeDYwMCJdXQ/restaurant-cafe-lomi-paris.jpg?sha=78136935',
+          'http://genylabs.typepad.com/.a/6a00d8345675df69e201b8d2b6c0cf970c-pi'
+      ]
+    restaurant.save
+
+
+      restaurant = Location.create({
+       user_id: User.all.sample.id,
+      name: "Cave 23",
+      email: "cave239@gmail.com",
+      address: "Torel Palace, Rua Câmara Pestana, 23, Pena, Lisboa 1150-199",
+      phone: "21 8298071",
+      description: "With eyes on the city, this space is perfect to get to know another place of the city while working in a classic portuguese restaurant",
+      capacity: "30",
+      rate_by_hour: 5,
+      rate_by_day: 10,
+      rate_by_week: 25,
+      features: FEATURES.sample(4),
+      tags:  TAGS.sample(2),
+      rules: RULES.sample(2),
+      open_hour: 9,
+      close_hour: 16,
+            latitude:  38.718040,
+      longitude: -9.140064
+    })
+    restaurant.photo_urls = [
+          'https://www.restaurantscanada.org/wp-content/uploads/2017/05/nick-hillier-254650.jpg',
+          'https://media.treehugger.com/assets/images/2017/05/coworking-in-restaurants-bars-spacious.jpg.650x0_q70_crop-smart.jpg'
+      ]
+    restaurant.save
+
 
 puts "create 15 fake booking"
 

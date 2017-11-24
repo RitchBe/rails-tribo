@@ -39,7 +39,76 @@
 </span>
 <div class="uni-tooltip__text">
 <!---->
-    Payment equivalent to one month of rent to cover for January, 2018
+
+<!--
+<div class="banner-location" style= "background-image: url(< if @location.photos? then @location.photos[0] else asset_path('landing/cowork-2.jpg') end %>">
+<h2 class="title-location-show"><%= @location.name %></h2>
+  </div>
+ -->
+<div class="location-carousel">
+  <div>
+ <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <% if @location.photos[0] != nil  %>
+      <%= cl_image_tag @location.photos[0].path, class: "image-carousel" %>
+      <% else %>
+      <%= image_tag "landing/cowork-2.jpg", class: "image-carousel" %>
+      <% end %>
+
+    </div>
+
+    <div class="item">
+          <% if @location.photos[1] != nil  %>
+      <%= cl_image_tag @location.photos[1].path, class: "image-carousel" %>
+      <% else %>
+      <%= image_tag "landing/cowork-2.jpg", class: "image-carousel" %>
+      <% end %>
+    </div>
+
+    <div class="item">
+         <% if @location.photos[2] != nil  %>
+      <%= cl_image_tag @location.photos[2].path, class: "image-carousel" %>
+      <% else %>
+      <%= image_tag "landing/cowork-2.jpg", class: "image-carousel" %>
+      <% end %>
+    </div>
+<h2 class="title-location-show"><%= @location.name %></h2>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+<div class="booking-card">
+<h3 class="text-center">Book a Desk !</h3>
+</div>
+
+
+
+</div>
+  <div class="location-wrapper">
+<div class="location-container">
+<div class="location-info-row-1">
+  <div class="location-description">
+    <h3>About the place</h3>
+    <p><%= @location.description %></p>
+  </div>
 
 <!----></div>
 </span>
@@ -70,13 +139,50 @@
 </div>
 <%= button_to "BOOK IT", new_location_booking_path(location_id: @location.id, in: params[:in], out: params[:out]), :method => "get", class: "btn btn--sm btn--primary type--uppercase" %>
 </div>
+
       </div>
         <div class="payment-message">
             <span class="payment-message__text">You’ll pay only after the landlord accepts your request.</span>
         </div>
+
+<div class="location-container-2">
+<div class="location-map">
+<div id="map" style="width: 100%; height: 100%"></div>
+</div>
+
+<div class="location-info">
+  <div class="location-contact">
+  <h3>Message</h3>
+  <h3 style="text-align: center; margin-top: 20px;"><%= link_to "Send a message", conversations_path(sender_id: current_user.id, receiver_id: @location.user_id), method: :post, class: "new-message-link" %></h3>
+
+  <h3 style="text-align: center; margin-top: 20px;"> <%= link_to "Chat Room", location_messages_path(location_id: @location.id) , class: "chatroom-link" %> </h3>
+
+  </div>
+  <div class="location-other-info">
+    <h3>Rules</h3>
+    <p><%= @location.rules %></p></br>
+    <h3>Address</h3>
+    <p><%= @location.address %></p>
+
   </div>
 </div>
 </div>
 
-<!-- TEST CARD BOOKING -->
+
+=======
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    var handler = Gmaps.build('Google');
+    handler.buildMap({ internal: { id: 'map' } }, function() {
+      markers = handler.addMarkers(<%= raw @hash.to_json %>);
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+      if (markers.length == 0) {
+        handler.getMap().setZoom(2);
+      } else if (markers.length == 1) {
+        handler.getMap().setZoom(14);
+      }
+    });
+  <% end %>
+<% end %>
 

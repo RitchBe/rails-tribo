@@ -1,0 +1,23 @@
+.cards {
+  display: flex;
+  justify-content: space-around;
+}
+
+#map {
+  flex: 1 0 450px;
+  height: 90vh;
+  position: sticky !important;
+  top: 0 !important;
+}
+
+.cards-container {
+  margin-top: 15vh;
+  margin-bottom: 15vh;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+
+.card-row {
+  width: 60vw;
+}

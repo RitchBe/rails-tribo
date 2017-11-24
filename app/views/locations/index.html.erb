@@ -11,7 +11,9 @@
     <input type="text" id="flatpickr-user" placeholder="Pick a date" data-default-date="<%= data_default %>">
   </div>
   <div class="cards-container">
+
     <div class="row" style="padding:20px">
+
       <% @location.each do |l| %>
       <div class="col-xs-12 col-sm-6 col-md-4">
         <% if params[:in].present? %>
@@ -36,23 +38,30 @@
       </div>
       <% end %>
 
-    </div>
-    <div id="map"></div>
-  </div>
-</div>
-<% content_for(:after_js) do %>
-<%= javascript_tag do %>
-var handler = Gmaps.build('Google');
-handler.buildMap({ internal: { id: 'map' } }, function() {
-markers = handler.addMarkers(<%= raw @hash.to_json %>);
-handler.bounds.extendWith(markers);
-handler.fitMapToBounds();
-if (markers.length == 0) {
-handler.getMap().setZoom(2);
-} else if (markers.length == 1) {
-handler.getMap().setZoom(14);
-}
-});
+
+      </div>
+         <div id="map"></div>
+
+        </div>
+       </div>
+
+
+       <% content_for(:after_js) do %>
+       <%= javascript_tag do %>
+       var handler = Gmaps.build('Google');
+       handler.buildMap({ internal: { id: 'map' } }, function() {
+       markers = handler.addMarkers(<%= raw @hash.to_json %>);
+       handler.bounds.extendWith(markers);
+       handler.fitMapToBounds();
+       if (markers.length == 0) {
+       handler.getMap().setZoom(2);
+     } else if (markers.length == 1) {
+     handler.getMap().setZoom(14);
+   }
+ });
+ <% end %>
+ <% end %>
+
 
 <% end %>
 <% end %>
