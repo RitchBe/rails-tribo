@@ -1,5 +1,4 @@
 
-
 <div class="banner-location" style= "background-image: url(<%= if @location.photos? then @location.photos[0] else asset_path('landing/cowork-2.jpg') end %>">
 <h2 class="title-location-show"><%= @location.name %></h2>
 
@@ -12,6 +11,7 @@
     <h3>About the place</h3>
     <p><%= @location.description %></p>
   </div>
+<input type="text" id="flatpickr-user">
 
   <div class="location-price-hours">
     <h3>Opening Hours</h3>

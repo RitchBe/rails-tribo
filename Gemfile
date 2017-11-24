@@ -11,6 +11,7 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem 'activeadmin', github: 'activeadmin/activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+gem 'flatpickr_rails'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'

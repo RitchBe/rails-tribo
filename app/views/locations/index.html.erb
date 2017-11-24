@@ -3,8 +3,9 @@
     <div class="search">
       <%= form_tag(locations_path, :method => "get", id: "search-form") do %>
     <%= text_field_tag :search, params[:search], placeholder: "Search",class: "location-search" %>
-<% end %>
+    <% end %>
     </div>
+    <input type="text" id="flatpickr-user">
   </div>
   <div class="cards-container">
     <div class="row" style="padding:20px">
@@ -45,7 +46,7 @@ handler.getMap().setZoom(2);
 handler.getMap().setZoom(14);
 }
 });
-<% end %>
-<% end %>
 
+<% end %>
+<% end %>
 

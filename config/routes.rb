@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
 
   root to: 'pages#landing'
-
+  get '/calendar', to: 'pages#calendar'
   get '/about', to: 'pages#about'
   resources :locations do
     resources :messages
