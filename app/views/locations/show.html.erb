@@ -18,7 +18,7 @@
   <div class="carousel-inner">
     <div class="item active">
       <% if @location.photos[0] != nil  %>
-      <%= cl_image_tag @location.photos[0].path, class: "image-carousel" %>
+
       <% else %>
       <%= image_tag "landing/cowork-2.jpg", class: "image-carousel" %>
       <% end %>
