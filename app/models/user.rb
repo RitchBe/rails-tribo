@@ -12,9 +12,7 @@ class User < ApplicationRecord
 
   private
 
-  # def send_welcome_email
-  #   UserMailer.welcome(self).deliver_now
-  # end
+
 
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)
