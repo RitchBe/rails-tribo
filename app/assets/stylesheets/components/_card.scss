@@ -13,7 +13,7 @@
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius:2px 2px 0px 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -26,10 +26,10 @@
   padding: 5px 40px;
   margin-top: 90px;
   text-align: center;
-  max-width: 270px;
 }
 
 .card-description h3 {
+  font-size: 16px;
   color: white;
   font-weight: 200;
   letter-spacing: 5px;
@@ -38,7 +38,7 @@
   text-transform: uppercase;
 }
 
-.card-description  p {
+.card-description p {
   color: white;
   font-weight: 100;
   letter-spacing: 3px;
@@ -51,29 +51,41 @@
   display: flex;
   justify-content:space-between;
   align-items: center;
-  height: 70px;
+  height: 45px;
+  position: relative;
 }
 
-.card-hours-text{
+.card-hours{
   color: black;
-  font-weight: 100;
+  font-weight: 300;
   letter-spacing: 2px;
-  font-size: 15px;
-  padding-left: 20px;
+  font-size: 12px;
+  position:absolute;
+  left: 2px;
+  top: 2px;
+  margin-left:3px;
 }
 
-.btn-medium {
+.card-hours p {
+  margin:0;
+  margin-bottom: -7px;
+}
+
+.hours {
+  padding-bottom: 6px;
+}
+
+.btn-card {
     color: #999999;
-    border: 1px solid #999999;
-    padding: 5px 10px;
-    font-size: 15px;
-    border-radius: 50px;
-    opacity: 0.6;
+    opacity: 0.8;
     margin-right: 10px;
-    font-weight: 100;
+    font-weight: 300;
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
 }
 
-.btn-medium:hover {
+.btn-card:hover {
   opacity: 0.9;
   text-decoration: none;
   color: black;
@@ -83,7 +95,6 @@
 
 div.cards-container {
   display: flex;
-
 }
 
 
