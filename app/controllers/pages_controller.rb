@@ -1,5 +1,10 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!
-  def home
-  end
+	skip_before_action :authenticate_user!
+	def home
+	end
+
+	def landing
+		@locations = Location.all
+	end
+
 end
