@@ -20,7 +20,7 @@
       <% if @location.photos[0] != nil  %>
 
       <% else %>
-      <%= image_tag "landing/cowork-2.jpg", class: "image-carousel" %>
+      <%= image_tag "landing/cowork-3.jpg", class: "image-carousel" %>
       <% end %>
 
     </div>
@@ -29,7 +29,7 @@
           <% if @location.photos[1] != nil  %>
       <%= cl_image_tag @location.photos[1].path, class: "image-carousel" %>
       <% else %>
-      <%= image_tag "landing/cowork-2.jpg", class: "image-carousel" %>
+      <%= image_tag "landing/cowork-3.jpg", class: "image-carousel" %>
       <% end %>
     </div>
 
@@ -37,7 +37,7 @@
          <% if @location.photos[2] != nil  %>
       <%= cl_image_tag @location.photos[2].path, class: "image-carousel" %>
       <% else %>
-      <%= image_tag "landing/cowork-2.jpg", class: "image-carousel" %>
+      <%= image_tag "landing/cowork-3.jpg", class: "image-carousel" %>
       <% end %>
     </div>
 <h2 class="title-location-show"><%= @location.name %></h2>
