@@ -18,7 +18,7 @@
   <div class="carousel-inner">
     <div class="item active">
       <% if @location.photos[0] != nil  %>
-      <%= image_tag @location.photos[0], class: "image-carousel" %>
+      <%= cl_image_tag @location.photos[0].path, class: "image-carousel" %>
       <% else %>
       <%= image_tag "landing/cowork-2.jpg", class: "image-carousel" %>
       <% end %>
@@ -27,7 +27,7 @@
 
     <div class="item">
           <% if @location.photos[1] != nil  %>
-      <%= image_tag @location.photos[1], class: "image-carousel" %>
+      <%= cl_image_tag @location.photos[1].path, class: "image-carousel" %>
       <% else %>
       <%= image_tag "landing/cowork-2.jpg", class: "image-carousel" %>
       <% end %>
@@ -35,7 +35,7 @@
 
     <div class="item">
          <% if @location.photos[2] != nil  %>
-      <%= image_tag @location.photos[2], class: "image-carousel" %>
+      <%= cl_image_tag @location.photos[2].path, class: "image-carousel" %>
       <% else %>
       <%= image_tag "landing/cowork-2.jpg", class: "image-carousel" %>
       <% end %>
