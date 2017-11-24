@@ -72,6 +72,8 @@ end
       rules: RULES.sample(2),
       open_hour: 9,
       close_hour: 18,
+      latitude:  38.707362,
+      longitude: -9.143454
     })
     restaurant.photo_urls = [
           'https://cdn.betakit.com/wp-content/uploads/2016/08/rndmwrk-web.jpg',
@@ -95,6 +97,8 @@ end
       rules: RULES.sample(1),
       open_hour: 9,
       close_hour: 17,
+      latitude:  38.714978,
+      longitude: -9.144686
     })
     restaurant.photo_urls = [
           'https://s3-eu-west-1.amazonaws.com/hubblehq/hubble/uploads/wyswigy/greenhouse-coworking.jpg',
@@ -119,6 +123,8 @@ end
       rules: RULES.sample(2),
       open_hour: 9,
       close_hour: 17,
+      latitude:  38.720856,
+      longitude: -9.134657
     })
     restaurant.photo_urls = [
           'https://cdn-images-1.medium.com/max/2000/1*tzK_94Kop8eMfV8R8WRlsg.jpeg',
@@ -143,6 +149,8 @@ end
       rules: RULES.sample(2),
       open_hour: 10,
       close_hour: 16,
+            latitude: 38.718354 ,
+      longitude: -9.118477
     })
     restaurant.photo_urls = [
           'https://cdn.vox-cdn.com/thumbor/bQtMJLgMqAH3mGG7_ORL2XwKYyU=/0x0:4032x3024/1200x800/filters:focal(829x1330:1473x1974)/cdn.vox-cdn.com/uploads/chorus_image/image/50444117/bon_20nene.0.jpg',
@@ -167,6 +175,8 @@ end
       rules: RULES.sample(2),
       open_hour: 8,
       close_hour: 17,
+            latitude: 38.715034  ,
+      longitude: -9.137011
     })
     restaurant.photo_urls = [
           'https://cdn.theculturetrip.com/wp-content/uploads/2016/02/lomi.jpg',
@@ -191,6 +201,8 @@ end
       rules: RULES.sample(2),
       open_hour: 10,
       close_hour: 18,
+            latitude: 38.715035 ,
+      longitude: -9.137011
     })
     restaurant.photo_urls = [
           'https://cdn.theculturetrip.com/wp-content/uploads/2016/02/lomi.jpg',
@@ -201,7 +213,7 @@ end
        user_id: User.all.sample.id,
       name: "Double9 - 9Hotel Mercy",
       email: "double9@gmail.com",
-      address: "9Hotel Mercy, Rua da Misericórdia, 76, Chiado, Lisboa",
+      address: "Hotel Mercy, Rua da Misericórdia, 76, Chiado, Lisboa",
       phone: "221 2481480",
       description: "A modern tea house, transformed into a coworking and chillout space, where you can work during the day and sample some cocktails made to order at night",
       capacity: "25",
@@ -213,6 +225,8 @@ end
       rules: RULES.sample(2),
       open_hour: 9,
       close_hour: 17,
+            latitude: 38.712366 ,
+      longitude: -9.142971
     })
     restaurant.photo_urls = [
           'https://lefooding.com/media/W1siZiIsIjIwMTUvMDcvMjkvMTBfMTJfMzlfMTY0X3Jlc3RhdXJhbnRfY2FmZV9sb21pX3BhcmlzLmpwZyJdLFsicCIsInRodW1iIiwiNjcyeDYwMCJdXQ/restaurant-cafe-lomi-paris.jpg?sha=78136935',
@@ -237,6 +251,8 @@ end
       rules: RULES.sample(2),
       open_hour: 9,
       close_hour: 16,
+            latitude:  38.718040,
+      longitude: -9.140064
     })
     restaurant.photo_urls = [
           'https://www.restaurantscanada.org/wp-content/uploads/2017/05/nick-hillier-254650.jpg',
