@@ -1,4 +1,11 @@
 <div class="content">
+  <div class="location-filter-bar">
+    <div class="search">
+      <%= form_tag(locations_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search",class: "location-search" %>
+<% end %>
+    </div>
+  </div>
   <div class="cards-container">
     <div class="row" style="padding:20px">
       <% @location.each do |l| %>
@@ -14,7 +21,7 @@
               <div class="card-hours-text">
                 <p class="card-hours-text"><%= l.capacity %> spaces</p>
               </div>
-              <p class="card-hours-text"><%= l.rate_by_week %> €</p>
+              <p class="card-hours-text"><%= l.rate_by_week %>€/week </p>
             </div>
           </div>
         </a>
