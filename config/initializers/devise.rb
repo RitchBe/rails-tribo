@@ -21,6 +21,10 @@ Devise.setup do |config|
   # with default "from" parameter.
   config.mailer_sender = 'triboteam@gmail.com'
 
+  #this two lines will allow devise to work in modals
+  config.http_authenticatable_on_xhr = false
+  config.navigational_formats = ["*/*", :html, :json]
+
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 

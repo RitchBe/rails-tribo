@@ -79,7 +79,7 @@ end
       user_id: User.all.sample.id,
       address: ADDRESSES.sample,
       phone: Faker::PhoneNumber.phone_number,
-      description: "This is a locatoin description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum id facere illo exercitationem vel neque dolores, modi ratione odio placeat eaque, eos quia labore, harum provident. Accusantium fuga, odio enim.",
+      description: "This is a location description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum id facere illo exercitationem vel neque dolores, modi ratione odio placeat eaque, eos quia labore, harum provident. Accusantium fuga, odio enim.",
       capacity: (5..40).to_a.sample,
       rate_by_hour: (3..8).to_a.sample,
       rate_by_day: (15..25).to_a.sample,
