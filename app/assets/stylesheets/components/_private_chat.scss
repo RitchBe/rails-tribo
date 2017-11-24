@@ -10,6 +10,7 @@ div.private-message-container {
 
 div.private-message-wrapper {
   padding: 50px 50px;
+  width: 60%;
 
 }
 #private_message_body {  //THIS IS FOR THE TEXT AREA
@@ -28,6 +29,7 @@ ul.private-message-list {
   list-style: none;
   overflow: scroll;
   max-height: 50vh;
+  height: 50vh;
 }
 
 

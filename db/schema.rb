@@ -84,6 +84,8 @@ ActiveRecord::Schema.define(version: 20171123155127) do
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
+    t.integer "open_hour"
+    t.integer "close_hour"
     t.index ["user_id"], name: "index_locations_on_user_id"
   end
 

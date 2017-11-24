@@ -10,7 +10,7 @@ end
   def create
     message = current_user.messages.build(message_params)
     message.location_id = @location.id
-    message.recipient = params[:user_id]
+
     message.errors
     if message.save
       redirect_back(fallback_location: root_path)

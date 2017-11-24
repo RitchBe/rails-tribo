@@ -15,5 +15,3 @@ $(document).ready(function() {
   $('.private-message-list').scrollTop($('.private-message-list').height());
 });
 
-
-
