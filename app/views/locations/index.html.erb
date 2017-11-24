@@ -5,13 +5,20 @@
     <%= text_field_tag :search, params[:search], placeholder: "Search",class: "location-search" %>
     <% end %>
     </div>
-    <input type="text" id="flatpickr-user">
+    <% if params[:in].present? %>
+    <% data_default = params[:in] + " to "+ params[:out] %>
+    <% else data_default = "" end %>
+    <input type="text" id="flatpickr-user" placeholder="Pick a date" data-default-date="<%= data_default %>">
   </div>
   <div class="cards-container">
     <div class="row" style="padding:20px">
       <% @location.each do |l| %>
       <div class="col-xs-12 col-sm-6 col-md-4">
-        <a href="<%= location_path(l.id) %>">
+        <% if params[:in].present? %>
+          <a href="<%= location_path(l.id) + '?in=' + params[:in] + '&out=' + params[:out] %>">
+        <% else %>
+          <a href="<%= location_path(l.id) %>">
+        <% end %>
           <div class="card">
             <div class="card-body">
               <div class="card-description">

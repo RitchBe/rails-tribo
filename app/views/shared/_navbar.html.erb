@@ -61,10 +61,6 @@
 
           <li><%= link_to "Locations", locations_path, class: "navbar-tribo-item navbar-tribo-link" %>
           </li>
-          <li><%= link_to user_path(current_user.id) do %>
-            <%= t(".profile", default: "Profile") %>
-            <% end %>
-          </li>
           <li>
             <%= link_to destroy_user_session_path, method: :delete do %>
             <%= t(".sign_out", default: "Log out") %>

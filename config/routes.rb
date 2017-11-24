@@ -9,28 +9,29 @@ Rails.application.routes.draw do
   mount Attachinary::Engine => "/attachinary"
 
   devise_for :users, :controllers => {sessions: 'sessions'},
-    controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   # devise_for :users, :path => 'accounts',
   #   controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    resources :bookings, only: [:index]
+  end
 
   root to: 'pages#landing'
   get '/calendar', to: 'pages#calendar'
   get '/about', to: 'pages#about'
+
   resources :locations do
     resources :messages
   end
-  resources :users do
-    resources :locations, only: [:show, :index, :create, :update]
 
-  resources :bookings
-    end
-
-
-    resources :conversations, only: [:index, :create] do
-      resources :private_messages, only: [:index, :create]
-    end
+  resources :locations, only: [:show, :new, :index, :create, :update] do
+    resources :bookings, only: [:create, :new]
   end
+
+  resources :conversations, only: [:index, :create] do
+    resources :private_messages, only: [:index, :create]
+  end
+end
 
 
 
