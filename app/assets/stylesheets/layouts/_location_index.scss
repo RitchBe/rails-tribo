@@ -1,0 +1,19 @@
+.cards {
+  display: flex;
+  justify-content: space-around;
+
+}
+
+#map {
+  flex: 0 0 480px;
+  height: 100vh;
+  position: sticky !important;
+  top: 0 !important;
+}
+
+.main{
+  margin-top: 15vh;
+  margin-bottom: 15vh;
+}
+
+

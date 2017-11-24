@@ -1,17 +1,18 @@
-<div class="content">
-  <div class="cards-container">
+<div class="main ">
+  <div class="cards">
     <div class="row">
       <% @location.each do |l| %>
-      <div class="col-xs-12 col-sm-6">
+      <div class="col-xs-12 col-sm-12 col-md-6">
         <%= render "shared/card" %>
       </div>
       <% end %>
+    </div>
 
-      </div>
-         <div id="map"></div>
+    <div id="map"></div>
 
-        </div>
-       </div>
+  </div>
+</div>
+
 
        <% content_for(:after_js) do %>
        <%= javascript_tag do %>

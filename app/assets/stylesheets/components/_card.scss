@@ -1,19 +1,21 @@
 .card {
-  max-width: 402px;
-  height: 300px;
+  max-width: 322px;
+  height: 220px;
   background: white;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  margin: 10px 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  margin: 15px 10px;
+  border-radius: 2px;
+
 }
 
 .card-body {
-  max-width: 400px;
-  height: 230px;
-  background:  url("http://unsplash.it/400/300/?random")!important;
+  max-width: 322px;
+  height: 175px;
+  background: url("http://unsplash.it/400/300/?random")!important;
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius:2px 2px 0px 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,45 +23,53 @@
 }
 
 .card-description {
-  margin:0 auto;
-  background: rgba(0,0,0,0.3);
-  padding: 5px 40px;
-  margin-top: 90px;
+  background: rgba(0,0,0,0.4);
+  padding: 5px 30px;
+  margin-top: 80px;
   text-align: center;
-  max-width: 270px;
 }
 
 .card-description h3 {
+  font-size: 16px;
   color: white;
-  font-weight: 200;
-  letter-spacing: 5px;
-  margin: 0;
-  font-size: 18px;
   text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 4px;
+  margin: 0;
 }
 
-.card-description  p {
+.card-description p {
   color: white;
-  font-weight: 100;
+  font-weight: 500;
   letter-spacing: 3px;
-  font-size: 14px;
-  margin: 0;
-  opacity: 0.7;
 }
 
 .card-footer {
   display: flex;
   justify-content:space-between;
   align-items: center;
-  height: 70px;
+  height: 45px;
+  position: relative;
 }
 
-.card-hours-text{
+.card-hours{
   color: black;
-  font-weight: 100;
+  font-weight: 300;
   letter-spacing: 2px;
-  font-size: 15px;
-  padding-left: 20px;
+  font-size: 12px;
+  position:absolute;
+  left: 2px;
+  top: 2px;
+  margin-left:3px;
+}
+
+.card-hours p {
+  margin:0;
+  margin-bottom: -7px;
+}
+
+.hours {
+  padding-bottom: 6px;
 }
 
 .btn-medium {
@@ -71,6 +81,9 @@
     opacity: 0.6;
     margin-right: 10px;
     font-weight: 100;
+    position: absolute;
+    top: 2px;
+    right: 2px;
 }
 
 .btn-medium:hover {
@@ -80,13 +93,3 @@
 }
 
 
-
-div.cards-container {
-  display: flex;
-
-}
-
-
-.content {
-  margin-top: 10vh;
-}
