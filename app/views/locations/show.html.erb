@@ -1,8 +1,7 @@
-<div class="booking-details">
+<!-- <div class="booking-details">
     <div id="ember1582" class="ember-view __pricing-box__b23db">  <div class="pricing-box pricing-box--not-expanded ">
-<!---->
     <div class="pricing-box__image" alt="offer-pic" style="background-image: url(https://d16teuje7e44sv.cloudfront.net/property-photos/6934fd9ed0c3a7368b529f5cfa333b3be30ea83a6130f68b9811b4ffce42f647/small.jpg)"></div>
-        <h2 class="pricing-box__request-details">Request details</h2>
+        <h2 class="pricing-box__request-details">Request details</h2> -->
 
 <!--
 <div class="banner-location" style= "background-image: url(< if @location.photos? then @location.photos[0] else asset_path('landing/cowork-2.jpg') end %>">
@@ -61,19 +60,6 @@
 </div>
 <div class="booking-card">
 <h3 class="text-center">Book a Desk !</h3>
-</div>
-
-
-
-</div>
-  <div class="location-wrapper">
-<div class="location-container">
-<div class="location-info-row-1">
-  <div class="location-description">
-    <h3>About the place</h3>
-    <p><%= @location.description %></p>
-  </div>
-
       <div class="pricing-box__container">
         <h3 class="pricing-box__offer-title">Single bedroom in residential Arroios</h3>
         <div class="pricing-box__cell">
@@ -140,6 +126,33 @@
   </div>
 </div>
 <%= button_to "BOOK IT", new_location_booking_path(location_id: @location.id, in: params[:in], out: params[:out]), :method => "get", class: "btn btn--sm btn--primary type--uppercase" %>
+</div></div>
+</div>
+
+
+
+</div>
+ <div class="location-wrapper">
+<div class="location-container">
+<div class="location-info-row-1">
+  <div class="location-description">
+    <h3>About the place</h3>
+    <p><%= @location.description %></p>
+  </div>
+
+  <div class="location-price-hours">
+    <h3>Opening Hours</h3>
+    <p>Monday to Saturday: <strong> 8am to 5pm </strong></p>
+  <h3>Prices</h3>
+  <p>Day: <strong><%= @location.rate_by_day %>€</strong> | Week: <strong><%= @location.rate_by_week %>€</strong></p>
+  </div>
+</div>
+
+<div class="location-info-row-2">
+  <div class="features">
+    <h3>Features</h3>
+  </div>
+</div>
 </div>
 <div class="location-container-2">
 <div class="location-map">
@@ -159,17 +172,14 @@
     <p><%= @location.rules %></p></br>
     <h3>Address</h3>
     <p><%= @location.address %></p>
-
-      </div>
-        <div class="payment-message">
-            <span class="payment-message__text">You’ll pay only after the landlord accepts your request.</span>
-        </div>
-
   </div>
 </div>
+
+
+</div>
 </div>
 
-<!-- TEST CARD BOOKING -->
+
 
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>
@@ -186,4 +196,3 @@
     });
   <% end %>
 <% end %>
-

@@ -19,9 +19,9 @@
       <div class="col-xs-12 col-sm-6">
 
 
-        <%= render "shared/card" %>
+        < render "shared/card" %>
       </div>
-      <% end %>
+      < end %>
 
       </div>
          <div id="map"></div>
@@ -30,7 +30,7 @@
        </div>
 
 
-       <% content_for(:after_js) do %>
+       <% content_for(:after_js)  %>
         javascript_tag do %>
        var handler = Gmaps.build('Google');
        handler.buildMap({ internal: { id: 'map' } }, function() {
@@ -91,4 +91,3 @@ handler.getMap().setZoom(14);
 
 <% end %>
 <% end %>
-
