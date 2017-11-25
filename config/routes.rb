@@ -9,13 +9,11 @@ Rails.application.routes.draw do
 
   ActiveAdmin.routes(self)
 
-
   devise_for :users, :controllers => {sessions: 'sessions'},
   controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-  # devise_for :users, :path => 'accounts',
-  #   controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+
   resources :users, only: [:show] do
-    resources :bookings, only: [:index]
+   resources :bookings, only: [:index]
   end
 
 

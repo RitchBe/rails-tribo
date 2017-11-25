@@ -2,83 +2,50 @@
   <div class="location-filter-bar">
     <div class="search">
       <%= form_tag(locations_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search",class: "location-search" %>
-    <% end %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search",class: "location-search" %>
+      <% end %>
     </div>
     <% if params[:in].present? %>
     <% data_default = params[:in] + " to "+ params[:out] %>
     <% else data_default = "" end %>
     <input type="text" id="flatpickr-user" placeholder="Pick a date" data-default-date="<%= data_default %>">
   </div>
-<!-- <<<<<<< HEAD
-    <di class="row card-row">
-      < @location.each do |l| %>
 
-
-      <div class="col-xs-12 col-sm-6">
-
-
-        < render "shared/card" %>
-      </div>
-      < end %>
-
-      </div>
-         <div id="map"></div>
-
-        </div>
-       </div>
-
-
-       <% content_for(:after_js)  %>
-        javascript_tag do %>
-       var handler = Gmaps.build('Google');
-       handler.buildMap({ internal: { id: 'map' } }, function() {
-       markers = handler.addMarkers(< raw @hash.to_json %>);
-       handler.bounds.extendWith(markers);
-       handler.fitMapToBounds();
-       if (markers.length == 0) {
-       handler.getMap().setZoom(2);
-     } else if (markers.length == 1) {
-     handler.getMap().setZoom(14);
-   }
- });
- <end %>
- < end %>
-======= -->
   <div class="cards-container">
-
-    <div class="row" style="padding:20px">
+    <div class="row-index-show" >
       <% @location.each do |l| %>
       <div class="col-xs-12 col-sm-6 col-md-4">
-
-          <div class="row">
-<div class="blog-card spring-fever" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-         url('<%= cl_image_path l.photos[0].path %>')">
-  <div class="title-content">
-    <h3><%= l.name %></h3>
-    <hr />
-   <!--  <div class="intro">Yllamco laboris nisi ut aliquip ex ea commodo.</div> -->
-  </div><!-- /.title-content -->
-  <div class="card-info">
-   <%= l.description %>
-  </div><!-- /.card-info -->
-  <div class="utility-info">
-    <ul class="utility-list">
-      <li class="comments">12</li>
-      <li class="date">03.12.2015</li>
-    </ul>
-  </div><!-- /.utility-info -->
-  <!-- overlays -->
-  <div class="gradient-overlay"></div>
-  <div class="color-overlay"></div>
+        <% if params[:in].present? %>
+        <a href="<%= location_path(l.id) + '?in=' + params[:in] + '&out=' + params[:out] %>">
+          <% else %>
+          <a href="<%= location_path(l.id) %>">
+            <% end %>
+          <div class="blog-card spring-fever" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+          url('<%= cl_image_path l.photos[0].path %>')">
+          <div class="title-content">
+            <h3><%= l.name %></h3>
+            <hr class="card-hr">
+            <!--  <div class="intro">Yllamco laboris nisi ut aliquip ex ea commodo.</div> -->
+          </div><!-- /.title-content -->
+          <div class="card-info">
+           <%= l.description %>
+         </div><!-- /.card-info -->
+         <div class="utility-info">
+          <ul class="utility-list">
+            <li class="comments">12</li>
+            <li class="date">03.12.2015</li>
+          </ul>
+        </div><!-- /.utility-info -->
+        <!-- overlays -->
+        <div class="gradient-overlay"></div>
+        <div class="color-overlay"></div>
+      </div>
+    </a>
+  </div>
+  <% end %>
 </div>
+<div id="map"></div>
 </div>
-</div>
-<% end %>
-</div>
-    <div id="map"></div>
-
-
 
 </div>
 <% content_for(:after_js) do %>
