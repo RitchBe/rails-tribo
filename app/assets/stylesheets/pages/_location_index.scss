@@ -1,0 +1,24 @@
+#map {
+  flex: 0 0 450px;
+  height: 100vh;
+  position: sticky !important;
+  top: 0 !important;
+}
+.cards-conainer {
+  display: flex;
+}
+
+.location-filter-bar {
+  width:100%;
+  height:50px;
+  border-bottom: 1px solid grey;
+  display:flex;
+}
+
+#search-form {
+  padding: 5px 10px 10px 28px !important;
+}
+
+#flatpickr-user {
+  width: 185px;
+}

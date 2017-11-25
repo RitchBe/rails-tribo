@@ -1,15 +1,27 @@
+
+
 .card {
   max-width: 500px;
   height: 300px;
   background: white;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  margin: 10px 10px;
+  margin: 15px 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 25px;
+  color: white;
+  overflow:hidden;
 }
 
 .card-body {
-  max-width: 600px;
-  height: 230px;
- background: url("http://unsplash.it/400/300/?random")!important;
+
+
+  width: 100%;
+  height: 70%;
+  background:  url("http://unsplash.it/400/300/?random")!important;
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
@@ -51,8 +63,10 @@
   display: flex;
   justify-content:space-between;
   align-items: center;
-  height: 45px;
-  position: relative;
+
+  height: 70px;
+  width: 100%;
+  padding: 0 20px;
 }
 
 .card-hours{
@@ -69,6 +83,9 @@
 .card-hours p {
   margin:0;
   margin-bottom: -7px;
+
+  font-size: 15px;
+
 }
 
 .hours {
@@ -99,5 +116,5 @@ div.cards-container {
 
 
 .content {
-  margin-top: 10vh;
+  margin-top: 70px;
 }

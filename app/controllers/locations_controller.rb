@@ -5,7 +5,11 @@ class LocationsController < ApplicationController
   def index
     # @location = Location.all
 
-    @location = Location.where.not(latitude: nil, longitude: nil)
+    @location = Location.geocoded
+    if params[:search].present?
+      #param_geocoding = params[:in].geo
+      @location = @location.near(params[:search], 50, :units => :km)
+    end
 
     @hash = Gmaps4rails.build_markers(@location) do |location, marker|
       marker.lat location.latitude
@@ -70,7 +74,7 @@ class LocationsController < ApplicationController
   private
 
   def location_params
-    params.require(:location).permit(:name, :email, :address, :phone,
+    params.require(:location).permit(:name, :email, :search, :address, :phone,
      :description, :capacity, :rate_by_hour, :rate_by_day, :rate_by_week,
       :features, :tags, :rules, photos: [])
   end
@@ -80,7 +84,7 @@ class LocationsController < ApplicationController
     @location = Location.find(params[:id])
   end
 
- 
+
 
 end
 
