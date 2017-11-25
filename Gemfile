@@ -14,6 +14,7 @@ gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
 
 gem 'autoprefixer-rails'
+gem 'rails_emoji_picker'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'jquery-rails'

@@ -7,6 +7,7 @@
 //= require turbolinks
 //= require jquery-fileupload/basic
 //= require cloudinary/jquery.cloudinary
+//= require rails_emoji_picker
 //= require attachinary
 //= require_tree ./app
 
@@ -16,5 +17,17 @@
 $(document).ready(function() {
   $('.attachinary-input').attachinary();
   $('.private-message-list').scrollTop($('.private-message-list').height());
+
 });
+
+
+
+function scrollLastMessageIntoView() {
+  const messages = document.querySelectorAll('.message');
+  const lastMessage = messages[messages.length - 1];
+
+  if (lastMessage !== undefined) {
+    lastMessage.scrollIntoView();
+  }
+}
 

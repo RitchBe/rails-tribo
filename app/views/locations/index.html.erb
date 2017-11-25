@@ -10,7 +10,6 @@
     <% else data_default = "" end %>
     <input type="text" id="flatpickr-user" placeholder="Pick a date" data-default-date="<%= data_default %>">
   </div>
-  <div class="cards-container">
 <!-- <<<<<<< HEAD
     <di class="row card-row">
       < @location.each do |l| %>
@@ -46,34 +45,41 @@
  <end %>
  < end %>
 ======= -->
+  <div class="cards-container">
+
     <div class="row" style="padding:20px">
       <% @location.each do |l| %>
       <div class="col-xs-12 col-sm-6 col-md-4">
-        <% if params[:in].present? %>
-          <a href="<%= location_path(l.id) + '?in=' + params[:in] + '&out=' + params[:out] %>">
-        <% else %>
-          <a href="<%= location_path(l.id) %>">
-        <% end %>
-          <div class="card">
-            <div class="card-body">
-              <div class="card-description">
-                <h3><%= l.name %></h3>
-              </div>
-            </div>
-            <div class="card-footer">
-              <div class="card-hours-text">
-                <p class="card-hours-text"><%= l.capacity %> spaces</p>
-              </div>
-              <p class="card-hours-text"><%= l.rate_by_week %>€/week </p>
-            </div>
-          </div>
-        </a>
-      </div>
-      <% end %>
 
-    </div>
+          <div class="row">
+<div class="blog-card spring-fever" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= cl_image_path l.photos[0].path %>')">
+  <div class="title-content">
+    <h3><%= l.name %></h3>
+    <hr />
+   <!--  <div class="intro">Yllamco laboris nisi ut aliquip ex ea commodo.</div> -->
+  </div><!-- /.title-content -->
+  <div class="card-info">
+   <%= l.description %>
+  </div><!-- /.card-info -->
+  <div class="utility-info">
+    <ul class="utility-list">
+      <li class="comments">12</li>
+      <li class="date">03.12.2015</li>
+    </ul>
+  </div><!-- /.utility-info -->
+  <!-- overlays -->
+  <div class="gradient-overlay"></div>
+  <div class="color-overlay"></div>
+</div>
+</div>
+</div>
+<% end %>
+</div>
     <div id="map"></div>
-  </div>
+
+
+
 </div>
 <% content_for(:after_js) do %>
 <%= javascript_tag do %>
