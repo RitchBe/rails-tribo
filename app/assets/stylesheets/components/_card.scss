@@ -212,7 +212,7 @@ body{
 }
 .card-info{
   bottom: 100px;
-  overflow:hidden !important;
+  overflow: hidden !important;
   text-overflow: ellipsis;
 
   padding: 0 50px;
@@ -249,4 +249,9 @@ margin-top: 50%;
       background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1765/icon-calendar.svg) no-repeat 0 .1em;
     }
   }
+}
+
+.link-to-location:hover {
+  text-decoration: none;
+  color: white
 }
