@@ -3,6 +3,6 @@
     <%= message.user.email%>:
   </div>
   <div class="message-content">
-    <%= message.content %>
+    <%= content_with_emoji(message.content) %>
   </div>
 </div>
