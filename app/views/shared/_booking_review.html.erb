@@ -1,0 +1,118 @@
+<div class="booking-details">
+  <div id="ember1582" class="ember-view __pricing-box__b23db">
+    <div class="pricing-box pricing-box--not-expanded ">
+      <div class="pricing-box__image" alt="offer-pic" style="background-image: url(<%= cl_image_path @location.photos[0].path %>)"></div>
+      <h2 class="pricing-box__request-details">Request details</h2>
+
+      <div class="pricing-box__container">
+        <h3 class="pricing-box__offer-title"><%= @location.name %> </h3>
+        <div class="pricing-box__cell">
+          <span>Space</span>
+          <span>1 person</span>
+        </div>
+        <div class="pricing-box__cell">
+          <span>
+            Contract Type <a target="_blank" href="https://www.uniplaces.com/contract-types#fortnight">Fortnight</a>
+          </span>
+          <span>Ref. 568</span>
+        </div>
+        <div class="pricing-box__dates">
+          <div class="pricing-box__move-in">
+                <span class="pricing-box__move-in-title">Move in</span>
+                <span class="pricing-box__move-in-date"><%= params[:in] %></span>
+            </div>
+            <div class="pricing-box__move-out">
+                <span class="pricing-box__move-out-title">Move out</span>
+                <span class="pricing-box__move-out-date"><%= params[:out] %></span>
+            </div>
+       <!--    <% if params[:in].present? %>
+          <% data_default = params[:in] + " to "+ params[:out] %>
+          <% else data_default = "" end %>
+          <input type="text" id="flatpickr-show" placeholder="Pick a date" data-default-date="<%= data_default %>" style="z-index:0;">
+         --></div>
+        <div id="ember1648" class="ember-view __pricing-box__pricing-breakdown__d763b"><div class="pricing-breakdown ">
+        <% if params[:in].present? %>
+          <div class="pricing-breakdown__cell pricing-breakdown__cell--total ">
+            <span>Total</span>
+            <% calc_days =  (Date.parse(params[:out]) - Date.parse(params[:in]) + 1).to_i  %>
+            <% if calc_days > 4 ? calc_rate = @location.rate_by_week/5.to_f * calc_days : calc_rate = calc_days * @location.rate_by_day %>
+            <% end %>
+            <span><%= '%.2f' % calc_rate %> €</span>
+          </div>
+        <div style="text-align: center !important">
+         <%= button_to "CONFIRM REQUEST", location_bookings_path(@location.id), class: "btn btn--sm btn--primary type--uppercase", method: "post", params: { user_id: @user.id, begin: params[:in], end: params[:out] } %>
+        <% else %>
+          No dates selected
+        <% end %>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+<div class="booking-details">
+    <div id="ember1582" class="ember-view __pricing-box__b23db">  <div class="pricing-box pricing-box--not-expanded ">
+<!---->
+    <div class="pricing-box__image" alt="offer-pic" style="background-image: url(https://d16teuje7e44sv.cloudfront.net/property-photos/6934fd9ed0c3a7368b529f5cfa333b3be30ea83a6130f68b9811b4ffce42f647/small.jpg)"></div>
+        <h2 class="pricing-box__request-details">Request details</h2>
+
+      <div class="pricing-box__container">
+        <h3 class="pricing-box__offer-title">Single bedroom in residential Arroios</h3>
+        <div class="pricing-box__cell">
+            <span>Bedroom</span>
+            <span>1 person</span>
+        </div>
+        <div class="pricing-box__cell">
+            <span>
+              Contract Type <a target="_blank" href="https://www.uniplaces.com/contract-types#fortnight">Fortnight</a>
+            </span>
+            <span>Ref. 568</span>
+        </div>
+        <div class="pricing-box__dates">
+            <div class="pricing-box__move-in">
+                <span class="pricing-box__move-in-title">Move in</span>
+                <span class="pricing-box__move-in-date">Nov 24, 2017</span>
+            </div>
+            <div class="pricing-box__move-out">
+                <span class="pricing-box__move-out-title">Move out</span>
+                <span class="pricing-box__move-out-date">Nov 30, 2017</span>
+            </div>
+
+            <div class="pricing-box__total-mobile">
+                <span class="pricing-box__total-mobile-title">Total</span>
+                <span class="pricing-box__total-mobile-value">303€</span>
+            </div>
+            <a href="#" class="pricing-box__show-details-mobile" data-ember-action="1635">View details</a>
+        </div>
+        <div id="ember1648" class="ember-view __pricing-box__pricing-breakdown__d763b"><div class="pricing-breakdown ">
+  <div class="pricing-breakdown__cell first-rent-payment">
+
+    </div>
+  <div class="pricing-breakdown__cell pricing-breakdown__cell--total ">
+    <span>Total</span>
+    <span>303€</span>
+  </div>
+</div>
+
+  <%= button_to "CONFIRM REQUEST", location_bookings_path(@location.id), class: "btn btn--sm btn--primary type--uppercase", method: "post", params: { user_id: 57, begin: "Nov 24, 2017", end: "Nov 30, 2017" } %>
+
+</div>
+      </div>
+        <div class="payment-message">
+            <span class="payment-message__text">You’ll pay only after the landlord accepts your request.</span>
+        </div>
+  </div>
+</div>
+</div>
+
+<!-- TEST CARD BOOKING -->
+
