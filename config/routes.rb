@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => {sessions: 'sessions',
    omniauth_callbacks: 'users/omniauth_callbacks' }
 
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
    resources :bookings, only: [:index]
   end
 
