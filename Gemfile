@@ -12,6 +12,7 @@ gem 'omniauth-facebook'
 gem 'activeadmin', github: 'activeadmin/activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
+
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
@@ -25,6 +26,7 @@ gem "geocoder"
 gem "pundit"
 gem "coffee-rails"
 gem "gmaps4rails"
+gem 'flatpickr_rails'
 
 gem 'cloudinary', '1.1.7'
 gem 'attachinary', github: 'assembler/attachinary'

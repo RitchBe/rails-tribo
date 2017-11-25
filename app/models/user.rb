@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_many :messages
 
 
+  #after_create :send_welcome_email
+
   private
 
   # def send_welcome_email
