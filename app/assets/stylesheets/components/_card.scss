@@ -129,11 +129,10 @@ body{
 }
 
 .blog-card{
-  width: $card-width;
   height: $card-height;
   overflow: hidden;
   border-radius: 5px;
-  box-shadow: 3px 3px 20px rgba(0, 0, 0, .5);
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, .1);
   text-align: center;
   margin-bottom: 30px;
 

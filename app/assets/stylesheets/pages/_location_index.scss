@@ -4,9 +4,6 @@
   position: sticky !important;
   top: 0 !important;
 }
-.cards-conainer {
-  display: flex;
-}
 
 .location-filter-bar {
   width:100%;
@@ -21,4 +18,20 @@
 
 #flatpickr-user {
   width: 185px;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-around;
+}
+
+.cards-container {
+}
+
+.row-index-show {
+  padding:30px 15px 0 30px;
+}
+
+.card-row {
+  width: 60vw;
 }
