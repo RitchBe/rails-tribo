@@ -1,6 +1,6 @@
 <div class="message-input">
-  <%= simple_form_for ([@location, @user, @message]) do |f| %>
+  <%= simple_form_for [@location, Message.new], remote: true do |f| %>
     <%= f.text_area :content %>
-    <%= f.submit "Send" %>
+    <%= f.submit "Send", id: "SendMessage" %>
   <% end %>
 </div>
