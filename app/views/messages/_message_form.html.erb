@@ -1,6 +1,9 @@
 <div class="message-input">
-  <%= simple_form_for ([@location, @user, @message]) do |f| %>
-    <%= f.text_area :content %>
-    <%= f.submit "Send" %>
+  <%= simple_form_for [@location, Message.new], remote: true do |f| %>
+  <p class="emoji-picker-container">
+    <%= f.text_area :content, data: {emojiable: true} %>
+  </p>
+
+    <%= f.submit "Send", id: "SendMessage" %>
   <% end %>
 </div>

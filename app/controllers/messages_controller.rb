@@ -12,10 +12,22 @@ end
     message.location_id = @location.id
 
     message.errors
+    # if message.save
+    #   redirect_back(fallback_location: root_path)
+    # else
+    #   render 'index'
+    # end
+
     if message.save
-      redirect_back(fallback_location: root_path)
+      respond_to do |format|
+        format.html { redirect_to location_messages_path(@location.id) }
+        format.js
+      end
     else
-      render 'index'
+      respond_to do |format|
+        format.html { render "messages/index"}
+        format.js
+      end
     end
   end
 

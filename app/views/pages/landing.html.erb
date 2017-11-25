@@ -53,13 +53,13 @@
 			<div class="row">
 				<div class="gallery-1">
 					<div class="col-sm-6">
-						<div class="gallery__image" style="background: url('<%= asset_path('landing/cowork-1.jpg')%>')">
+						<div class="gallery__image" style="background: url('<%= asset_path('landing/cowork-3.jpg')%>')">
 						</div>
 					</div>
 					<div class="col-sm-6">
 						<div class="gallery__image" style="background: url('<%= asset_path('landing/cowork-2.jpg')%>')">
 						</div>
-						<div class="gallery__image" style="background: url('<%= asset_path('landing/cowork-3.jpg')%>')">
+						<div class="gallery__image" style="background: url('<%= asset_path('landing/cowork-1.jpg')%>')">
 						</div>
 					</div>
 				</div>
@@ -195,7 +195,26 @@
 					<% @locations[0,3].each do |l| %>
 
 				<div class="col-sm-4">
-					<%= render "shared/card" %>
+					<div class="row">
+  <div class="card">
+      <div class="card-body">
+        <div class="card-description">
+          <h3><%= l.name %></h3>
+          <p> Lisbon </p>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="card-hours">
+          <p>Opening Hours</p>
+          <p class="hours"> <%= l.open_hour %>am - <%= l.close_hour %>pm</p>
+        </div>
+        <a href="#" class="btn-card">Discover</a>
+      </div>
+    </div>
+  </div>
+
+
+
 				</div>
 					<% end %>
 

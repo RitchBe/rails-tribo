@@ -10,7 +10,8 @@
     <% else data_default = "" end %>
     <input type="text" id="flatpickr-user" placeholder="Pick a date" data-default-date="<%= data_default %>">
   </div>
-  <div class="cards-container">
+<!-- OLD CARD CONTAINER START -->
+<!--   <div class="cards-container">
 
     <div class="row" style="padding:20px">
 
@@ -34,11 +35,25 @@
               <p class="card-hours-text"><%= l.rate_by_week %>€/week </p>
             </div>
           </div>
-        </a>
+        </a> -->
+<!-- OLD CARD CONTAINER END -->
+<!-- <<<<<<< HEAD
+    <di class="row card-row">
+      < @location.each do |l| %>
+
+
+      <div class="col-xs-12 col-sm-6">
+
+
+        < render "shared/card" %>
+>>>>>>> origin
       </div>
-      <% end %>
+      < end %>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin
       </div>
          <div id="map"></div>
 
@@ -46,11 +61,11 @@
        </div>
 
 
-       <% content_for(:after_js) do %>
-       <%= javascript_tag do %>
+       <% content_for(:after_js)  %>
+        javascript_tag do %>
        var handler = Gmaps.build('Google');
        handler.buildMap({ internal: { id: 'map' } }, function() {
-       markers = handler.addMarkers(<%= raw @hash.to_json %>);
+       markers = handler.addMarkers(< raw @hash.to_json %>);
        handler.bounds.extendWith(markers);
        handler.fitMapToBounds();
        if (markers.length == 0) {
@@ -59,8 +74,66 @@
      handler.getMap().setZoom(14);
    }
  });
+<<<<<<< HEAD
  <% end %>
  <% end %>
 
 
 
+=======
+ <end %>
+ < end %>
+======= -->
+  <div class="cards-container">
+
+    <div class="row" style="padding:20px">
+      <% @location.each do |l| %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+
+          <div class="row">
+<div class="blog-card spring-fever" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= cl_image_path l.photos[0].path %>')">
+  <div class="title-content">
+    <h3><%= l.name %></h3>
+    <hr />
+   <!--  <div class="intro">Yllamco laboris nisi ut aliquip ex ea commodo.</div> -->
+  </div><!-- /.title-content -->
+  <div class="card-info">
+   <%= l.description %>
+  </div><!-- /.card-info -->
+  <div class="utility-info">
+    <ul class="utility-list">
+      <li class="comments">12</li>
+      <li class="date">03.12.2015</li>
+    </ul>
+  </div><!-- /.utility-info -->
+  <!-- overlays -->
+  <div class="gradient-overlay"></div>
+  <div class="color-overlay"></div>
+</div>
+</div>
+</div>
+<% end %>
+</div>
+    <div id="map"></div>
+
+
+
+</div>
+<% content_for(:after_js) do %>
+<%= javascript_tag do %>
+var handler = Gmaps.build('Google');
+handler.buildMap({ internal: { id: 'map' } }, function() {
+markers = handler.addMarkers(<%= raw @hash.to_json %>);
+handler.bounds.extendWith(markers);
+handler.fitMapToBounds();
+if (markers.length == 0) {
+handler.getMap().setZoom(2);
+} else if (markers.length == 1) {
+handler.getMap().setZoom(14);
+}
+});
+
+<% end %>
+<% end %>
+>>>>>>> origin
