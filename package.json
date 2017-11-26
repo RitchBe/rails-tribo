@@ -1,5 +1,7 @@
 {
   "name": "rails-tribo",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "scrollreveal": "^3.3.6"
+  }
 }

@@ -1,6 +1,6 @@
 .message-wr {
   height: 75vh;
-  width: 80vw;
+  width: 50vw;
   margin-top: 50px;
   margin-bottom: 50px;
   margin-left: auto;
@@ -40,6 +40,7 @@
   box-sizing: border-box;
   height: 13%;
   padding: 0 5px 5px;
+
   form {
     height: 100%;
   }
@@ -56,9 +57,21 @@
 }
 
 .emoji-picker-container {
-  width: 70%;
+  width: 20%;
 }
+.emoji-menu {
+  transform: translateX(40vw) translateY(60vh) translateZ(0px) !important;
+  width: 20% !important;
+}
+
+
 
 h2.chat-room-title {
   margin-top: 100px;
+}
+
+
+
+.self-messages > .message > .message-user {
+  color: pink
 }
