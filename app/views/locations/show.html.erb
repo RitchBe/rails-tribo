@@ -57,33 +57,33 @@
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
-    <div class="item active">
       <% if @location.photos[0] != nil  %>
+    <div class="item active" style="background-image: url(' <%= cl_image_path @location.photos[0].path %>');">
 
       <% else %>
-      <%= image_tag "landing/cowork-3.jpg", class: "image-carousel" %>
-      <% end %>
+    <div class="item active" style="background-image: url( <%= 'asset_path landing/cowork-3.jpg'  %>)">
 
-    </div>
 
-    <div class="item">
-          <% if @location.photos[1] != nil  %>
-      <%= cl_image_tag @location.photos[1].path, class: "image-carousel" %>
-      <% else %>
-      <%= image_tag "landing/cowork-3.jpg", class: "image-carousel" %>
       <% end %>
     </div>
 
-    <div class="item">
-         <% if @location.photos[2] != nil  %>
-      <%= cl_image_tag @location.photos[2].path, class: "image-carousel" %>
+      <% if @location.photos[1] != nil  %>
+    <div class="item" style="background-image: url(' <%= cl_image_path @location.photos[1].path %>');">
+
       <% else %>
-      <%= image_tag "landing/cowork-3.jpg", class: "image-carousel" %>
+    <div class="item" style="background-image: url( <%= 'asset_path landing/cowork-2.jpg'  %>)">
       <% end %>
     </div>
-<h2 class="title-location-show"><%= @location.name %></h2>
-  </div>
 
+
+      <% if @location.photos[3] != nil  %>
+    <div class="item" style="background-image: url(' <%= cl_image_path @location.photos[3].path %>');">
+
+      <% else %>
+    <div class="item" style="background-image: url( <%= asset_path 'landing/cowork-1.jpg'  %>)">
+      <% end %>
+    </div>
+</div>
   <!-- Left and right controls -->
   <a class="left carousel-control" href="#myCarousel" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left"></span>
