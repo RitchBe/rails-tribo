@@ -1,5 +1,30 @@
+
+<h2 class="chat-room-title text-center"><%= @location.name %>'s Chat Room</h2>
 <div class="message-wr">
   <%= render 'messages' %>
   <%= render 'message_form' %>
 
 </div>
+
+<% content_for :after_js do %>
+  <script>
+    scrollLastMessageIntoView();
+    App['location_<%= @location.id %>'] = App.cable.subscriptions.create(
+      { channel: 'LocationsChannel', location_id: <%= @location.id %> },
+      {
+        received: (data) => {
+          if (data.current_user_id !== <%= current_user.id %>) {
+            const messagesContainer = document.querySelector('.messages');
+            messagesContainer.insertAdjacentHTML('beforeend', data.message_partial);
+            scrollLastMessageIntoView();
+          }
+            if (data.current_user_id == <%= current_user.id %>) {
+            const messagesContainer = document.querySelector('.messages');
+            messagesContainer.insertAdjacentHTML('beforeend', data.message_partial);
+            scrollLastMessageIntoView();
+          }
+        }
+      }
+    )
+  </script>
+<% end %>

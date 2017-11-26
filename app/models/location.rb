@@ -14,5 +14,6 @@ class Location < ApplicationRecord
   FEATURES = ["Wifi", "Printer", "Headlights"]
 
   has_attachments :photos, maximum: 3
+
 end
 

@@ -76,6 +76,8 @@ puts "Creating 16 real locations..."
     rules: RULES.sample(2),
     open_hour: 9,
     close_hour: 18,
+    latitude:  38.707362,
+    longitude: -9.143454
     })
     restaurant.photo_urls = [
           'http://lookmag.pt/wp-content/uploads/2017/02/TOPO-Clube1.jpg',
@@ -102,6 +104,8 @@ puts "Creating 16 real locations..."
       rules: "Restaurant Disscount",
       open_hour: 9,
       close_hour: 17,
+      latitude:  38.714978,
+      longitude: -9.144686
     })
     restaurant.photo_urls = [
           'http://images-cdn.impresa.pt/bcbm/2016-05-18-22201908611_33a3120640_b.jpg/3x2/mw-1240',
@@ -176,6 +180,8 @@ puts "Creating 16 real locations..."
       rules: RULES.sample(2),
       open_hour: 9,
       close_hour: 17,
+      latitude:  38.720856,
+      longitude: -9.134657
     })
     restaurant.photo_urls = [
           'http://www.agendalx.pt/sites/default/files/evento/casaind.jpg',
@@ -229,6 +235,8 @@ puts "Creating 16 real locations..."
       rules: RULES.sample(2),
       open_hour: 10,
       close_hour: 16,
+            latitude: 38.718354 ,
+      longitude: -9.118477
     })
     restaurant.photo_urls = [
           'http://upmagazine-tap.com/app/uploads/2011/06/24hrs4.jpg',
@@ -255,6 +263,8 @@ puts "Creating 16 real locations..."
       rules: RULES.sample(2),
       open_hour: 8,
       close_hour: 17,
+            latitude: 38.715034  ,
+      longitude: -9.137011
     })
     restaurant.photo_urls = [
           'https://www.coworkcentral.pt/media/images/services/private-rooms.jpg',
@@ -282,6 +292,8 @@ puts "Creating 16 real locations..."
       rules: RULES.sample(2),
       open_hour: 10,
       close_hour: 18,
+            latitude: 38.715035 ,
+      longitude: -9.137011
     })
     restaurant.photo_urls = [
           'http://s3cdn.observador.pt/wp-content/uploads/2015/05/redfrogtp15052015-31.jpg',
@@ -295,7 +307,7 @@ puts "Creating 16 real locations..."
        user_id: User.all.sample.id,
       name: "Double9",
       email: "double9@gmail.com",
-      address: "9Hotel Mercy, Rua da Misericórdia, 76, Chiado, Lisboa",
+      address: "Hotel Mercy, Rua da Misericórdia, 76, Chiado, Lisboa",
       phone: "221 2481480",
       description: "A modern tea house, transformed into a coworking and chillout space, where you can work during the day and sample some cocktails made to order at night",
       capacity: "25",
@@ -307,6 +319,8 @@ puts "Creating 16 real locations..."
       rules: RULES.sample(2),
       open_hour: 9,
       close_hour: 17,
+            latitude: 38.712366 ,
+      longitude: -9.142971
     })
     restaurant.photo_urls = [
           'https://www.9-hotel-mercy-lisbon.pt/imgcache/f4dc544d8690c5a5368f30ad0a45f81b_w1138_h488_cp.jpg',
@@ -332,6 +346,8 @@ puts "Creating 16 real locations..."
       rules: RULES.sample(2),
       open_hour: 9,
       close_hour: 16,
+            latitude:  38.718040,
+      longitude: -9.140064
     })
     restaurant.photo_urls = [
           'http://static.savoteur.com/uploads/content_image/image/2616/Cave23.jpg',
