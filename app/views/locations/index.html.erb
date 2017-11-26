@@ -16,9 +16,9 @@
       <% @location.each do |l| %>
       <div class="col-xs-12 col-sm-6 col-md-4">
         <% if params[:in].present? %>
-        <a href="<%= location_path(l.id) + '?in=' + params[:in] + '&out=' + params[:out] %>">
+        <a  href="<%= location_path(l.id) + '?in=' + params[:in] + '&out=' + params[:out] %>">
           <% else %>
-          <a href="<%= location_path(l.id) %>">
+          <a href="<%= location_path(l.id) %>" class="link-to-location">
             <% end %>
           <div class="blog-card spring-fever" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
           url('<%= cl_image_path l.photos[0].path %>')">
@@ -28,7 +28,7 @@
             <!--  <div class="intro">Yllamco laboris nisi ut aliquip ex ea commodo.</div> -->
           </div><!-- /.title-content -->
           <div class="card-info">
-           <%= l.description %>
+           <p><%= l.description %></p>
          </div><!-- /.card-info -->
          <div class="utility-info">
           <ul class="utility-list">
