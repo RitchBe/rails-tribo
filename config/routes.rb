@@ -29,7 +29,7 @@ Rails.application.routes.draw do
     resources :bookings, only: [:create, :new]
   end
 
-  resources :conversations, only: [:index, :create] do
+  resources :conversations, only: [:index, :create, :destroy ] do
     resources :private_messages, only: [:index, :create]
   end
 end

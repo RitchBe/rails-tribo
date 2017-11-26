@@ -161,9 +161,9 @@ div.features, div.booking-card {
 
 
 #myCarousel, .carousel-inner {
-
   width: 60vw;
 }
+
 
 
 ol li:not(:last-child) {
@@ -196,4 +196,6 @@ div.booking-card {
 
 .item {
   height: 50vh;
+  background-size: cover;
+  background-position: bottom;
 }
