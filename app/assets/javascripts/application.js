@@ -4,6 +4,7 @@
 //= require underscore
 //= require flatpickr
 //= require gmaps/google
+
 //= require turbolinks
 //= require jquery-fileupload/basic
 //= require cloudinary/jquery.cloudinary
@@ -31,3 +32,14 @@ function scrollLastMessageIntoView() {
   }
 }
 
+window.sr = ScrollReveal({ reset: true });
+sr.reveal('.gallery__image',{ duration: 1000 }, 500);
+sr.reveal('.cta', { duration: 1000 });
+sr.reveal('.lead', { duration: 1000 });
+sr.reveal('.feature', { duration: 1000 }, 200);
+sr.reveal('.boxed', { duration: 1000 });
+sr.reveal('.blog-card', { duration: 1000 }, 500);
+
+
+
+// sr.reveal('.');
