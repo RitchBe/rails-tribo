@@ -11,19 +11,18 @@ Booking.destroy_all
 Location.destroy_all
 User.destroy_all
 
-puts "DESTROY DATABASE"
+puts "DESTROY DATABASE!!!"
 
-FEATURES = ["High-speed Wi-Fi", "Coffee and tea", "Friday Beers",
+FEATURES = ["High-speed Wi-Fi", "Coffee&Tea", "FridayBeers",
 "Printers", "Outlets", "Host","Meeting Rooms",
-"Bicycle lodge", "Events", "Whiteboards", "Office Supplies"]
+"Bicycle Lodge", "Events", "Whiteboards", "Office Supplies"]
 
-TAGS = ["#Calm & quiet","#Trendy","#Vintage","#Industrial","#Hipster",
-"#Designers","#Developers","#Nature",
-"#City Centre","#Chill","#Nice Views","#Music","#Social","#Roomy",
-"#Inspiring","#Dimly lighted","#Outside area"]
+TAGS = ["#Calm","#Trendy","#Vintage","#Industrial","#Hipster",
+"#Design","#Code","#Marketing","#City Centre","#Chill","#Nice Views","#Music","#Social",
+"#Roomy","#Inspiring","#Dimly lighted","#Outside area"]
 
-RULES = ["Smoking not allowed","Pets allowed","No questions",
-"Instant Booking","Early Dinner Access", "Networking", "Restaurants Disscount"]
+RULES = ["Smoking not allowed","Pets allowed","No ??",
+"Instant Booking","Early Dinner Access", "Networking", "Restaurant Disscount"]
 
 ACTIVITY = ["Web developper", "Designer", "Data analysist", "Video editor", "Bussiness Analyst",
 "Digital Marketing Specialist"]
@@ -38,7 +37,7 @@ ACTIVITY = ["Web developper", "Designer", "Data analysist", "Video editor", "Bus
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     activity: ACTIVITY.sample,
-    birth_date: Faker::Date.birthday(18, 65),
+    birth_date: Faker::Date.birthday(18, 50),
     rating: (1..5).to_a.sample
   )
 end
@@ -51,36 +50,36 @@ end
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     activity: ACTIVITY.sample,
-    birth_date: Faker::Date.birthday(18, 65),
+    birth_date: Faker::Date.birthday(18, 50),
     rating: (1..5).to_a.sample
   )
 end
 
 
-  puts "Creating 16 real locations..."
+puts "Creating 16 real locations..."
 
-    restaurant = Location.create({
-      user_id: User.all.sample.id,
-      name: "The Good The bad and the Ugly",
-      email: "info@obomomaueovilao.com",
-      address: "R. do Alecrim 21, 1200-014 Lisboa",
-      phone: "+351 96 453 1423",
-      description: "Situated on the heart of Lisbon trendiest quearter Cais do Sodré, you´ll find here a
-      intimate and trendy coworking atmosphere provided with afterwork Live Jazz Jam Sessions, Funky and Indie. Restored house dating from the eighteenth century, located in the heart of Cais do Sodré",
-      capacity: 20,
-      rate_by_hour: 3,
-      rate_by_day: 6,
-      rate_by_week: 14,
-      features: "High-speed Wi-Fi, Coffee and tea, Outlets,Meeting Rooms",
-      tags: "#Vintage, #Hipster, #Music, #Social",
-      rules: RULES.sample(2),
-      open_hour: 9,
-      close_hour: 18,
+  restaurant = Location.create({
+    user_id: User.all.sample.id,
+    name: "The Good The bad and the Ugly",
+    email: "info@obomomaueovilao.com",
+    address: "R. do Alecrim 21, 1200-014 Lisboa",
+    phone: "+351 96 453 1423",
+    description: "Situated on the heart of Lisbon trendiest quarter Cais do Sodré, you´ll find here a restored house
+    dating from the eighteenth century. Intimate and trendy coworking atmosphere provided with afterwork Live Jazz
+    Jam Sessions, Funky and Indie.",
+    capacity: 15,
+    rate_by_hour: 3,
+    rate_by_day: 7,
+    rate_by_week: 14,
+    features: "High-speed Wi-Fi, Coffee and tea, Outlets, Meeting Rooms",
+    tags: "#Vintage, #Hipster, #Music, #Social",
+    rules: RULES.sample(2),
+    open_hour: 9,
+    close_hour: 18,
     })
     restaurant.photo_urls = [
-          'https://media.timeout.com/images/103453500/750/422/image.jpg'
-          'https://media.timeout.com/images/103691660/image.jpg'
-          'https://pbs.twimg.com/media/DLn_FCwX4AEJzIn.jpg'
+          'http://lookmag.pt/wp-content/uploads/2017/02/TOPO-Clube1.jpg',
+          'http://www.evenues.com/GetImage.ashx?PhotoId=19991'
         ]
     restaurant.save
 
@@ -91,70 +90,72 @@ end
       email: "insolito@hotmail.com",
       address:"Rua de São Pedro de Alcântara, 83, Bairro Alto, Lisboa 1250-238",
       phone: "+351 21 130 33 06",
-      description: "Rooftoop  with outstanding viwes and fast-wifi connection.A meeting place for locals as well as nomad travelers.
+      description: "Rooftoop with outstanding views and ultra fast-wifi connection.
+      A meeting place for locals as well as nomad travelers.
       Available to work outdoors during warm seasons",
-      capacity: "30",
+      capacity: "25",
       rate_by_hour: 5,
       rate_by_day: 10,
       rate_by_week: 25,
       features: FEATURES.sample(5),
       tags: "#Trendy, #Designers, #Nice Views, #Social",
-      rules: "Restaurants Disscount"
+      rules: "Restaurant Disscount",
       open_hour: 9,
       close_hour: 17,
     })
     restaurant.photo_urls = [
-          'https://u.tfstatic.com/restaurant_photos/843/64843/169/612/the-insolito-vista-bb2fe.jpg',
-          'http://images-cdn.impresa.pt/bcbm/2016-05-18-22201908611_33a3120640_b.jpg/3x2/mw-1240'
+          'http://images-cdn.impresa.pt/bcbm/2016-05-18-22201908611_33a3120640_b.jpg/3x2/mw-1240',
+          'http://upmagazine-tap.com/app/uploads/2014/03/homelisbon.jpg'
       ]
     restaurant.save
 
     restaurant = Location.create({
       user_id: User.all.sample.id,
-      name: "Diego´s Shanghai Penthouse",
+      name: "Shanghai Penthouse",
       email: "penthouse@gmail.com",
-      address:"R. do Diário de Notícias 142, 1200-146 Lisboa",
+      address:"Paseo de la Castellana, 2, 28046 Madrid, España",
       phone: "+351 21 130 33 43",
       description: "Spacious and confortable desks to work with all the supplies of a co-working space plus 3 meeting rooms. At the same time you´ll have the
-      opportunity to co-work with one of the best coders of the city",
+      opportunity to co-work with one of the best coder community of the city",
       capacity: "10",
       rate_by_hour: 4,
       rate_by_day: 11,
       rate_by_week: 35,
       features: FEATURES.sample(4),
       tags: "#Roomy, #Developers #Social",
-      rules: RULES.sample(3)
+      rules: RULES.sample(3),
       open_hour: 9,
       close_hour: 21,
     })
     restaurant.photo_urls = [
           'http://retaildesignblog.net/wp-content/uploads/2016/12/WeWork-Yanping-Lu-Coworking-Office-by-Linehouse-Shanghai-China05-1.jpg',
-          'https://www.hospitalitydesign.com/wp-content/uploads/Linehouse_Herschel.png'
+          'https://www.hospitalitydesign.com/wp-content/uploads/Linehouse_Herschel.png',
           'https://i.pinimg.com/originals/cd/40/7a/cd407ad0eb29dd583f86001c2aa61cb6.jpg'
       ]
     restaurant.save
 
     restaurant = Location.create({
       user_id: User.all.sample.id,
-      name: "Ritch Beee in da House",
+      name: "Ritch Beee in da ...",
       email: "ritchbeindahouse@gmail.com",
       address:"R. Rodrigues de Faria 103, 1300 - 501 Lisboa",
       phone: "+351 22 132 44 43",
-      description: "Come to work to my place. Two shared big desks plus, sofas, puffs and a meeting room. My place is near Lx Factory. I can give you
-      a break dance lessons afterwards"
-      capacity: "8",
+      description: "Come to work to my place. Two shared big desks, sofas, puffs and a meeting room. My place is near Lx Factory. I can give you
+      a break dance lessons afterwards",
+      capacity: 8,
       rate_by_hour: 4,
       rate_by_day: 11,
       rate_by_week: 35,
       features: FEATURES.sample(4),
       tags: "#Roomy, #Developers #Social",
-      rules: RULES.sample(3)
+      rules: RULES.sample(3),
       open_hour: 9,
       close_hour: 21,
     })
     restaurant.photo_urls = [
           'http://craigbaute.com/wp-content/uploads/2014/06/20141010__20141013_C1_FE13SMCOWORKp1.jpg',
-          'http://lisboacool.com/sites/default/files/styles/ny_article_horizontal__w720xh480_watermark/public/lisboa_cool_liberdade22903.jpg?itok=Gjuv05CU'
+          'http://lisboacool.com/sites/default/files/styles/ny_article_horizontal__w720xh480_watermark/public/lisboa_cool_liberdade22903.jpg?itok=Gjuv05CU',
+          'http://cdn.maxima.pt/images/2017-10/img_974x632$2017_10_10_14_22_33_328688.png'
       ]
     restaurant.save
 
@@ -178,19 +179,20 @@ end
     })
     restaurant.photo_urls = [
           'http://www.agendalx.pt/sites/default/files/evento/casaind.jpg',
-          'http://www.insidelisbon.com/wp-content/uploads/2016/11/IL_nightlife_drink_casa-independente.jpg'
-          'http://cdn.maxima.pt/images/2017-10/img_974x632$2017_10_10_14_22_33_328688.png'
+          'http://www.insidelisbon.com/wp-content/uploads/2016/11/IL_nightlife_drink_casa-independente.jpg',
+          'http://cdn.maxima.pt/images/2017-10/img_974x632$2017_10_10_14_22_33_328688.png',
+          'https://cdn.betakit.com/wp-content/uploads/2016/08/rndmwrk-web.jpg'
       ]
     restaurant.save
 
     restaurant = Location.create({
       user_id: User.all.sample.id,
-      name: "Goni Coding Station",
+      name: "GCoding Station",
       email: "coding@gmail.com",
       address: "Av. de Roma 50, 1700-348 Lisboa",
       phone: "218875143",
       description: "Full house equipped to cowork in the North area of Lisbon well surrounded by good restaurants, we also handle
-      events after 7 in topics related to nomadism",
+      events after 7 ",
       capacity: "30",
       rate_by_hour: 3,
       rate_by_day: 10,
@@ -203,8 +205,9 @@ end
     })
     restaurant.photo_urls = [
           'https://i.pinimg.com/564x/a9/c5/48/a9c548325bc4ff4c39071877d10a52b7.jpg',
-          'https://admin.citiesintransition.eu/wp-content/uploads/2015/01/Liberdade-229-Coworking-in-Lisbon-1.jpg'
-          'https://admin.citiesintransition.eu/wp-content/uploads/2015/01/Liberdade-229-Coworking-in-Lisbon.jpg'
+          'https://admin.citiesintransition.eu/wp-content/uploads/2015/01/Liberdade-229-Coworking-in-Lisbon-1.jpg',
+          'https://admin.citiesintransition.eu/wp-content/uploads/2015/01/Liberdade-229-Coworking-in-Lisbon.jpg',
+          'http://barcelonanavigator.i5me33nlgv.maxcdn-edge.com/wp-content/uploads/2015/05/Felisa-Coworking-Barcelona.jpg'
       ]
     restaurant.save
 
@@ -229,7 +232,7 @@ end
     })
     restaurant.photo_urls = [
           'http://upmagazine-tap.com/app/uploads/2011/06/24hrs4.jpg',
-          'http://2.bp.blogspot.com/_2y06NHHK-ys/TKstseCAJUI/AAAAAAAAArA/xRzlDljcbYg/s1600/IMG_3998.jpg'
+          'https://www.wedemain.fr/photo/art/default/5788848-8629890.jpg?v=1378821161',
           'https://media-cdn.tripadvisor.com/media/photo-s/08/b0/75/5e/scenes-from-the-clube.jpg'
 
       ]
@@ -238,11 +241,11 @@ end
 
     restaurant = Location.create({
       user_id: User.all.sample.id,
-      name: "Rooftop Bar Mundial",
-      email: "hmundial@gmail.com",
-      address: "Hotel Mundial, Praça Martim Moniz, 2, Mouraria, Lisboa",
+      name: "Shubaduba",
+      email: "ashubaduba@gmail.com",
+      address: "Praça Duque da Terceira 24, 1200-014 Lisboa",
       phone: " +251 218 8 42 00",
-      description: "At the last floor of Hotel Mundial we discover one of the Best Rooftoop and coworking spaces in Lisbon where you can admire views over the Tejo while networking",
+      description: "At the last floor of my place  we discover one of the friendlier places in Lisbon to work and get inspired",
       capacity: "25",
       rate_by_hour: 4,
       rate_by_day: 10,
@@ -254,8 +257,11 @@ end
       close_hour: 17,
     })
     restaurant.photo_urls = [
-          'https://www.google.pt/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=0ahUKEwja3rHEvtrXAhVMbRQKHQQtDsMQjBwIBA&url=https%3A%2F%2Fd1vp8nomjxwyf1.cloudfront.net%2Fwp-content%2Fuploads%2Fsites%2F9%2F2016%2F06%2F23085648%2Fmundial_home_slide_01.jpg&psig=AOvVaw2M2Dvm3sB6AzZj9c65jV46&ust=1511725469969070',
-          'http://1.bp.blogspot.com/-7qDYc8HacXk/VZVCBkVL9QI/AAAAAAAACe0/7ogYp19J9g0/s1600/mundial.jpg'
+          'https://www.coworkcentral.pt/media/images/services/private-rooms.jpg',
+          'http://blog.rumbo.pt/wp-content/uploads/sites/16/2017/02/coworkcentral-coworking-lisboa-1024x512.jpg',
+          'https://static1.squarespace.com/static/52fcc48ce4b03f845db4aa7f/52fdf05be4b0feb85ec3644f/56d82927b654f9f9ecd0096d/1457008498328/?format=1500w',
+          'http://res.cloudinary.com/dzxgxofdh/image/upload/c_scale,q_70,w_800/v1504281616/workhub%20gallery/YellowSavages-Workhub-17.jpg'
+
       ]
     restaurant.save
 
@@ -303,8 +309,8 @@ end
       close_hour: 17,
     })
     restaurant.photo_urls = [
-          'https://www.9-hotel-mercy-lisbon.pt/imgcache/f4dc544d8690c5a5368f30ad0a45f81b_w1138_h488_cp.jpg'
-          'https://mb.web.sapo.io/3999df53d6bc1d2307577b264a62f7c51ca4d2f6.jpg'
+          'https://www.9-hotel-mercy-lisbon.pt/imgcache/f4dc544d8690c5a5368f30ad0a45f81b_w1138_h488_cp.jpg',
+          'https://mb.web.sapo.io/3999df53d6bc1d2307577b264a62f7c51ca4d2f6.jpg',
           'https://d1u4v68pfiv879.cloudfront.net/media/13002/bar-double9_chiado_lisbon-shopping.jpg',
       ]
     restaurant.save
@@ -329,7 +335,7 @@ end
     })
     restaurant.photo_urls = [
           'http://static.savoteur.com/uploads/content_image/image/2616/Cave23.jpg',
-          'https://u.tfstatic.com/restaurant_photos/337/295337/169/612/cave-23-vista-do-interior-4fffc.jpg'
+          'https://u.tfstatic.com/restaurant_photos/337/295337/169/612/cave-23-vista-do-interior-4fffc.jpg',
           'http://lisboa.convida.pt/images/POIs/Terraco23-ConVida2017-010.jpg'
       ]
     restaurant.save
@@ -339,7 +345,7 @@ end
       user_id: User.all.sample.id,
       name: "Edwards Place",
       email: "eduardo@love.com",
-      address: "R. Amorim 2, 1950-022 Lisboa",
+      address: "Gran Vía, 66, 28013 Madrid, España",
       phone: "21 8298071",
       description: "Plenty of space at my place with all the facilities and a gym in the building that you can use if you desire too. Usually designers and people related with
       the luxury start-up industry",
@@ -356,6 +362,7 @@ end
     restaurant.photo_urls = [
       'https://static.wixstatic.com/media/441a2a_32584af7a82d498789fd8ecd072d68da~mv2_d_3976_2651_s_4_2.jpg/v1/fill/w_636,h_424,al_c,q_90,usm_0.66_1.00_0.01/441a2a_32584af7a82d498789fd8ecd072d68da~mv2_d_3976_2651_s_4_2.webp',
       'https://static.wixstatic.com/media/441a2a_cf5d00f42cac4b0eaa9dca1a810086dd~mv2_d_4080_2720_s_4_2.jpg/v1/fill/w_636,h_424,al_c,q_90,usm_0.66_1.00_0.01/441a2a_cf5d00f42cac4b0eaa9dca1a810086dd~mv2_d_4080_2720_s_4_2.webp',
+      'https://www.billboard.com/files/media/03-Mass-Appeal-office-space-2017-billboard-embed.jpg'
       ]
     restaurant.save
 
@@ -388,11 +395,11 @@ end
       user_id: User.all.sample.id,
       name: "Isahias Madrid Lounge",
       email: "Isahias@love.com",
-      address: "Calle de O'Donnell, 21 28009 Madrid",
+      address: "Gran Vía, 12, 28013 Madrid, España",
       phone: "91 5773322",
-      description: "My place is the best. I have a mansion where you can cowork and network with other nomads. I´m the best one with Mapbox so I can teach Plenty of space at my place with all the facilities and a gym in the building that you can use if you desire too. Usually designers and people related with
-      the luxury start-up industry",
-      capacity: "6",
+      description: "A whole floor designed for the comfort of nomad people in right in the city center of Madrid. Normally full of
+      of freelancers",
+      capacity: "27",
       rate_by_hour: 5,
       rate_by_day: 10,
       rate_by_week: 25,
@@ -400,22 +407,22 @@ end
       tags:  TAGS.sample(2),
       rules: RULES.sample(2),
       open_hour: 9,
-      close_hour: 17,
+      close_hour: 20,
     })
     restaurant.photo_urls = [
-      'https://static.wixstatic.com/media/441a2a_32584af7a82d498789fd8ecd072d68da~mv2_d_3976_2651_s_4_2.jpg/v1/fill/w_636,h_424,al_c,q_90,usm_0.66_1.00_0.01/441a2a_32584af7a82d498789fd8ecd072d68da~mv2_d_3976_2651_s_4_2.webp',
-      'https://static.wixstatic.com/media/441a2a_cf5d00f42cac4b0eaa9dca1a810086dd~mv2_d_4080_2720_s_4_2.jpg/v1/fill/w_636,h_424,al_c,q_90,usm_0.66_1.00_0.01/441a2a_cf5d00f42cac4b0eaa9dca1a810086dd~mv2_d_4080_2720_s_4_2.webp',
+      'https://cdn.wework.com/locations/image/11849c9a-4ebb-11e6-a56f-0a488af3e541/charging-bull-office-space-20.jpg?auto=compress%2Cformat&w=1200&h=600&fit=crop',
+      'https://www.homepolish.com/wp-content/uploads/Homepolish-3632-decorating-3aa8613a.jpeg',
+      'https://comunalcoworking.com/wp-content/uploads/2017/06/benavidesmiraflores-benavides_DSC1079-600x600_c.jpg'
       ]
     restaurant.save
 
     restaurant = Location.create({
       user_id: User.all.sample.id,
-      name: "Edwards Place",
-      email: "eduardo@love.com",
-      address: "R. Amorim 2, 1950-022 Lisboa",
-      phone: "21 8298071",
-      description: "Plenty of space at my place with all the facilities and a gym in the building that you can use if you desire too. Usually designers and people related with
-      the luxury start-up industry",
+      name: "Mikes Place",
+      email: "mike@gmail.com",
+      address: "Av. de Pío XII, 25, 28016 Madrid, España",
+      phone: "+34 913 53 07 80",
+      description: "I have just reformed my home to host nomad from all around the world. In this house you find all a nomad can need",
       capacity: "6",
       rate_by_hour: 5,
       rate_by_day: 10,
@@ -424,40 +431,65 @@ end
       tags:  TAGS.sample(2),
       rules: RULES.sample(2),
       open_hour: 9,
-      close_hour: 17,
+      close_hour: 19,
     })
     restaurant.photo_urls = [
-      'https://static.wixstatic.com/media/441a2a_32584af7a82d498789fd8ecd072d68da~mv2_d_3976_2651_s_4_2.jpg/v1/fill/w_636,h_424,al_c,q_90,usm_0.66_1.00_0.01/441a2a_32584af7a82d498789fd8ecd072d68da~mv2_d_3976_2651_s_4_2.webp',
-      'https://static.wixstatic.com/media/441a2a_cf5d00f42cac4b0eaa9dca1a810086dd~mv2_d_4080_2720_s_4_2.jpg/v1/fill/w_636,h_424,al_c,q_90,usm_0.66_1.00_0.01/441a2a_cf5d00f42cac4b0eaa9dca1a810086dd~mv2_d_4080_2720_s_4_2.webp',
+      'https://blog.liquidspace.com/wp-content/uploads/2017/05/7ef60e93-ba4a-4db0-82d7-f4b53714b236.jpeg',
+      'https://officesnapshots.com/wp-content/uploads/2015/06/wework-nyc-office-design-1-700x467.jpg',
+      'https://i.pinimg.com/originals/82/44/04/8244040d6eaeb66f0f24bd40ff1d4d0e.jpg'
       ]
     restaurant.save
 
     restaurant = Location.create({
       user_id: User.all.sample.id,
-      name: "Edwards Place",
-      email: "eduardo@love.com",
-      address: "R. Amorim 2, 1950-022 Lisboa",
-      phone: "21 8298071",
-      description: "Plenty of space at my place with all the facilities and a gym in the building that you can use if you desire too. Usually designers and people related with
-      the luxury start-up industry",
-      capacity: "6",
-      rate_by_hour: 5,
-      rate_by_day: 10,
-      rate_by_week: 25,
+      name: "George",
+      email: "george@gmail.com",
+      address: "Calle San Lucas, 13, 28004 Madrid, España",
+      phone: "+34 915 13 54 66",
+      description: "Industrial style space warmed up with central heating during winter. Collaborative and productive atmosphere
+      where  nomad travellers spend weeks or months while completing their projects. Highly recommended if you want to network
+      in Madrid" ,
+      capacity: "8",
+      rate_by_hour: 2,
+      rate_by_day: 8,
+      rate_by_week: 30,
       features: FEATURES.sample(4),
-      tags:  TAGS.sample(2),
+      tags:  "#Industrial #Rommy",
       rules: RULES.sample(2),
       open_hour: 9,
-      close_hour: 17,
+      close_hour: 21,
     })
     restaurant.photo_urls = [
-      'https://static.wixstatic.com/media/441a2a_32584af7a82d498789fd8ecd072d68da~mv2_d_3976_2651_s_4_2.jpg/v1/fill/w_636,h_424,al_c,q_90,usm_0.66_1.00_0.01/441a2a_32584af7a82d498789fd8ecd072d68da~mv2_d_3976_2651_s_4_2.webp',
-      'https://static.wixstatic.com/media/441a2a_cf5d00f42cac4b0eaa9dca1a810086dd~mv2_d_4080_2720_s_4_2.jpg/v1/fill/w_636,h_424,al_c,q_90,usm_0.66_1.00_0.01/441a2a_cf5d00f42cac4b0eaa9dca1a810086dd~mv2_d_4080_2720_s_4_2.webp',
+      'http://esdipberlin.com/wp-content/uploads/11080623_684963288313799_3898966742149368400_o.jpg',
+      'https://artconnect.s3-eu-west-1.amazonaws.com/attachments/87414/original.jpg?1423259056',
+      'https://s3-eu-west-1.amazonaws.com/hubblehq/hubble/uploads/wyswigy/greenhouse-coworking.jpg'
       ]
     restaurant.save
 
-
-
+     restaurant = Location.create({
+      user_id: User.all.sample.id,
+      name: "Workon",
+      email: "peter11@gmail.com",
+      address: "Calle Mateo Inurria, 33, 28036 Madrid, España",
+      phone: "+34 915 13 54 66",
+      description: "Big open space with many available spaces, outlets, wi-fi. Great place to get things done while meeting new
+      and interesting people",
+      capacity: "40",
+      rate_by_hour: 2,
+      rate_by_day: 8,
+      rate_by_week: 30,
+      features: FEATURES.sample(4),
+      tags:  "#Industrial #Rommy",
+      rules: RULES.sample(2),
+      open_hour: 9,
+      close_hour: 21,
+    })
+    restaurant.photo_urls = [
+      'https://breather.imgix.net/locations/p/853-broadway-1211-2-1489605745352.jpg',
+      'https://breather.imgix.net/locations/p/295madison2_1469937300009.jpg?w=355',
+      'http://genylabs.typepad.com/.a/6a00d8345675df69e201b8d2b6c0cf970c-pi'
+      ]
+    restaurant.save
 
 puts "create 15 fake booking"
 
