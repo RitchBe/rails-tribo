@@ -6,14 +6,14 @@
     <div class="private-user-info">
 
       <% if @conversation.receiver.id == current_user.id %>
-        <% avatar_url = @conversation.sender.facebook_picture_url || "https://image.freepik.com/free-photo/cute-cat-picture_1122-449.jpg" %>
+        <% avatar_url = @conversation.sender.facebook_picture_url || "http://s3.amazonaws.com/nvest/Blank_Club_Website_Avatar_Gray.jpg" %>
       <%= image_tag avatar_url, class: "private-message-avatar private-message-avatar-lg " %>
     <h3 class="text-left conversation-user" style="width: 100%;"> <%= @conversation.sender.first_name %> <%= @conversation.sender.last_name %></h3>
     <h4 class="text-left" style="width: 100%;"> <%= @conversation.sender.email %></h4>
     <h4 class="text-left" style="width: 100%;"> <%= @conversation.sender.activity %></h4>
     <h4 class="text-left" style="width: 100%;"> <%= "☆" * @conversation.sender.rating %></h4>
     <% else %>
-            <% avatar_url = @conversation.receiver.facebook_picture_url || "https://image.freepik.com/free-photo/cute-cat-picture_1122-449.jpg" %>
+            <% avatar_url = @conversation.receiver.facebook_picture_url || "http://s3.amazonaws.com/nvest/Blank_Club_Website_Avatar_Gray.jpg" %>
       <%= image_tag avatar_url, class: "private-message-avatar private-message-avatar-lg " %>
     <h3 class="text-left conversation-user" style="width: 100%;"> <%= @conversation.receiver.first_name %> <%= @conversation.receiver.last_name %></h3>
     <h4 class="text-left" style="width: 100%;"> <%= @conversation.receiver.email %></h4>
@@ -36,7 +36,7 @@
       <li class= <%= if current_user.id === message.user_id then "private-message-sender" else "private-message-receiver" end %>>
         <h4 class="private-message-author"><%= message.user.first_name %> <%= message.user.last_name %> | <i><%= message.user.email %></i></h4>
         <p><%= message.body %></p>
-           <% avatar_url = message.user.facebook_picture_url || "https://image.freepik.com/free-photo/cute-cat-picture_1122-449.jpg" %>
+           <% avatar_url = message.user.facebook_picture_url || "http://s3.amazonaws.com/nvest/Blank_Club_Website_Avatar_Gray.jpg" %>
             <%= image_tag avatar_url, class: "private-message-avatar" %>
       </li>
   <hr>
