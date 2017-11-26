@@ -48,7 +48,7 @@
             <span><%= calc_days %> days x  <%= '%.2f' % calc_rate_daily %>€ = <%= '%.2f' % calc_rate %> €</span>
           </div>
          <div style="text-align: center !important">
-        <%= button_to "BOOK IT", new_location_booking_path(location_id: @location.id, in: params[:in], out: params[:out]), :method => "get", class: "btn btn--sm btn--primary type--uppercase" %>
+        <%= link_to "BOOK IT", new_location_booking_path(location_id: @location.id, in: params[:in], out: params[:out]), :method => "get", class: "btn btn--sm btn--primary type--uppercase" %>
         <% else %>
           <!-- PUT SOMETHING WHEN THERE IS NO DATES SELECTED -->
         <% end %>
