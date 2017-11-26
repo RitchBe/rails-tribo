@@ -1,7 +1,11 @@
 .message-wr {
   height: 75vh;
-  margin: auto;
-  width: 80vw
+  width: 80vw;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+
 }
 
 .messages {
@@ -49,4 +53,12 @@
     vertical-align: top;
     width: 14.5%;
 }
+}
+
+.emoji-picker-container {
+  width: 70%;
+}
+
+h2.chat-room-title {
+  margin-top: 100px;
 }
