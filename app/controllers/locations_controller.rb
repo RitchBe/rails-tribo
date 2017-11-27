@@ -14,7 +14,8 @@ class LocationsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@location) do |location, marker|
       marker.lat location.latitude
       marker.lng location.longitude
-      # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
+
+      marker.infowindow render_to_string(partial: "/shared/card", locals: { location: location })
       authorize @location
     end
   end
@@ -33,7 +34,7 @@ class LocationsController < ApplicationController
     @location.features = params[:features]
     authorize @location
     if @location.save
-      redirect_to locations_path(@location.id)
+      redirect_to location_path(@location.id)
     else
       # GO BACK TO THE FORM
       puts "not working"

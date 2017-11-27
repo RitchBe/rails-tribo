@@ -30,6 +30,7 @@
       <% end %>
     </div>
 
+
     <!-- Left and right controls -->
     <a class="left carousel-control" href="#myCarousel" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left"></span>
@@ -42,7 +43,9 @@
   </div>
 </div>
 </div>
+
 <!-- END CAROUSEL - START <IN CONTAINER -->
+
 
   <div class="container-location-show">
     <div class="col-sm-5 col-sm-offset-1 col-md-5 col-md-offset-2">
@@ -61,27 +64,31 @@
         <h3>Features</h3>
         <div class="wrapper">
          <div class="features">
-          <% if @location.features.include? "High-speed Wi-Fi" %> <i class="fi flaticon-wifi"></i> <% end %>
-          <% if @location.features.include? "Coffee&Tea" %> <i class="fi flaticon-coffee-cup"></i> <% end %>
-          <% if @location.features.include? "FridayBeers" %> <i class="fi flaticon-beer"></i> <% end %>
-          <% if @location.features.include? "Printers" %> <i class="fi flaticon-printer"></i> <% end %>
-          <% if @location.features.include? "Outlets" %> <i class="fi flaticon-plug"></i> <% end %>
-          <% if @location.features.include? "Host" %> <i class="fi flaticon-man"></i> <% end %>
-          <% if @location.features.include? "Meeting Rooms" %> <i class="fi flaticon-meeting"></i> <% end %>
-          <% if @location.features.include? "Bicycle Lodge" %> <i class="fi flaticon-transport"></i> <% end %>
-          <% if @location.features.include? "Whiteboards" %> <i class="fi flaticon-board"></i> <% end %>
-          <% if @location.features.include? "Office Supplies" %> <i class="fi flaticon-paper-clip"></i> <% end %>
-          <% if @location.features.include? "Events" %> <i class="fi flaticon-calendar"></i> <% end %>
+          <% if @location.features.include? "High-speed Wi-Fi" %> <i class="fi flaticon-wifi"><p>Wifi</p> </i><% end %>
+          <% if @location.features.include? "Coffee&Tea" %> <i class="fi flaticon-coffee-cup"> <p>Coffee and Tea</p></i> <% end %>
+          <% if @location.features.include? "FridayBeers" %> <i class="fi flaticon-beer"><p>FridayBeers</p></i> <% end %>
+          <% if @location.features.include? "Printers" %> <i class="fi flaticon-printer"> <p>Printer</p></i><% end %>
+          <% if @location.features.include? "Outlets" %> <i class="fi flaticon-plug"><p>Outlets</p></i> <% end %>
+          <% if @location.features.include? "Host" %> <i class="fi flaticon-man"><p>Host</p></i> <% end %>
+          <% if @location.features.include? "Meeting Rooms" %> <i class="fi flaticon-meeting"><p>Meeting Rooms</p></i> <% end %>
+          <% if @location.features.include? "Bicycle Lodge" %> <i class="fi flaticon-transport"><p>Bicycle lodge</p></i> <% end %>
+          <% if @location.features.include? "Whiteboards" %> <i class="fi flaticon-board"><p>WhiteBoards</p></i> <% end %>
+          <% if @location.features.include? "Office Supplies" %> <i class="fi flaticon-paper-clip"><p>Office Supplies</p></i> <% end %>
+          <% if @location.features.include? "Events" %> <i class="fi flaticon-calendar"><p>Events</p></i><% end %>
+
         </div>
+
       </div>
           <div id="map" style="width: 100%; height: 250px;"></div>
         </div>
       </div>
+
     </div>
       <div class="col-sm-5 col-md-3">
         <%= render "shared/booking_details" %>
       </div>
     </div>
+
 
 
 
@@ -140,6 +147,7 @@
       <h3>Address</h3>
       <p><%= @location.address %></p>
     </div>
+
   </div>
 
 

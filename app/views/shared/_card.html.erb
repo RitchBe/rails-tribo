@@ -1,19 +1,17 @@
-<div class="row">
-	<div class="card">
+  <a href="<%= location_path(location.id) %>">_
+	<div class="card" style="background-image:linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url('<%= cl_image_path location.photos[0].path  %>'); background-size: cover;">
 			<div class="card-body">
 				<div class="card-description">
-					<h3>Lisbon</h3>
-					<p>Street</p>
+					<h3><%= location.name %></h3>
+
 				</div>
 			</div>
 			<div class="card-footer">
-				<div class="card-hours">
-					<p>Opening Hours</p>
-					<p class="hours"> 09:00 - 18:00</p>
+				<div class="card-hours" style="color: white">
+					<p>Opening Hours</p></br>
+					<p class="hours"> <%= location.open_hour %>:00| <%= location.close_hour %>:00</p>
 				</div>
-				<a href="#" class="btn-card">Discover</a>
 			</div>
 		</div>
-	</div>
-
+</a>
 
