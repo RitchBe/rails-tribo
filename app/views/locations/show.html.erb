@@ -1,4 +1,5 @@
 
+<div class = "wrapper">
 <div class="location-carousel">
  <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
@@ -42,7 +43,9 @@
 </div>
 </div>
 <!-- END CAROUSEL - START <IN CONTAINER -->
-<div< class="container-location-show">
+<div class="wrapper">
+
+<div class="container-location-show">
   <div class="col-sm-5 col-sm-offset-1 col-md-5 col-md-offset-2">
     <div class="show-description-container" style="padding:20px;">
       <h3 class="pricing-box__offer-title"><%= @location.name %> </h3>
@@ -62,6 +65,8 @@
   <div class="col-sm-5 col-md-3">
     <%= render "shared/booking_details" %>
   </div>
+</div>
+</div>
 </div>
 <!--
 

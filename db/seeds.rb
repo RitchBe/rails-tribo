@@ -147,7 +147,7 @@ restaurant = Location.create({
   rate_by_day: 11,
   rate_by_week: 35,
   features: FEATURES.sample(4),
-  tags: TAGS.sample(3),,
+  tags: TAGS.sample(3),
   rules: RULES.sample(3),
   open_hour: 9,
   close_hour: 21,
