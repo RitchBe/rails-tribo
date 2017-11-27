@@ -13,16 +13,53 @@
     <!-- Links when logged in -->
      <%= link_to "Locations", locations_path, class: "navbar-tribo-item navbar-tribo-link" %>
 
+
+
+
+
     <%= link_to inbox_path, class: "navbar-tribo-item navbar-tribo-link" do %>
     <% Conversation.where("sender_id = ? OR receiver_id = ?", current_user.id, current_user.id).each do |conversation| %>
     <span class="nav-notification"> <% if !conversation.unread_message_count(current_user).zero? %>
       (<%= conversation.unread_message_count(current_user) %>)
       <% end %>
-
     </span>
     <% end %>
     Inbox
     <% end %>
+<div class="navbar-message-item">
+  <div class="dropdown">
+    <!-- Have a number of unread mesages -->
+    <p data-toggle="dropdown">Inbox
+      <% Conversation.where("sender_id = ? OR receiver_id = ?", current_user.id, current_user.id).each do |conversation| %>
+    <span class="nav-notification">
+      <% if !conversation.unread_message_count(current_user).zero? %>
+      (<%= conversation.unread_message_count(current_user) %>)
+      <% end %>
+      <% end %>
+    </span></p>
+
+<!-- dropdown -->
+    <ul style="width: 500px;" class="dropdown-menu dropdown-menu-right navbar-message-dropdown-menu">
+
+      <% Conversation.where("sender_id = ? OR receiver_id = ? ", current_user.id, current_user.id).each do |conversation| %>
+     <% conversation.private_messages.each do |message| %>
+      <% if message.read == false %>
+      <div class="new-message">
+        <h5 style="color: black; margin-bottom: 0px; padding-left: 25px;"> <%= User.find(message.user_id).first_name %> <%= User.find(message.user_id).last_name %></h5><hr style="margin: 0px 15px;">
+      <p style="color: black; text-align: left; padding-left: 40px;"><%= message.body %></p>
+    </div>
+
+      <% end %>
+      <% end %>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+
+
+
+
     <%= link_to "Bookings", user_bookings_path(current_user.id), class: "navbar-tribo-item navbar-tribo-link" %>
 
 
