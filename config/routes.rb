@@ -15,6 +15,9 @@ Rails.application.routes.draw do
    resources :bookings, only: [:index]
   end
 
+  resources :bookings, only: [] do
+    get 'success'
+  end
 
   root to: 'pages#landing'
   get '/calendar', to: 'pages#calendar'

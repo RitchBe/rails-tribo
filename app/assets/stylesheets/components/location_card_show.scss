@@ -1,8 +1,15 @@
 .booking-details{
-  width:400px;
+  width:100%;
   height:auto;
+  margin-top:10px;
   position:relative;
-  margin-top: 70px;
+}
+
+.booking-details-review{
+  height:auto;
+  margin-top:100px;
+  position:relative;
+  border-radius: 5px 5px 0 0;
 }
 
 .__pricing-box__pricing-breakdown__d763b .pricing-breakdown--is-loading .pricing-breakdown__cell>span {
@@ -204,8 +211,7 @@
 .__pricing-box__b23db .pricing-box__container {
     padding: 25px 32px;
     border: 2px solid #f0f0f0;
-    border-top: 0;
-    background: #fff
+    background: #fff;
 }
 
 @media (max-width:767px) {
@@ -265,9 +271,6 @@
     justify-content: space-between;
     flex-wrap: wrap;
     background: url(../assets/images/general/right.svg) center center no-repeat;
-    border-top: 2px solid #f0f0f0;
-    border-bottom: 2px solid #f0f0f0;
-    padding: 20px 0;
     margin-bottom: 16px
 }
 
