@@ -163,6 +163,7 @@ div.features, div.booking-card {
 }
 
 
+
 ol li:not(:last-child) {
   margin: 0 !important ;
 }
@@ -188,4 +189,6 @@ div.booking-card {
 
 .item {
   height: 50vh;
+  background-size: cover;
+  background-position: bottom;
 }

@@ -9,13 +9,15 @@ Rails.application.routes.draw do
 
   ActiveAdmin.routes(self)
 
-  devise_for :users, :controllers => {sessions: 'sessions'},
-  controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  devise_for :users, controllers: { sessions: 'sessions', omniauth_callbacks: 'users/omniauth_callbacks' }
 
   resources :users, only: [:show] do
    resources :bookings, only: [:index]
   end
 
+  resources :bookings, only: [] do
+    get 'success'
+  end
 
   root to: 'pages#landing'
   get '/calendar', to: 'pages#calendar'
@@ -29,7 +31,7 @@ Rails.application.routes.draw do
     resources :bookings, only: [:create, :new]
   end
 
-  resources :conversations, only: [:index, :create] do
+  resources :conversations, only: [:index, :create, :destroy ] do
     resources :private_messages, only: [:index, :create]
   end
 end

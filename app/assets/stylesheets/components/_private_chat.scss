@@ -1,16 +1,37 @@
+div.private-message-page {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 150px;
+}
+
 div.private-message-container {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   height: 75vh;
+  width: 70vw;
 
+
+}
+
+div.private-user-info {
+  margin-left: 50px;
+  border-bottom: 1px solid rgba(200,200,200,0.5);
+  border-right: 1px solid rgba(200,200,200,0.5);
+  padding: 15px;
+  padding-right: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  // box-shadow: 10px 0px 5px rgba(200,200,200,0.5)
 }
 
 
 div.private-message-wrapper {
-  padding: 50px 50px;
   width: 60%;
+  border-top: 1px solid rgba(200,200,200,0.5);
+  border-left: 1px solid rgba(200,200,200,0.5);
 
 }
 #private_message_body {  //THIS IS FOR THE TEXT AREA
@@ -21,36 +42,63 @@ div.private-message-wrapper {
 
 
 ul.private-message-list {
-  border: 1px solid black;
   padding: 50px 50px;
-  background-color: rgb(230,230,230);
   border-radius: 5px;
-  box-shadow: 0 -10px 35px lightgray;
+  // box-shadow: 0 -10px 35px lightgray;
   list-style: none;
-  overflow: scroll;
+  overflow-y: auto;
   max-height: 50vh;
   height: 50vh;
 }
 
 
 li.private-message-sender {
-  background-color: cornflowerblue;
+  // background-color: cornflowerblue;
   padding: 10px;
   border-radius: 5px;
   border-bottom-right-radius: 40px;
+  text-align: right;
   margin-top: 10px;
+    i {
+    border-right: 5px solid $yellow;
+    padding-right: 10px;
+  }
+
+}
+
+h4.private-message-author {
+  padding-left: 10px;
+}
+
+li.private-message-receiver > p {
+  text-align: left;
+  width: 90%;
+}
+
+li.private-message-sender > p {
+  text-align: right;
+  width: 90%;
+}
+
+.conversation-user {
+  border-left: 5px solid $red;
+  padding-left: 10px;
+  white-space: pre;
 }
 
 
-
 li.private-message-receiver {
-  background-color: pink;
+  // background-color: pink;
   padding: 10px;
   border-radius: 5px;
   border-bottom-left-radius: 40px;
   margin-top: 10px;
   width: 100%;
+     h4 {
+    border-left: 5px solid $red
+  }
 }
+
 
 .private-message-avatar {
   border-radius: 50%;
@@ -58,11 +106,30 @@ li.private-message-receiver {
   height: 40px;
 }
 
-li.private-message-sender > .private-message-avatar {
-  position: relative;
-  left: 91%;
+.private-message-avatar-lg {
+  width: 80px;
+  height: 80px;
 }
 
-.emoji-menu {
-  width: 600px !important;
+li.private-message-sender > .private-message-avatar {
+  position: relative;
+}
+
+
+
+//FORM
+.new_private_message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.private-message-field {
+    width: 80%;
+}
+
+.send-private-message-btn {
+  height: 50px;
+  margin-left: 10px;
 }

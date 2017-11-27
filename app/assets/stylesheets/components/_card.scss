@@ -139,26 +139,29 @@ body{
 
   &.spring-fever{
     background-size: cover;
+
   }
 
   .color-overlay{
     /* Rectangle 11: */
     background: rgba(84,104,110,0.4);
-    width: $card-width;
-    height: $card-height;
+    max-width: $card-width;
+    max-height: $card-height;
 
     z-index: 10;
 
     transition: background .3s cubic-bezier(.33,.66,.66,1);
+
   }
+
   .gradient-overlay{
     /* bg-gradient: */
     background-image: -webkit-linear-gradient(rgba(0,0,0,0.00) 0%, rgba(0,0,0,.6) 21%);
     background-image: -moz-linear-gradient(rgba(0,0,0,0.00) 0%, rgba(0,0,0,.6) 21%);
     background-image: -o-linear-gradient(rgba(0,0,0,0.00) 0%, rgba(0,0,0,.6) 21%);
     background-image: linear-gradient(rgba(0,0,0,0.00) 0%, rgba(0,0,0,.6) 21%);
-    width: $card-width;
-    height: $card-height;
+    max-width: $card-width;
+    max-height: $card-height;
     z-index: 15;
   }
 
@@ -167,6 +170,8 @@ body{
     .card-info{
       opacity: 1;
       bottom: 120px;
+      color: white;
+      background-color: rgba(50,50,50,0.8)
     }
     .color-overlay{
       background: rgba(84,104,110,0.8);
@@ -207,11 +212,13 @@ body{
 }
 .card-info{
   bottom: 100px;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
 
   padding: 0 50px;
-  color: $txt-color;
+  color: white;
   font-family: 'Droid Serif', serif;
-  font-style: 16px;
+  font-style: 20px;
   line-height: 24px;
   z-index: 20;
   opacity: 0;
@@ -242,4 +249,9 @@ margin-top: 50%;
       background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1765/icon-calendar.svg) no-repeat 0 .1em;
     }
   }
+}
+
+.link-to-location:hover {
+  text-decoration: none;
+  color: white
 }

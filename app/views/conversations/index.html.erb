@@ -1,13 +1,26 @@
-<h1>Inbox</h1>
 
-<ul>
+<div class="inbox-container">
+  <div class="inbox-messages">
+<h2>Your Inb<o>o</o>x</h2>
+
+<ul class="inbox-list">
   <% @conversations.each do |conversation| %>
-    <li>
-      <%= link_to conversation.recipient(current_user).email, conversation_private_messages_path(conversation) %>
+      <%= link_to conversation_private_messages_path(conversation), class: "link_see_private" do%>
+
+  <div class="inbox-message-div">
       <% if !conversation.unread_message_count(current_user).zero? %>
         (<%= conversation.unread_message_count(current_user) %>)
       <% end %>
-    </li>
+     <p class="private_message_author text-left"><strong> <%=  "#{conversation.recipient(current_user).first_name} #{conversation.recipient(current_user).last_name}" %></strong></p>
+
+<!--
+     <ink_to "Delete", "#", method: "delete"  %> -->
+      <p class="private_message_body text-left">  <%= conversation.private_messages.last.body %></p>
+  </div>
+
+<% end %>
+
+
   <% end %>
 </ul>
 
@@ -17,3 +30,5 @@
     <li>link_to user.email, conversations_path(sender_id: current_user.id, receiver_id: user.id), method: :post %></li>
    end %>
 </ul> -->
+</div>
+</div>

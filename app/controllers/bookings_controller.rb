@@ -4,17 +4,17 @@ class BookingsController < ApplicationController
     @user = User.find(current_user.id)
   end
 
-
  def create
     @location = Location.find(params[:location_id])
-    @booking = @location.bookings.new(id: current_user.id, begin: params[:begin], end: params[:end])
-    @booking.save
-     respond_to do |format|
-      if @booking.save
-        format.html { redirect_to @test, notice: 'Booking succesfully created.' }
-      else
-        format.html { render action: "new" }
-      end
+    @booking = @location.bookings.new(user_id: current_user.id, begin: params[:begin], end: params[:end])
+    if @booking.save
+      redirect_to booking_success_path(@booking), notice: 'Booking succesfully created.'
+    else
+      render action: "new"
     end
+  end
+
+  def success
+
   end
 end

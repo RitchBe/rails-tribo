@@ -38,7 +38,11 @@
                 <span><%= '%.2f' % calc_rate %> €</span>
               </div>
               <div style="text-align: center !important; margin-top:10px;">
-               <%= link_to "CONFIRM REQUEST", location_bookings_path(@location.id), class: "btn btn--sm btn--primary type--uppercase", style: "color:white", method: "post", params: { user_id: @user.id, begin: params[:in], end: params[:out] } %>
+               <%= form_tag location_bookings_path(@location.id) do %>
+                 <%= hidden_field_tag :begin, params[:in] %>
+                 <%= hidden_field_tag :end, params[:out] %>
+                 <%= submit_tag "CONFIRM REQUEST", class: "btn btn--sm btn--primary type--uppercase", style: "color:white" %>
+               <% end %>
                <% else %>
                No dates selected
                <% end %>
