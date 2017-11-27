@@ -13,8 +13,10 @@
     <!-- Links when logged in -->
      <%= link_to "Locations", locations_path, class: "navbar-tribo-item navbar-tribo-link" %>
 
+    <%= link_to inbox_path, class: "navbar-tribo-item navbar-tribo-link" do %>
+
      <%= link_to "Bookings", user_bookings_path(current_user.id), class: "navbar-tribo-item navbar-tribo-link" %>
-    <%= link_to conversations_path, class: "navbar-tribo-item navbar-tribo-link" do %>
+
     <% Conversation.where("sender_id = ? OR receiver_id = ?", current_user.id, current_user.id).each do |conversation| %>
     <span class="nav-notification"> <% if !conversation.unread_message_count(current_user).zero? %>
       (<%= conversation.unread_message_count(current_user) %>)
@@ -22,7 +24,7 @@
 
     </span>
     <% end %>
-    Messages
+    Inbox
     <% end %>
 
 
