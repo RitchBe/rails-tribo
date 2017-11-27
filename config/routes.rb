@@ -17,8 +17,9 @@ Rails.application.routes.draw do
    resources :bookings, only: [:index]
   end
 
-  resources :bookings, only: [] do
-    get 'success'
+  resources :bookings, only: [:show, :create, :new] do
+    resources :payments, only: [:new, :create]
+    #get 'success'
   end
 
   root to: 'pages#landing'
@@ -37,8 +38,5 @@ Rails.application.routes.draw do
     resources :private_messages, only: [:index, :create]
   end
 end
-
-
-
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

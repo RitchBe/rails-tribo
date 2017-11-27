@@ -39,8 +39,11 @@
               </div>
               <div style="text-align: center !important; margin-top:10px;">
                <%= form_tag location_bookings_path(@location.id) do %>
+                 <%= hidden_field_tag :user_id, current_user.id %>
+                 <%= hidden_field_tag :location_id, @location.id %>
                  <%= hidden_field_tag :begin, params[:in] %>
                  <%= hidden_field_tag :end, params[:out] %>
+                 <%= hidden_field_tag :price, calc_rate %>
                  <%= submit_tag "CONFIRM REQUEST", class: "btn btn--sm btn--primary type--uppercase", style: "color:white" %>
                <% end %>
                <% else %>

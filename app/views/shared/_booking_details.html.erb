@@ -22,13 +22,13 @@
             <span>
               Daily
             </span>
-            <span><%= @location.rate_by_day %> € </span>
+            <span><%= humanized_money_with_symbol(@location.rate_by_day) %></span>
           </div>
           <div class="pricing-breakdown__cell service-fee">
             <span>
               Weekly
             </span>
-            <span><%= @location.rate_by_week %> € </span>
+            <span><%= humanized_money_with_symbol(@location.rate_by_week) %></span>
           </div>
 
         <% if params[:in].present? %>
@@ -39,7 +39,7 @@
             <% end %>
             <% if calc_days > 4 ? calc_rate_daily = @location.rate_by_week/5.to_f : calc_rate_daily = @location.rate_by_day %>
             <% end %>
-            <span><%= calc_days %> days x  <%= '%.2f' % calc_rate_daily %>€ = <%= '%.2f' % calc_rate %> €</span>
+            <span><%= calc_days %> days x  <%= humanized_money_with_symbol(calc_rate_daily) %> = <%= humanized_money_with_symbol(calc_rate) %></span>
           </div>
          <div style="text-align: center !important; margin-top:15px;">
         <%= link_to "BOOK IT", new_location_booking_path(location_id: @location.id, in: params[:in], out: params[:out]), :method => "get", class: "btn btn--sm btn--primary type--uppercase", style: "color:white;" %>
