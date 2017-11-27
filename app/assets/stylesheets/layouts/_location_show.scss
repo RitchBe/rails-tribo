@@ -87,6 +87,25 @@ div.features, div.booking-card {
   color: $light-gray;
 }
 
+div.features {
+    height: 300px;
+    display: flex;
+    align-items: top;
+    width: 100%;
+    justify-content: left;
+    flex-wrap: wrap;
+}
+
+div.features > i > p {
+  padding-top: 25px;
+}
+
+div.features > i {
+  text-align: center;
+  width: 20%;
+}
+
+
 .info {
 
   width: 60vw;
