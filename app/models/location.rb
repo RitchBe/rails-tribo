@@ -19,5 +19,7 @@ class Location < ApplicationRecord
 
   has_attachments :photos, maximum: 3
 
+  acts_as_favoritable
+
 end
 

@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   get 'private_messages/index'
 
-  get 'conversations/index'
+  get '/inbox', to: 'conversations#index'
+
+  get "users/favorites"
 
 
   ActiveAdmin.routes(self)

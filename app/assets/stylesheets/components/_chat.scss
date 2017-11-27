@@ -10,10 +10,9 @@
 
 .messages {
   background-color: #fff;
-  box-shadow: 0 0 0 5px #f4f2ed inset;
   box-sizing: border-box;
   height: 87%;
-  overflow: scroll;
+  overflow-y: auto;
   padding: 20px;
 }
 .messages-table {
@@ -36,7 +35,6 @@
   width: 100%;
 }
 .message-input {
-  background-color: rgba(0,0,0,0.03);
   box-sizing: border-box;
   height: 13%;
   padding: 0 5px 5px;
@@ -74,4 +72,8 @@ h2.chat-room-title {
 
 .self-messages > .message > .message-user {
   color: pink
+}
+
+#SendMessage {
+  height: 35px;
 }
