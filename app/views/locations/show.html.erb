@@ -55,6 +55,8 @@
         <p style="text-align: left;">Monday to Saturday: <strong> 8am </strong>to <strong>5pm </strong></p>
         <hr>
         <h3>Features</h3>
+        <div class="wrapper">
+         <div class="features">
           <% if @location.features.include? "High-speed Wi-Fi" %> <i class="fi flaticon-wifi"></i> <% end %>
           <% if @location.features.include? "Coffee&Tea" %> <i class="fi flaticon-coffee-cup"></i> <% end %>
           <% if @location.features.include? "FridayBeers" %> <i class="fi flaticon-beer"></i> <% end %>
@@ -65,10 +67,13 @@
           <% if @location.features.include? "Bicycle Lodge" %> <i class="fi flaticon-transport"></i> <% end %>
           <% if @location.features.include? "Whiteboards" %> <i class="fi flaticon-board"></i> <% end %>
           <% if @location.features.include? "Office Supplies" %> <i class="fi flaticon-paper-clip"></i> <% end %>
-          <% if @location.features.include? "Events" %> <i class="fi fflaticon-calendar"></i> <% end %>
+          <% if @location.features.include? "Events" %> <i class="fi flaticon-calendar"></i> <% end %>
+        </div>
+      </div>
           <div id="map" style="width: 100%; height: 250px;"></div>
         </div>
       </div>
+    </div>
       <div class="col-sm-5 col-md-3">
         <%= render "shared/booking_details" %>
       </div>
