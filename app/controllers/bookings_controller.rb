@@ -14,6 +14,11 @@ class BookingsController < ApplicationController
     end
   end
 
+  def index
+    @bookings = User.find(current_user.id).bookings
+    @user = User.find(current_user.id)
+  end
+
   def success
 
   end

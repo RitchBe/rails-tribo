@@ -14,7 +14,8 @@ class LocationsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@location) do |location, marker|
       marker.lat location.latitude
       marker.lng location.longitude
-      # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
+
+      marker.infowindow render_to_string(partial: "/shared/card", locals: { location: location })
       authorize @location
     end
   end
@@ -86,8 +87,6 @@ class LocationsController < ApplicationController
   def set_location
     @location = Location.find(params[:id])
   end
-
-
 
 end
 

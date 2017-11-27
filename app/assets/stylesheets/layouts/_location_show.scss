@@ -7,9 +7,6 @@
   align-items: center;
 }
 
-
-
-
 div.location-info-row-1, .location-info {
   display: flex;
   justify-content: space-around;
@@ -191,4 +188,9 @@ div.booking-card {
   height: 50vh;
   background-size: cover;
   background-position: bottom;
+}
+
+.wrapper {
+  display: flex;
+
 }
