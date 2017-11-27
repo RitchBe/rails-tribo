@@ -3,6 +3,12 @@
   <div class="inbox-messages">
 <h2>Your Inb<o>o</o>x</h2>
 
+
+
+
+<% if @conversations.any? %>
+
+
 <ul class="inbox-list">
   <% @conversations.each do |conversation| %>
       <%= link_to conversation_private_messages_path(conversation), class: "link_see_private" do%>
@@ -21,6 +27,9 @@
 <% end %>
 
 
+  <% end %>
+  <% else %>
+  <h4> - No messages</h4>
   <% end %>
 </ul>
 

@@ -7,7 +7,7 @@
         <div class="card-sign">
           <div class="face front">
             <div class="panel panel-default">
-                  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name),:type => :json, remote: true) do |f| %>
+                  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name),:type => :json) do |f| %>
                     <%= f.error_notification %>
                     <h2 class="text-center">LOG IN</h2>
                     <hr>
