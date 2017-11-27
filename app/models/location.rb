@@ -10,6 +10,10 @@ class Location < ApplicationRecord
   validates :rules, length: { maximum: 400 }
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
+  monetize :rate_by_hour_cents
+  monetize :rate_by_day_cents
+  monetize :rate_by_week_cents
+  monetize :rate_by_month_cents
 
   FEATURES = ["Wifi", "Printer", "Headlights"]
 

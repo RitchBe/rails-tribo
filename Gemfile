@@ -28,6 +28,8 @@ gem "pundit"
 gem "coffee-rails"
 gem "gmaps4rails"
 gem 'flatpickr_rails'
+gem 'money-rails'
+gem 'stripe'
 
 gem 'cloudinary', '1.1.7'
 gem 'attachinary', github: 'assembler/attachinary'

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171127150919) do
+ActiveRecord::Schema.define(version: 20171127213406) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,7 +55,8 @@ ActiveRecord::Schema.define(version: 20171127150919) do
     t.text "worker_review"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.float "price"
+    t.integer "price_cents", default: 0, null: false
+    t.jsonb "payment"
     t.index ["location_id"], name: "index_bookings_on_location_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -75,9 +76,6 @@ ActiveRecord::Schema.define(version: 20171127150919) do
     t.string "phone"
     t.text "description"
     t.integer "capacity"
-    t.integer "rate_by_hour"
-    t.integer "rate_by_day"
-    t.integer "rate_by_week"
     t.string "features", default: [], array: true
     t.string "tags"
     t.text "rules"
@@ -87,6 +85,10 @@ ActiveRecord::Schema.define(version: 20171127150919) do
     t.float "longitude"
     t.integer "open_hour"
     t.integer "close_hour"
+    t.integer "rate_by_hour_cents", default: 0, null: false
+    t.integer "rate_by_day_cents", default: 0, null: false
+    t.integer "rate_by_week_cents", default: 0, null: false
+    t.integer "rate_by_month_cents", default: 0, null: false
     t.index ["user_id"], name: "index_locations_on_user_id"
   end
 
