@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get 'conversations/index'
 
+  get "users/favorites"
+
 
   ActiveAdmin.routes(self)
 

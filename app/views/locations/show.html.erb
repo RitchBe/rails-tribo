@@ -51,6 +51,8 @@
         <%= @location.address %>
         <hr>
         <h3>About the place</h3>
+        <p id="Favorite"> add favorite </p>
+     <p><%= Favorite.where("favoritor_id = ?", current_user.id)    %></p>
         <p style="text-align: left;"><%= @location.description %></p>
         <hr>
         <h3>Opening Hours</h3>
@@ -80,6 +82,16 @@
         <%= render "shared/booking_details" %>
       </div>
     </div>
+
+
+
+
+<script>
+  const favorite = document.getElementById("Favorite");
+  favorite.addEventListener("click", function() {
+    <% current_user.favorite @location %>
+  })
+</script>
 
 <!--
 
