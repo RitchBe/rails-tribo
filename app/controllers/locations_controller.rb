@@ -33,7 +33,7 @@ class LocationsController < ApplicationController
     @location.features = params[:features]
     authorize @location
     if @location.save
-      redirect_to locations_path(@location.id)
+      redirect_to location_path(@location.id)
     else
       # GO BACK TO THE FORM
       puts "not working"
