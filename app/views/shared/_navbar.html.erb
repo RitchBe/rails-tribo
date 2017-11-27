@@ -11,8 +11,9 @@
     <% if user_signed_in? %>
 
     <!-- Links when logged in -->
+     <%= link_to "Locations", locations_path, class: "navbar-tribo-item navbar-tribo-link" %>
 
-
+     <%= link_to "Bookings", user_bookings_path(current_user.id), class: "navbar-tribo-item navbar-tribo-link" %>
     <%= link_to conversations_path, class: "navbar-tribo-item navbar-tribo-link" do %>
     <% Conversation.where("sender_id = ? OR receiver_id = ?", current_user.id, current_user.id).each do |conversation| %>
     <span class="nav-notification"> <% if !conversation.unread_message_count(current_user).zero? %>
@@ -25,7 +26,7 @@
     <% end %>
 
 
-    <%= link_to "Locations", locations_path, class: "navbar-tribo-item navbar-tribo-link" %>
+
 
 
     <!-- Avatar with dropdown menu -->
