@@ -149,6 +149,7 @@ body{
 div.blog-card-footer {
   background-color: rgba(30,30,30,0.8);
   padding-bottom: 50px;
+  transition: 0.3s
 }
 .blog-card:hover  div.blog-card-footer, .blog-card:active div.blog-card-footer {
     background-color: $yellow;
