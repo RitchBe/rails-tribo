@@ -30,6 +30,7 @@
       <% end %>
     </div>
 
+
     <!-- Left and right controls -->
     <a class="left carousel-control" href="#myCarousel" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left"></span>
@@ -42,6 +43,7 @@
   </div>
 </div>
 </div>
+
 <!-- END CAROUSEL - START <IN CONTAINER -->
 
 
@@ -60,18 +62,20 @@
         <h3>Features</h3>
         <div class="wrapper">
          <div class="features">
-          <% if @location.features.include? "High-speed Wi-Fi" %> <i class="fi flaticon-wifi"></i> <% end %>
-          <% if @location.features.include? "Coffee&Tea" %> <i class="fi flaticon-coffee-cup"></i> <% end %>
-          <% if @location.features.include? "FridayBeers" %> <i class="fi flaticon-beer"></i> <% end %>
-          <% if @location.features.include? "Printers" %> <i class="fi flaticon-printer"></i> <% end %>
-          <% if @location.features.include? "Outlets" %> <i class="fi flaticon-plug"></i> <% end %>
-          <% if @location.features.include? "Host" %> <i class="fi flaticon-man"></i> <% end %>
-          <% if @location.features.include? "Meeting Rooms" %> <i class="fi flaticon-meeting"></i> <% end %>
-          <% if @location.features.include? "Bicycle Lodge" %> <i class="fi flaticon-transport"></i> <% end %>
-          <% if @location.features.include? "Whiteboards" %> <i class="fi flaticon-board"></i> <% end %>
-          <% if @location.features.include? "Office Supplies" %> <i class="fi flaticon-paper-clip"></i> <% end %>
-          <% if @location.features.include? "Events" %> <i class="fi flaticon-calendar"></i> <% end %>
+          <% if @location.features.include? "High-speed Wi-Fi" %> <i class="fi flaticon-wifi"><p>Wifi</p> </i><% end %>
+          <% if @location.features.include? "Coffee&Tea" %> <i class="fi flaticon-coffee-cup"> <p>Coffee and Tea</p></i> <% end %>
+          <% if @location.features.include? "FridayBeers" %> <i class="fi flaticon-beer"><p>FridayBeers</p></i> <% end %>
+          <% if @location.features.include? "Printers" %> <i class="fi flaticon-printer"> <p>Printer</p></i><% end %>
+          <% if @location.features.include? "Outlets" %> <i class="fi flaticon-plug"><p>Outlets</p></i> <% end %>
+          <% if @location.features.include? "Host" %> <i class="fi flaticon-man"><p>Host</p></i> <% end %>
+          <% if @location.features.include? "Meeting Rooms" %> <i class="fi flaticon-meeting"><p>Meeting Rooms</p></i> <% end %>
+          <% if @location.features.include? "Bicycle Lodge" %> <i class="fi flaticon-transport"><p>Bicycle lodge</p></i> <% end %>
+          <% if @location.features.include? "Whiteboards" %> <i class="fi flaticon-board"><p>WhiteBoards</p></i> <% end %>
+          <% if @location.features.include? "Office Supplies" %> <i class="fi flaticon-paper-clip"><p>Office Supplies</p></i> <% end %>
+          <% if @location.features.include? "Events" %> <i class="fi flaticon-calendar"><p>Events</p></i><% end %>
+
         </div>
+
       </div>
           <div id="map" style="width: 100%; height: 250px;"></div>
         </div>
@@ -81,54 +85,6 @@
       <div class="col-sm-5 col-md-3">
         <%= render "shared/booking_details" %>
       </div>
-    </div>
-
-<!--
-
-<div class="location-wrapper">
-  <div class="location-container">
-    <div class="location-info-row-1">
-      <div class="location-description">
-        <h3>About the place</h3>
-        <p><%= @location.description %></p>
-      </div>
-
-      <div class="location-price-hours">
-        <h3>Opening Hours</h3>
-        <p>Monday to Saturday: <strong> 8am to 5pm </strong></p>
-        <h3>Prices</h3>
-        <p>Day: <strong><%= @location.rate_by_day %>€</strong> | Week: <strong><%= @location.rate_by_week %>€</strong></p>
-      </div>
-    </div>
-
-    <div class="location-info-row-2">
-      <div class="features">
-        <h3>Features</h3>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="payment-message">
-  <span class="payment-message__text">You’ll pay only after the landlord accepts your request.</span>
-</div>
-<div class="location-container-2">
-  <div class="location-map">
-    <div id="map" style="width: 100%; height: 100%"></div>
-  </div>
-
-  <div class="location-info">
-    <div class="location-contact">
-      <h3>Message</h3>
-      <h3 style="text-align: center; margin-top: 20px;"><%= link_to "Send a message", conversations_path(sender_id: current_user.id, receiver_id: @location.user_id), method: :post, class: "new-message-link" %></h3>
-
-      <h3 style="text-align: center; margin-top: 20px;"> <%= link_to "Chat Room", location_messages_path(location_id: @location.id) , class: "chatroom-link" %> </h3>
-
-    </div>
-    <div class="location-other-info">
-      <h3>Rules</h3>
-      <p><%= @location.rules %></p></br>
-      <h3>Address</h3>
-      <p><%= @location.address %></p>
     </div>
   </div>
 
