@@ -3,16 +3,18 @@
   <h2 class="readme-header">
     My bookings
     </h2>
+    <hr style="margin: 0px;">
     <% @bookings.each_with_index do | p, i | %>
+    <a href="<%= location_path(p.location_id) %>">
     <div class="booking-index">
-      <img src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan" alt="" class="avatar-large">
+      <img src="<%= cl_image_path(Location.find(p.location_id).photos[0].path) %>" alt="" class="avatar-bookings">
       <div class="booking-index-name">
         <h3><%= Location.find(p.location_id).name %></h3>
         <p><%= p.begin %> to <%= p.end %></p>
       </div>
-      <div class="booking-index-body">
-        <p><strong>Review</strong></p>
-        <p>
+      <div class="booking-index-body" >
+        <p style="text-align: left"><strong>Review</strong></p>
+        <p style="text-align: left">
           <%= p.worker_review %>
         </p>
       </div>
@@ -21,6 +23,8 @@
         <p class="price">€345</p>
       </div>
     </div>
+    </a>
+    <hr style="margin: 0px;">
     <% end %>
   </div>
 </div>
