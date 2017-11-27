@@ -1,0 +1,3 @@
+<% @favorites.each do |favorite| %>
+<h3> <%= Location.find(favorite.favoritable_id).name %></h3>
+<% end %>

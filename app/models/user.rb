@@ -8,7 +8,8 @@ class User < ApplicationRecord
   has_many :locations
   has_many :bookings
   has_many :messages
-
+acts_as_favoritable
+  acts_as_favoritor
   private
 
   # def send_welcome_email
