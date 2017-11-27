@@ -87,7 +87,5 @@ class LocationsController < ApplicationController
     @location = Location.find(params[:id])
   end
 
-
-
 end
 
