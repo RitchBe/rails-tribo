@@ -1,28 +1,22 @@
-<div class="booking-details">
+<div class="booking-details" style="margin-top:30px;margin-bottom:30px;" >
   <div id="ember1582" class="ember-view __pricing-box__b23db">
     <div class="pricing-box pricing-box--not-expanded ">
-      <div class="pricing-box__image" alt="offer-pic" style="background-image: url(<%= cl_image_path @location.photos[0].path %>)"></div>
       <h2 class="pricing-box__request-details">Request details</h2>
 
       <div class="pricing-box__container">
-        <h3 class="pricing-box__offer-title"><%= @location.name %> </h3>
+        <h3 class="pricing-box__offer-title">Details</h3>
         <div class="pricing-box__cell">
-          <span>Space</span>
-          <span>1 person</span>
+          <span>Spaces available</span>
+          <span><%= @location.capacity %></span>
         </div>
-        <div class="pricing-box__cell">
-          <span>
-            Contract Type <a target="_blank" href="https://www.uniplaces.com/contract-types#fortnight">Fortnight</a>
-          </span>
-          <span>Ref. 568</span>
-        </div>
+        <hr>
         <div class="pricing-box__dates">
-
           <% if params[:in].present? %>
           <% data_default = params[:in] + " to "+ params[:out] %>
           <% else data_default = "" end %>
-          <input type="text" id="flatpickr-show" placeholder="Pick a date" data-default-date="<%= data_default %>" style="z-index:0;">
+          <input type="text" id="flatpickr-show" placeholder="Pick a date" data-default-date="<%= data_default %>" style="z-index:0; width:100%; text-align:center;">
         </div>
+        <hr>
         <div id="ember1648" class="ember-view __pricing-box__pricing-breakdown__d763b"><div class="pricing-breakdown ">
           <div class="pricing-breakdown__cell first-rent-payment">
             <span>
@@ -47,8 +41,8 @@
             <% end %>
             <span><%= calc_days %> days x  <%= '%.2f' % calc_rate_daily %>€ = <%= '%.2f' % calc_rate %> €</span>
           </div>
-         <div style="text-align: center !important">
-        <%= link_to "BOOK IT", new_location_booking_path(location_id: @location.id, in: params[:in], out: params[:out]), :method => "get", class: "btn btn--sm btn--primary type--uppercase" %>
+         <div style="text-align: center !important; margin-top:15px;">
+        <%= link_to "BOOK IT", new_location_booking_path(location_id: @location.id, in: params[:in], out: params[:out]), :method => "get", class: "btn btn--sm btn--primary type--uppercase", style: "color:white;" %>
         <% else %>
           <!-- PUT SOMETHING WHEN THERE IS NO DATES SELECTED -->
         <% end %>

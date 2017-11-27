@@ -154,15 +154,12 @@ div.features, div.booking-card {
   height: 50vh;
 }
 
-
-
-
 /* CAROUSEL */
 
 
 #myCarousel, .carousel-inner {
-
-  width: 60vw;
+  width: 100vw;
+  height: 300px;
 }
 
 
@@ -182,11 +179,6 @@ ol li:not(:last-child) {
 .location-carousel {
   display: flex;
   justify-content: space-around;
-  height: 50vh;
-margin-top: 100px;
-margin-left: 50px;
-margin-right: 50px;
-
 }
 
 div.booking-card {

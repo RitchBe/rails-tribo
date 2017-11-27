@@ -15,8 +15,7 @@ class LocationsController < ApplicationController
       marker.lat location.latitude
       marker.lng location.longitude
       # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
-   authorize @location
-
+      authorize @location
     end
   end
 
@@ -44,6 +43,10 @@ class LocationsController < ApplicationController
 
   def show
     #@user = User.find(current_user.id)
+    @hash = Gmaps4rails.build_markers(@location) do |location, marker|
+      marker.lat location.latitude
+      marker.lng location.longitude
+    end
     authorize @location
   end
 
