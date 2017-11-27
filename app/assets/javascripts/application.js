@@ -38,7 +38,10 @@ sr.reveal('.cta', { duration: 1000 });
 sr.reveal('.lead', { duration: 1000 });
 sr.reveal('.feature', { duration: 1000 }, 200);
 sr.reveal('.boxed', { duration: 1000 });
-sr.reveal('.blog-card', { duration: 1000 }, 500);
+sr.reveal('.blog-card-landing', { duration: 1000 }, 300);
+sr.reveal('.private-message-sender', { duration: 1000 }, 200);
+sr.reveal('.private-message-receiver', { duration: 1000 }, 200);
+
 
 
 
