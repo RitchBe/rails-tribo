@@ -16,8 +16,23 @@ class LocationsController < ApplicationController
   	marker.lat location.latitude
   	marker.lng location.longitude
 
-  	marker.infowindow render_to_string(partial: "/shared/card", locals: { location: location })
-  	authorize @location
+
+      marker.infowindow render_to_string(partial: "/shared/card", locals: { location: location })
+      authorize @location
+    end
+    @user = User.find(current_user.id)
+    place_coordinates
+    coordinates
+
+    respond_to do |format|
+      if request.xhr?
+        format.js
+      else
+        format.html
+      end
+    end
+    @locations = Location.all
+
   end
 end
 
@@ -43,6 +58,7 @@ def create
   end
 end
 
+
 def show
     #@user = User.find(current_user.id)
     @hash = Gmaps4rails.build_markers(@location) do |location, marker|
@@ -51,6 +67,7 @@ def show
     end
     authorize @location
 end
+
 
 def edit
 	@user = User.find(current_user.id)
@@ -76,7 +93,38 @@ def destroy
 	redirect_to user_path(current_user.id)
 end
 
-private
+
+  def place_coordinates
+    @location_coordinates = @location.map do |location|
+      lng = location.longitude unless location.longitude.nil?
+      lat =  location.latitude unless location.latitude.nil?
+      feature = { "type": "Feature",
+                  "properties": {
+                    "description":
+                    "<div class=\"popup-bottom\">
+                      <h4 class=\"bold\">#{location.name}</h4>
+                    </div>"
+                  },
+                  "geometry": {
+                      "type": "Point",
+                      "coordinates": [lng, lat]
+                  }
+      }
+      feature
+    end
+  end
+
+
+  def coordinates
+    @coordinates = @location.map do |location|
+      unless location.longitude.nil? || location.latitude.nil?
+        [location.longitude, location.latitude]
+      end
+    end
+  end
+
+  private
+
 
 def location_params
 	params.require(:location).permit(:name, :email, :search, :address, :phone,
