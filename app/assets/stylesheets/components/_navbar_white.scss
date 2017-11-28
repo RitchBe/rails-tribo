@@ -6,11 +6,37 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color:white;
+  color:$gray;
   z-index:1000;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(255, 255, 255, 0.8);
 }
+.logo-background-animated {
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background: linear-gradient(270deg, #4cb5fd, #0d7cc8, #426e8c, #83c0ea);
+  background-size: 800% 800%;
 
+  -webkit-animation: AnimationName 40s ease infinite;
+  -moz-animation: AnimationName 40s ease infinite;
+  animation: AnimationName 40s ease infinite;
+
+  @-webkit-keyframes AnimationName {
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+  }
+  @-moz-keyframes AnimationName {
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+  }
+  @keyframes AnimationName {
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+  }
+}
 /* Logo */
 .navbar-tribo-brand img {
   height: 50px;
@@ -39,12 +65,20 @@
 
 /* Navbar link */
 .navbar-tribo-link {
-  color: white;
+  color: $gray;
   font-size: 14px;
+  font-family: Lato, TwoSpace, sans-serif;
+  font-size: 1em;
+  line-height: 1.85714286em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 48px;
+  margin-top: 22px;
 }
 .navbar-tribo-link:hover {
-  color: #5890DC;
   text-decoration: none;
+  color: #555555;
+  border-bottom: 3px solid $blue;
 }
 
 /* Dropdown menu */
