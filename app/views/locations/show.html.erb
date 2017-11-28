@@ -54,8 +54,6 @@
         <%= @location.address %>
         <hr>
         <h3>About the place</h3>
-        <p id="Favorite"> add favorite </p>
-     <p><%= Favorite.where("favoritor_id = ?", current_user.id)    %></p>
         <p style="text-align: left;"><%= @location.description %></p>
         <hr>
         <h3>Opening Hours</h3>
@@ -82,10 +80,32 @@
 
 
 
+
+
+
       </div>
           <div id="map" style="width: 100%; height: 250px;"></div>
         </div>
+
+
+
+              <!-- ADD AND REMOVE FROM FAVORITES -->
+<div style="background-color: pink; padding: 50px 100px">
+<% if  current_user.favorites.where("favoritable_id = ?", @location).count == 0 %>
+<%= link_to "Add as favorite",  "/locations/#{@location.id}/favorite", :method=> :post %>
+<% else %>
+<%= link_to "Remove from favorite",  "/locations/#{@location.id}/unfavorite", :method=> :delete %>
+<% end %>
+
+<!-- EXEMPLE TO GET FAVORITES FROM THE CURRENT USER-->
+<% Favorite.where("favoritor_id = ?", current_user.id).each do |favorite|    %>
+<p><%= Location.find(favorite.favoritable_id).name %></p>
+<% end %>
+ </div>  <!-- END OF FAVORITE, OUP OUP -->
       </div>
+
+
+
 
     </div>
       <div class="col-sm-5 col-md-3 sticky" id="Booking">
@@ -102,13 +122,12 @@
 
 
 
-
-<script>
+<!-- <script>
   const favorite = document.getElementById("Favorite");
   favorite.addEventListener("click", function() {
-    <% current_user.favorite @location %>
+    current_user.favorite @location %>
   })
-</script>
+</script -->>
 
 <script>
 window.onscroll = function() {
