@@ -43,7 +43,15 @@
 /* Logo */
 .navbar-tribo-brand img {
   height: 50px;
+  transition: 0.1s;
+  border-right: 0px solid white;
+  padding-right: 10px;
+  &:hover {
+    border-right: 2px solid white;
+    transition: 0.2s
+  }
 }
+
 
 /* User Avatar */
 .navbar-tribo .avatar {
