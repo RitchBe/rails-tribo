@@ -84,8 +84,10 @@
       </div>
 
     </div>
-      <div class="col-sm-5 col-md-3">
+      <div class="col-sm-5 col-md-3 sticky" id="Booking">
+
         <%= render "shared/booking_details" %>
+
       </div>
     </div>
     </div>
@@ -100,6 +102,20 @@
     <% current_user.favorite @location %>
   })
 </script>
+
+<script>
+window.onscroll = function() {
+    var nav = document.getElementById('Booking');
+    if ( window.pageYOffset > 450 ) {
+        nav.classList.add("fix-search");
+        nav.classList.remove("sticky");
+
+    } else {
+        nav.classList.remove("fix-search");
+        nav.classList.add("sticky");
+
+    }
+};</script>
 
 <!--
 
