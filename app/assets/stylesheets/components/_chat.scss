@@ -55,14 +55,22 @@
 }
 
 .emoji-picker-container {
-  width: 20%;
+  width: 100%;
+
+}
+
+.emoji-picker-icon {
+  margin-top: 10px;
 }
 .emoji-menu {
   transform: translateX(40vw) translateY(60vh) translateZ(0px) !important;
   width: 20% !important;
 }
 
-
+.emoji-wysiwyg-editor {
+  text-align: left;
+  height: 60px;
+}
 
 h2.chat-room-title {
   margin-top: 100px;

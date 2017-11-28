@@ -5,7 +5,6 @@ class LocationsController < ApplicationController
 
 	def index
     # @location = Location.all
-
     @location = Location.geocoded
     if params[:search].present?
       #param_geocoding = params[:in].geo
@@ -61,10 +60,12 @@ end
 
 def show
     #@user = User.find(current_user.id)
+byebug
     @hash = Gmaps4rails.build_markers(@location) do |location, marker|
     	marker.lat location.latitude
     	marker.lng location.longitude
     end
+
     authorize @location
 end
 
