@@ -71,8 +71,22 @@ h2.chat-room-title {
 
 
 .self-messages > .message > .message-user {
-  color: pink
+  color: $brown;
+  text-align: right;
 }
+
+
+.other-messages, .self-messages {
+  box-shadow: 0px 0px 20px rgba(150,150,150,0.1);
+  padding: 10px 25px;
+  margin-bottom: 25px;
+}
+
+.self-messages {
+  display: flex;
+justify-content: right;
+}
+
 
 #SendMessage {
   height: 35px;

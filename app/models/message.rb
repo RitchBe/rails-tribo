@@ -10,7 +10,8 @@ class Message < ApplicationRecord
     ActionCable.server.broadcast("location_#{location.id}", {
       message_partial: ApplicationController.renderer.render(
         partial: "messages/message",
-        locals: { message: self, user_is_messages_author: false }
+        locals: { message: self, user_is_messages_author: false },
+
       ),
       current_user_id: user.id
     })

@@ -46,12 +46,19 @@
       <% if message.read == false %>
       <div class="new-message">
         <h5 style="color: black; margin-bottom: 0px; padding-left: 25px;"> <%= User.find(message.user_id).first_name %> <%= User.find(message.user_id).last_name %></h5><hr style="margin: 0px 15px;">
+      <p style="color: black; text-align: left; padding-left: 40px;">New:<%= message.body %></p>
+    </div>
+<% else %>
+      <div class="new-message">
+        <h5 style="color: black; margin-bottom: 0px; padding-left: 25px;"> <%= User.find(message.user_id).first_name %> <%= User.find(message.user_id).last_name %></h5><hr style="margin: 0px 15px;">
       <p style="color: black; text-align: left; padding-left: 40px;"><%= message.body %></p>
     </div>
+      <% end %>
 
       <% end %>
+
       <% end %>
-      <% end %>
+      <%= link_to "See all", inbox_path  %>
     </ul>
   </div>
 </div>

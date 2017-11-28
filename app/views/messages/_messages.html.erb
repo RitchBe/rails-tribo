@@ -7,12 +7,12 @@
   <% if current_user.id == mes.user_id %>
       <div class="self-messages ">
       <%= render mes %>
-      <hr style="padding: 0 50px;">
+      <!-- <hr style="padding: 0 50px;"> -->
     </div>
     <% else %>
       <div class="other-messages">
       <%= render mes %>
-    </hr style="padding: 0 50px;">
+    <!-- </hr style="padding: 0 50px;"> -->
     </div>
 <% end %>
 
