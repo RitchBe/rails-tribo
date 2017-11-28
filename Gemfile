@@ -28,6 +28,8 @@ gem "pundit"
 gem "coffee-rails"
 gem "gmaps4rails"
 gem 'flatpickr_rails'
+gem 'money-rails'
+gem 'stripe'
 gem 'acts_as_favoritor'
 
 gem 'cloudinary', '1.1.7'

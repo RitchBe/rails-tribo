@@ -510,7 +510,7 @@ puts "create 15 fake booking"
     location_id: Location.all.sample.id,
     begin: Faker::Date.backward(5),
     end: Faker::Date.forward(5),
-    status: "To be confirmed",
+    status: "Pending",
     owner_feedback: (0..5).to_a.sample,
     worker_feedback: (0..5).to_a.sample,
     worker_review: Faker::ChuckNorris.fact,
