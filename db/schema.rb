@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20171127173152) do
+ActiveRecord::Schema.define(version: 20171127213406) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -94,6 +93,9 @@ ActiveRecord::Schema.define(version: 20171127173152) do
     t.string "phone"
     t.text "description"
     t.integer "capacity"
+    t.integer "rate_by_hour"
+    t.integer "rate_by_day"
+    t.integer "rate_by_week"
     t.string "features", default: [], array: true
     t.string "tags"
     t.text "rules"
