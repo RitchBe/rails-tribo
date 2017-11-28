@@ -126,7 +126,10 @@ location = Location.create({
   tags: "#Roomy, #Developers #Social",
   rules: RULES.sample(3),
   open_hour: 9,
-  close_hour: 21
+  close_hour: 21,
+  latitude:  40.426306,
+  longitude: -3.689672
+
   })
 location.photo_urls = [
   'http://retaildesignblog.net/wp-content/uploads/2016/12/WeWork-Yanping-Lu-Coworking-Office-by-Linehouse-Shanghai-China05-1.jpg',
@@ -151,7 +154,9 @@ location = Location.create({
   tags: TAGS.sample(3),
   rules: RULES.sample(3),
   open_hour: 9,
-  close_hour: 21
+  close_hour: 21,
+  latitude:  38.703522,
+  longitude: -9.178843
   })
 location.photo_urls = [
   'http://craigbaute.com/wp-content/uploads/2014/06/20141010__20141013_C1_FE13SMCOWORKp1.jpg',
@@ -205,7 +210,9 @@ location = Location.create({
   tags:  TAGS.sample(3),
   rules: RULES.sample(2),
   open_hour: 9,
-  close_hour: 20
+  close_hour: 20,
+  latitude:  38.747793,
+  longitude: -9.140863,
   })
 location.photo_urls = [
   'https://i.pinimg.com/564x/a9/c5/48/a9c548325bc4ff4c39071877d10a52b7.jpg',
@@ -367,7 +374,9 @@ location = Location.create({
   tags:  TAGS.sample(2),
   rules: RULES.sample(2),
   open_hour: 9,
-  close_hour: 17
+  close_hour: 17,
+  latitude:  40.422413,
+  longitude: -3.708938
   })
 location.photo_urls = [
   'https://static.wixstatic.com/media/441a2a_32584af7a82d498789fd8ecd072d68da~mv2_d_3976_2651_s_4_2.jpg/v1/fill/w_636,h_424,al_c,q_90,usm_0.66_1.00_0.01/441a2a_32584af7a82d498789fd8ecd072d68da~mv2_d_3976_2651_s_4_2.webp',
@@ -392,7 +401,9 @@ location = Location.create({
   tags: TAGS.sample(2),
   rules: RULES.sample(2),
   open_hour: 9,
-  close_hour: 17
+  close_hour: 17,
+    latitude:  38.711020,
+  longitude: -9.147560
   })
 location.photo_urls = [
   'http://4.bp.blogspot.com/-r0rcHrhdWa8/UrawkIduvHI/AAAAAAAAARI/O6HZp5opbnk/s1600/IMG_8265.JPG',
@@ -417,7 +428,9 @@ location = Location.create({
   tags:  TAGS.sample(2),
   rules: RULES.sample(2),
   open_hour: 9,
-  close_hour: 20
+  close_hour: 20,
+  latitude:  40.419644,
+  longitude: -3.698868
   })
 location.photo_urls = [
   'https://cdn.wework.com/locations/image/11849c9a-4ebb-11e6-a56f-0a488af3e541/charging-bull-office-space-20.jpg?auto=compress%2Cformat&w=1200&h=600&fit=crop',
@@ -441,7 +454,9 @@ location = Location.create({
   tags:  TAGS.sample(2),
   rules: RULES.sample(2),
   open_hour: 9,
-  close_hour: 19
+  close_hour: 19,
+    latitude:  40.462889,
+  longitude: -3.676546
   })
 location.photo_urls = [
   'https://blog.liquidspace.com/wp-content/uploads/2017/05/7ef60e93-ba4a-4db0-82d7-f4b53714b236.jpeg',
@@ -468,7 +483,9 @@ location = Location.create({
   tags:  "#Industrial #Rommy",
   rules: RULES.sample(2),
   open_hour: 9,
-  close_hour: 21
+  close_hour: 21,
+      latitude:  40.423772,
+  longitude: -3.696008
   })
 location.photo_urls = [
   'http://esdipberlin.com/wp-content/uploads/11080623_684963288313799_3898966742149368400_o.jpg',
@@ -493,7 +510,9 @@ location = Location.create({
   tags:  "#Industrial #Rommy",
   rules: RULES.sample(2),
   open_hour: 9,
-  close_hour: 21
+  close_hour: 21,
+        latitude:  40.467590,
+  longitude: -3.681164
   })
 location.photo_urls = [
   'https://breather.imgix.net/locations/p/853-broadway-1211-2-1489605745352.jpg',

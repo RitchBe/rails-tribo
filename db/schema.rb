@@ -93,6 +93,9 @@ ActiveRecord::Schema.define(version: 20171127213406) do
     t.string "phone"
     t.text "description"
     t.integer "capacity"
+    t.integer "rate_by_hour"
+    t.integer "rate_by_day"
+    t.integer "rate_by_week"
     t.string "features", default: [], array: true
     t.string "tags"
     t.text "rules"
