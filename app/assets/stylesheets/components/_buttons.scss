@@ -1,0 +1,76 @@
+[class^="btn-"] {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  width: 900%;
+  height: 60px;
+  max-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+.btn-1 {
+  color: white;
+  font-weight: bolder;
+  border: 2px solid white;
+
+}
+.btn-1:before {
+  content: '';
+  position: absolute;
+  top: 0;
+    box-sizing: border-box;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+
+  right:-50px;
+  bottom: 0;
+  left: 0;
+  border-right: 50px solid transparent;
+  border-bottom: 80px solid rgba(250,250,250,0.2);
+  border-radius: 5px;
+
+
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+.btn-1:hover {
+  color: white;
+    box-sizing: border-box;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+
+}
+.btn-1:hover:before {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+div.links {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+}
+
+.btn-black {
+  color: black;
+  border: 2px solid black;
+  margin-bottom: 15px;
+
+}
+
+.btn-black:before {
+  border-right: 50px solid transparent;
+  border-bottom: 80px solid rgba(10,10,10,0.2);
+}
+
+.btn-black:hover {
+  color: black;
+}
+
+.btn-right {
+  justify-content: right !important;
+
+}
