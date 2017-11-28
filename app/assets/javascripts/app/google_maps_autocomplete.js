@@ -70,7 +70,5 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 // var marker = google.maps.Marker
-google.maps.event.addListener(marker, 'click', function() {
-  console.log('bb');
-});
+
 });
