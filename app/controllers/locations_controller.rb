@@ -1,6 +1,16 @@
 class LocationsController < ApplicationController
 	skip_before_action :authenticate_user!, only: [:index, :show]
-	before_action :set_location, only: [:show, :edit, :update, :destroy]
+	before_action :set_location, only: [:show, :edit, :update, :destroy, :favorited, :unfavorite]
+
+def favorited
+  current_user.favorite @location
+  redirect_to location_path(@location.id)
+end
+
+def unfavorite
+  current_user.favorites.where('favoritable_id = ? ', @location.id).delete_all
+  redirect_to location_path(@location.id)
+end
 
 
 	def index
@@ -37,10 +47,8 @@ end
 
 def new
 	@user = User.find(current_user.id)
-
 	@location = Location.new
 	authorize @location
-
 end
 
 def create
@@ -83,8 +91,9 @@ def update
 	@location.update(location_params)
 	authorize @location
 	redirect_to locations_path(@location.id)
-
 end
+
+
 
 def destroy
 	@location = Location.find(params[:id])
