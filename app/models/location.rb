@@ -1,8 +1,14 @@
 class Location < ApplicationRecord
-  belongs_to :user
-  has_many :bookings
-  has_many :messages
-  validates :name, presence: true
+	
+
+	include PgSearch
+	pg_search_scope :search_by_name_and_address, against: [ :name, :address ]
+
+
+	belongs_to :user
+	has_many :bookings
+	has_many :messages
+	validates :name, presence: true
   # validates :email, presence: true, uniqueness: true
   validates :address, presence: true, uniqueness: true
   validates :phone, presence:true
