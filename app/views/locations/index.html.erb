@@ -51,36 +51,18 @@
 <%= javascript_tag do %>
 
 
-mapboxgl.accessToken = 'pk.eyJ1IjoidHJpYm8iLCJhIjoiY2phZDA4NDRuMWd2bzJ3bnV4YWZrb3hhYyJ9.XvFyv35-UIdCIzs8RY8RNw';
-var map = new mapboxgl.Map({
-  container: 'map',
-  style: 'mapbox://styles/mapbox/light-v9',
-  center: [-96, 37.8],
-  zoom: 3
+var handler = Gmaps.build('Google');
+handler.buildMap({ internal: { id: 'map' } }, function() {
+markers = handler.addMarkers(<%= raw @hash.to_json %>);
+handler.bounds.extendWith(markers);
+handler.fitMapToBounds();
+if (markers.length == 0) {
+handler.getMap().setZoom(2);
+} else if (markers.length == 1) {
+handler.getMap().setZoom(14);
+google.maps.event.addDomListener(window, 'page:load', initialize);
+}
 });
-
-var geojson = [
-  {
-    "type": "Feature",
-    "geometry": {
-      "type": "LineString",
-      "coordinates": [
-        [-77.03238901390978,38.913188059745586],
-        [-122.414, 37.776]
-      ]
-    },
-    "properties": {
-      "stroke": "#fc4353",
-      "stroke-width": 5
-    }
-  }
-];
-
-var map = L.mapbox.map('map', 'mapbox.streets')
-  .setView([37.8, -96], 4);
-
-L.geoJson(geojson, { style: L.mapbox.simplestyle.style }).addTo(map);
-
 
 <% end %>
 <% end %>
