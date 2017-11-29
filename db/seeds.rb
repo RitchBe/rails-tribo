@@ -59,7 +59,7 @@ puts "Creating 17 real locations..."
 
 location = Location.create({
   user_id: User.all.sample.id,
-  name: "The Good The bad and the Ugly",
+  name: "The Good and The bad",
   email: "info@obomomaueovilao.com",
   address: "R. do Alecrim 21, 1200-014 Lisboa",
   phone: "+351 96 453 1423",
