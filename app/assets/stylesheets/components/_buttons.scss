@@ -1,10 +1,46 @@
-[class^="btn-"] {
+[class^="btn-1"] {
   position: relative;
   display: block;
   overflow: hidden;
   width: 100%;
   height: 60px;
   max-width: 200px;
+  border:none !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+   background: linear-gradient(270deg, #63e1c0, #63e178, #dee163, #dee163);
+  background-size: 800% 800%;
+
+  -webkit-animation: AnimationName 30s ease infinite;
+  -moz-animation: AnimationName 30s ease infinite;
+  animation: AnimationName 30s ease infinite;
+
+  @-webkit-keyframes AnimationName {
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+  }
+  @-moz-keyframes AnimationName {
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+  }
+  @keyframes AnimationName {
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+  }
+}
+
+[class^="btn-2"] {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  height: 40px;
+  padding: 0 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,18 +52,24 @@
   height: 50px;
 }
 .btn-1 {
+  color: #14110d;
+  font-weight: bolder;
+  letter-spacing: 3px;
+}
+
+.btn-2 {
   color: white;
   font-weight: bolder;
   border: 2px solid white;
-
 }
-.btn-1:before {
+
+.btn-2:before {
   content: '';
   position: absolute;
   top: 0;
     box-sizing: border-box;
-  -webkit-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 
   right:-50px;
   bottom: 0;
@@ -40,14 +82,14 @@
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
 }
-.btn-1:hover {
+.btn-2:hover {
   color: white;
     box-sizing: border-box;
-  -webkit-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 
 }
-.btn-1:hover:before {
+.btn-2:hover:before {
   -webkit-transform: translateX(0);
           transform: translateX(0);
 }
@@ -76,5 +118,5 @@ div.links {
 }
 
 .btn-right {
-  justify-content: right !important;
+  justify-content: center !important;
 }

@@ -43,13 +43,7 @@
 /* Logo */
 .navbar-tribo-brand img {
   height: 50px;
-  transition: 0.1s;
-  border-right: 0px solid white;
   padding-right: 10px;
-  &:hover {
-    border-right: 2px solid white;
-    transition: 0.2s
-  }
 }
 
 
@@ -77,14 +71,15 @@
 /* Navbar link */
 .navbar-tribo-link {
   color: white;
-  font-size: 14px;
+  font-size: 12px !important;
   font-family: Lato, TwoSpace, sans-serif;
   font-size: 1em;
   line-height: 1.85714286em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 48px;
-  margin-top: 22px;
+  margin-top: 27px;
+  letter-spacing: 3px;
 }
 .navbar-tribo-link:hover {
   text-decoration: none;
