@@ -27,8 +27,7 @@ end
   	marker.lat location.latitude
   	marker.lng location.longitude
 
-    marker.json({ :id => location.id, label: "Week: #{(location.rate_by_week)}"})
-
+    marker.json({ :id => location.id})
 
 
       # marker.infowindow render_to_string(partial: "/shared/card", locals: { location: location })
