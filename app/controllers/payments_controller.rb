@@ -2,6 +2,9 @@ class PaymentsController < ApplicationController
   before_action :set_booking
 
   def new
+    @booking = Booking.find(params[:booking_id])
+    @location = Booking.find(params[:booking_id]).location
+    @user = Booking.find(params[:booking_id]).user
   end
 
   def show
@@ -22,7 +25,7 @@ class PaymentsController < ApplicationController
       )
 
       @booking.update(payment: charge.to_json, status: 'paid')
-      redirect_to booking_path(@booking)
+      redirect_to success_booking_path(@booking)
 
     rescue Stripe::CardError => e
       flash[:alert] = e.message

@@ -19,8 +19,8 @@
         </p>
       </div>
       <div class="booking-index-status">
-        <p class="status pending"><%= p.status %></p>
-        <p class="price"><%= p.price %>€</p>
+        <p class="status <%= p.status %>" style="text-align:right"><%= p.status.capitalize %></p>
+        <p class="price" style="text-align:right; color:black;"><%= p.price %>€</p>
       </div>
     </div>
     </a>

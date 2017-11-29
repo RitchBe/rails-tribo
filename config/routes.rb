@@ -18,12 +18,16 @@ Rails.application.routes.draw do
   end
 
   resources :bookings, only: [:show, :create, :new] do
-    resources :payments, only: [:new, :create]
-    #get 'success'
+    resources :payments, only: [:new, :create, :success] do
+
+    end
+    get 'success', :on => :member
   end
 
+
+
   root to: 'pages#landing'
-  get '/calendar', to: 'pages#calendar'
+
   get '/about', to: 'pages#about'
 
   resources :locations do

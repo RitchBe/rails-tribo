@@ -11,76 +11,113 @@
   position:relative;
   border-radius: 5px 5px 0 0;
 }
+.checkmark-icon-container {
+  text-align:center;
+  width:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.checkmark-icon-wrap {
+}
 
+.checkmark-icon {
+  background: linear-gradient(270deg, #89f29b, #b4f7c0, #4ff06c);
+  -webkit-animation: AnimationName 20s ease infinite;
+  -moz-animation: AnimationName 20s ease infinite;
+  animation: AnimationName 20s ease infinite;
+  background-size: 200% 200%;
+
+  @-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+  @-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+  @keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+  mask-image: image-url('icons/checkmark.svg');
+  height:100px;
+  width:100px;
+  color:black;
+}
 .__pricing-box__pricing-breakdown__d763b .pricing-breakdown--is-loading .pricing-breakdown__cell>span {
-    animation: loading 1s linear infinite;
-    animation-fill-mode: forwards;
-    background: #e7e9eb;
-    background: linear-gradient(to right, #e7e9eb 8%, rgba(220, 223, 227, .8) 18%, #e7e9eb 33%);
-    background-size: 400% 400%;
-    color: transparent;
-    border: 0;
-    outline: 0;
-    min-width: 20%
+  animation: loading 1s linear infinite;
+  animation-fill-mode: forwards;
+  background: #e7e9eb;
+  background: linear-gradient(to right, #e7e9eb 8%, rgba(220, 223, 227, .8) 18%, #e7e9eb 33%);
+  background-size: 400% 400%;
+  color: transparent;
+  border: 0;
+  outline: 0;
+  min-width: 20%
 }
 
 .__pricing-box__pricing-breakdown__d763b .pricing-breakdown--is-loading .pricing-breakdown .uni-anchor {
-    animation: loading 1s linear infinite;
-    animation-fill-mode: forwards;
-    background: #e7e9eb;
-    background: linear-gradient(to right, #e7e9eb 8%, rgba(220, 223, 227, .8) 18%, #e7e9eb 33%);
-    background-size: 400% 400%;
-    color: transparent;
-    border: 0;
-    outline: 0
+  animation: loading 1s linear infinite;
+  animation-fill-mode: forwards;
+  background: #e7e9eb;
+  background: linear-gradient(to right, #e7e9eb 8%, rgba(220, 223, 227, .8) 18%, #e7e9eb 33%);
+  background-size: 400% 400%;
+  color: transparent;
+  border: 0;
+  outline: 0
 }
 
 .__pricing-box__pricing-breakdown__d763b .pricing-breakdown__cell {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 16px
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px
 }
 
 .__pricing-box__pricing-breakdown__d763b .pricing-breakdown__cell>span {
-    color: #667485
+  color: #667485
 }
 
 .__pricing-box__pricing-breakdown__d763b .pricing-breakdown__cell>span a {
-    color: #00adef;
-    text-decoration: none
+  color: #00adef;
+  text-decoration: none
 }
 
 .__pricing-box__pricing-breakdown__d763b .pricing-breakdown__cell>span a:hover {
-    cursor: pointer;
-    text-decoration: underline
+  cursor: pointer;
+  text-decoration: underline
 }
 
 .__pricing-box__pricing-breakdown__d763b .pricing-breakdown__cell>span a--active {
-    color: #3b9eff
+  color: #3b9eff
 }
 
 .__pricing-box__pricing-breakdown__d763b .pricing-breakdown__cell>span a--negative {
-    color: #fff
+  color: #fff
 }
 
 .__pricing-box__pricing-breakdown__d763b .pricing-breakdown__cell>span a--alternative {
-    color: #616161
+  color: #616161
 }
 
 .__pricing-box__pricing-breakdown__d763b .pricing-breakdown__cell>span .uni-tooltip__icon svg {
-    width: 14px;
-    height: 14px;
-    position: relative;
-    top: 2px;
-    left: 5px
+  width: 14px;
+  height: 14px;
+  position: relative;
+  top: 2px;
+  left: 5px
 }
 
 .__pricing-box__pricing-breakdown__d763b .pricing-breakdown__cell>span .uni-tooltip__text {
-    z-index: 1
+  z-index: 1
 }
 
 .__pricing-box__pricing-breakdown__d763b .pricing-breakdown__cell--total {
-    margin-bottom: 0
+  margin-bottom: 0;
+  font-size: 17px;
 }
 
 .__pricing-box__pricing-breakdown__d763b .pricing-breakdown__cell--total>span {
@@ -88,408 +125,409 @@
 }
 
 @media (max-width:900px) {
-    .__pricing-box__pricing-breakdown__d763b .pricing-breakdown__cell--total>span {
+  .__pricing-box__pricing-breakdown__d763b .pricing-breakdown__cell--total>span {
     font-size: 1.75rem
-    }
+  }
 }
 
 .__pricing-box__pricing-breakdown__d763b .pricing-breakdown__cell--total.payment>span {
-    font-size: 1.75rem
+  font-size: 1.75rem
 }
 
 .__pricing-box__pricing-breakdown__d763b .pricing-breakdown__cell--credits>span {
-    color: #44c482
+  color: #44c482
 }
 
 .__pricing-box__pricing-breakdown__d763b .pricing-breakdown__cell--promocode {
-    flex-wrap: wrap
+  flex-wrap: wrap
 }
 
 .__pricing-box__pricing-breakdown__d763b .pricing-breakdown__cell--promocode>span {
-    width: 100%;
-    display: block;
-    margin-bottom: 16px
+  width: 100%;
+  display: block;
+  margin-bottom: 16px
 }
 
 .__pricing-box__pricing-breakdown__d763b .pricing-breakdown__cell__input {
-    display: flex
+  display: flex
 }
 
 .__pricing-box__pricing-breakdown__d763b .pricing-breakdown__cell__input .uni-button {
-    font-size: 1.25rem;
-    width: 50%;
-    line-height: 1;
-    margin: 0;
-    height: 44px;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0
+  font-size: 1.25rem;
+  width: 50%;
+  line-height: 1;
+  margin: 0;
+  height: 44px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0
 }
 
 .__pricing-box__pricing-breakdown__d763b .pricing-breakdown__cell__input .uni-input {
-    width: 100%;
-    height: 44px;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    border-right: 0
+  width: 100%;
+  height: 44px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: 0
 }
 
 .__pricing-box__pricing-breakdown__d763b .pricing-breakdown__cell__error {
-    font-size: .875rem;
-    color: #ff8d8d;
-    margin-top: 4px
+  font-size: .875rem;
+  color: #ff8d8d;
+  margin-top: 4px
 }
 
 .__pricing-box__b23db .pricing-box--is-loading .pricing-box__image {
-    animation: loading 1s linear infinite;
-    animation-fill-mode: forwards;
-    background: #e7e9eb;
-    background: linear-gradient(to right, #e7e9eb 8%, rgba(220, 223, 227, .8) 18%, #e7e9eb 33%);
-    background-size: 400% 400%;
-    color: transparent;
-    border: 0;
-    outline: 0;
-    height: 276px
+  animation: loading 1s linear infinite;
+  animation-fill-mode: forwards;
+  background: #e7e9eb;
+  background: linear-gradient(to right, #e7e9eb 8%, rgba(220, 223, 227, .8) 18%, #e7e9eb 33%);
+  background-size: 400% 400%;
+  color: transparent;
+  border: 0;
+  outline: 0;
+  height: 276px;
 }
 
 .__pricing-box__b23db .pricing-box--is-loading .pricing-box__request-details {
-    animation: loading 1s linear infinite;
-    animation-fill-mode: forwards;
-    background: #e7e9eb;
-    background: linear-gradient(to right, #e7e9eb 8%, rgba(220, 223, 227, .8) 18%, #e7e9eb 33%);
-    background-size: 400% 400%;
-    color: transparent;
-    border: 0;
-    outline: 0
+  animation: loading 1s linear infinite;
+  animation-fill-mode: forwards;
+  background: #e7e9eb;
+  background: linear-gradient(to right, #e7e9eb 8%, rgba(220, 223, 227, .8) 18%, #e7e9eb 33%);
+  background-size: 400% 400%;
+  color: transparent;
+  border: 0;
+  outline: 0
 }
 
 .__pricing-box__b23db .pricing-box--is-loading .pricing-box__container a {
-    color: transparent
+  color: transparent
 }
 
 .__pricing-box__b23db .pricing-box--is-loading .pricing-box__cell>span {
-    animation: loading 1s linear infinite;
-    animation-fill-mode: forwards;
-    background: #e7e9eb;
-    background: linear-gradient(to right, #e7e9eb 8%, rgba(220, 223, 227, .8) 18%, #e7e9eb 33%);
-    background-size: 400% 400%;
-    color: transparent;
-    border: 0;
-    outline: 0;
-    min-width: 20%
+  animation: loading 1s linear infinite;
+  animation-fill-mode: forwards;
+  background: #e7e9eb;
+  background: linear-gradient(to right, #e7e9eb 8%, rgba(220, 223, 227, .8) 18%, #e7e9eb 33%);
+  background-size: 400% 400%;
+  color: transparent;
+  border: 0;
+  outline: 0;
+  min-width: 20%
 }
 
 .__pricing-box__b23db .pricing-box--is-loading .pricing-box__offer-title {
-    animation: loading 1s linear infinite;
-    animation-fill-mode: forwards;
-    background: #e7e9eb;
-    background: linear-gradient(to right, #e7e9eb 8%, rgba(220, 223, 227, .8) 18%, #e7e9eb 33%);
-    background-size: 400% 400%;
-    color: transparent;
-    border: 0;
-    outline: 0;
-    width: 70%
+  animation: loading 1s linear infinite;
+  animation-fill-mode: forwards;
+  background: #e7e9eb;
+
+  background: linear-gradient(to right, #e7e9eb 8%, rgba(220, 223, 227, .8) 18%, #e7e9eb 33%);
+  background-size: 400% 400%;
+  color: transparent;
+  border: 0;
+  outline: 0;
+  width: 70%
 }
 
 .__pricing-box__b23db .pricing-box--is-loading .pricing-box__dates>div>span {
-    animation: loading 1s linear infinite;
-    animation-fill-mode: forwards;
-    background: #e7e9eb;
-    background: linear-gradient(to right, #e7e9eb 8%, rgba(220, 223, 227, .8) 18%, #e7e9eb 33%);
-    background-size: 400% 400%;
-    color: transparent;
-    border: 0;
-    outline: 0
+  animation: loading 1s linear infinite;
+  animation-fill-mode: forwards;
+  background: #e7e9eb;
+  background: linear-gradient(to right, #e7e9eb 8%, rgba(220, 223, 227, .8) 18%, #e7e9eb 33%);
+  background-size: 400% 400%;
+  color: transparent;
+  border: 0;
+  outline: 0
 }
 
 .__pricing-box__b23db .pricing-box__image {
-    width: 100%;
-    height: 276px;
-    background-size: cover;
-    background-position: center
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px 5px 0 0;
 }
 
 .__pricing-box__b23db .pricing-box__container {
-    padding: 25px 32px;
-    border: 2px solid #f0f0f0;
-    background: #fff;
+  padding: 25px 25px 25px 25px;
+  border: 2px solid #f0f0f0;
+  background: #fff;
+  border-radius: 0 0 5px 5px;
 }
 
 @media (max-width:767px) {
-    .__pricing-box__b23db .pricing-box__container {
-        padding: 0;
-        border: none
-    }
-    .__pricing-box__b23db .pricing-box__move-in,
-    .__pricing-box__b23db .pricing-box__move-out {
-        width: 40%
-    }
+  .__pricing-box__b23db .pricing-box__container {
+    padding: 0;
+    border: none
+  }
+  .__pricing-box__b23db .pricing-box__move-in,
+  .__pricing-box__b23db .pricing-box__move-out {
+    width: 40%
+  }
 }
 
 .__pricing-box__b23db .pricing-box__offer-title {
-    font-size: 1.25rem;
-    color: #224251;
-    line-height: 1.25;
-    margin-bottom: 16px
+  color: #224251;
+  line-height: 1.25;
+  margin-bottom: 16px
 }
 
 .__pricing-box__b23db .pricing-box__cell {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 16px
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px
 }
 
 .__pricing-box__b23db .pricing-box__cell>span {
-    font-size: 1rem;
-    line-height: 1;
-    color: #667485
+  font-size: 1rem;
+  line-height: 1;
+  color: #667485
 }
 
 .__pricing-box__b23db .pricing-box__cell>span a {
-    color: #00adef;
-    text-decoration: none
+  color: #00adef;
+  text-decoration: none
 }
 
 .__pricing-box__b23db .pricing-box__cell>span a:hover {
-    cursor: pointer;
-    text-decoration: underline
+  cursor: pointer;
+  text-decoration: underline
 }
 
 .__pricing-box__b23db .pricing-box__cell>span a--active {
-    color: #3b9eff
+  color: #3b9eff
 }
 
 .__pricing-box__b23db .pricing-box__cell>span a--negative {
-    color: #fff
+  color: #fff
 }
 
 .__pricing-box__b23db .pricing-box__cell>span a--alternative {
-    color: #616161
+  color: #616161
 }
 
 .__pricing-box__b23db .pricing-box__dates {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    background: url(../assets/images/general/right.svg) center center no-repeat;
-    margin-bottom: 16px
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 16px
 }
 
 .__pricing-box__b23db .pricing-box__move-in,
 .__pricing-box__b23db .pricing-box__move-out {
-    width: 40%
+  width: 40%
 }
 
 @media (max-width:767px) and (orientation:landscape) {
-    .__pricing-box__b23db .pricing-box__dates {
-        justify-content: flex-start
-    }
-    .__pricing-box__b23db .pricing-box__move-in,
-    .__pricing-box__b23db .pricing-box__move-out {
-        width: 20%
-    }
+  .__pricing-box__b23db .pricing-box__dates {
+    justify-content: flex-start
+  }
+  .__pricing-box__b23db .pricing-box__move-in,
+  .__pricing-box__b23db .pricing-box__move-out {
+    width: 20%
+  }
 }
 
 .__pricing-box__b23db .pricing-box__total-mobile {
-    display: none
+  display: none
 }
 
 .__pricing-box__b23db .pricing-box__move-in-title,
 .__pricing-box__b23db .pricing-box__move-out-title,
 .__pricing-box__b23db .pricing-box__total-mobile-title {
-    display: block;
-    font-family: IntervalNextBook, sans-serif;
-    font-size: 1rem;
-    line-height: 1;
-    color: #949da9;
-    margin-bottom: 7px
+  display: block;
+  font-family: IntervalNextBook, sans-serif;
+  font-size: 1rem;
+  line-height: 1;
+  color: #949da9;
+  margin-bottom: 7px
 }
 
 .__pricing-box__b23db .pricing-box__move-in-date,
 .__pricing-box__b23db .pricing-box__move-out-date {
-    font-size: 1.25rem;
-    color: #224251;
-    line-height: 1
+  font-size: 1.25rem;
+  color: #224251;
+  line-height: 1
 }
 
 .__pricing-box__b23db .pricing-box__request-details,
 .__pricing-box__b23db .pricing-box__show-details-mobile {
-    display: none
+  display: none
 }
 
 @media (max-width:900px) {
-    .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__offer-title {
-        font-size: .875rem
-    }
+  .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__offer-title {
+    font-size: .875rem
+  }
 }
 
 @media (max-width:767px) {
-    .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__offer-title {
-        font-size: 1.25rem
-    }
+  .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__offer-title {
+    font-size: 1.25rem
+  }
 }
 
 @media (max-width:900px) {
-    .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__cell>span {
-        font-size: .75rem
-    }
-    .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__container {
-        padding: 22px
-    }
+  .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__cell>span {
+    font-size: .75rem
+  }
+  .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__container {
+    padding: 22px
+  }
 }
 
 @media (max-width:767px) {
-    .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__cell>span {
-        font-size: 1rem
-    }
-    .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__total-mobile {
-        width: 20%;
-        display: flex;
-        flex-direction: column;
-        text-align: right
-    }
+  .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__cell>span {
+    font-size: 1rem
+  }
+  .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__total-mobile {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    text-align: right
+  }
 }
 
 @media (max-width:767px) and (orientation:landscape) {
-    .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__total-mobile {
-        width: 60%
-    }
+  .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__total-mobile {
+    width: 60%
+  }
 }
 
 @media (max-width:767px) {
-    .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__container {
-        padding: 0
-    }
-    .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__container .pricing-box__dates {
-        border: none;
-        padding: 0;
-        margin-bottom: 0;
-        background: 0 0
-    }
-    .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__container>:not(.pricing-box__dates) {
-        display: none
-    }
-    .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__show-details-mobile {
-            color: #00adef;
-        text-decoration: none;
-        display: block;
-        margin-top: 24px;
-        margin-bottom: 32px
-    }
-    .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__show-details-mobile:hover {
-        cursor: pointer;
-        text-decoration: underline
-    }
-    .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__show-details-mobile--active {
-        color: #3b9eff
-    }
-    .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__show-details-mobile--negative {
-        color: #fff
-    }
-    .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__show-details-mobile--alternative {
-        color: #616161
-    }
-    .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__request-details {
-            font-size: 1.25rem;
-        color: #224251;
-        display: block;
-        margin-top: 16px;
-        margin-bottom: 16px
-    }
+  .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__container {
+    padding: 0
+  }
+  .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__container .pricing-box__dates {
+    border: none;
+    padding: 0;
+    margin-bottom: 0;
+    background: 0 0
+  }
+  .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__container>:not(.pricing-box__dates) {
+    display: none
+  }
+  .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__show-details-mobile {
+    color: #00adef;
+    text-decoration: none;
+    display: block;
+    margin-top: 24px;
+    margin-bottom: 32px
+  }
+  .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__show-details-mobile:hover {
+    cursor: pointer;
+    text-decoration: underline
+  }
+  .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__show-details-mobile--active {
+    color: #3b9eff
+  }
+  .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__show-details-mobile--negative {
+    color: #fff
+  }
+  .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__show-details-mobile--alternative {
+    color: #616161
+  }
+  .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__request-details {
+    font-size: 1.25rem;
+    color: #224251;
+    display: block;
+    margin-top: 16px;
+    margin-bottom: 16px
+  }
 }
 
 @media (max-width:900px) {
-    .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__move-in-title,
-    .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__move-out-title {
-        font-size: .6875rem
-    }
+  .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__move-in-title,
+  .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__move-out-title {
+    font-size: .6875rem
+  }
 }
 
 @media (max-width:767px) {
-    .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__move-in-title,
-    .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__move-out-title {
-        font-size: 1rem
-    }
+  .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__move-in-title,
+  .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__move-out-title {
+    font-size: 1rem
+  }
 }
 
 @media (max-width:900px) {
-    .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__move-in-date,
-    .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__move-out-date {
-        font-size: .875rem
-    }
+  .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__move-in-date,
+  .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__move-out-date {
+    font-size: .875rem
+  }
 }
 
 @media (max-width:767px) {
-    .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__move-in-date,
-    .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__move-out-date {
-        font-family: IntervalNextBook, sans-serif;
-        font-size: 1rem
-    }
-    .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__move-in-date {
-        position: relative
-    }
-    .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__move-in-date:after {
-        content: "";
-        width: 15px;
-        height: 15px;
-        position: absolute;
-        right: -30px;
-        bottom: 2px;
-        background: url(../assets/images/general/right.svg) center center no-repeat;
-        background-size: 8px
-    }
+  .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__move-in-date,
+  .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__move-out-date {
+    font-family: IntervalNextBook, sans-serif;
+    font-size: 1rem
+  }
+  .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__move-in-date {
+    position: relative
+  }
+  .__pricing-box__b23db .pricing-box--not-expanded .pricing-box__move-in-date:after {
+    content: "";
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    right: -30px;
+    bottom: 2px;
+    background: url(../assets/images/general/right.svg) center center no-repeat;
+    background-size: 8px
+  }
 }
 
 .__pricing-box__b23db .pricing-box--expanded {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: #fff;
-    padding: 24px;
-    overflow-y: scroll;
-    overflow-x: hidden
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  padding: 24px;
+  overflow-y: scroll;
+  overflow-x: hidden
 }
 
 .__pricing-box__b23db .pricing-box--expanded .pricing-box__container {
-    padding-top: 10px
+  padding-top: 10px
 }
 
 .__pricing-box__b23db .pricing-box--expanded .pricing-box__request-details {
-    display: flex;
-    justify-content: space-between;
-    font-family: IntervalNextBook, sans-serif;
-    color: #224251;
-    font-size: 1.75rem;
-    margin-bottom: 24px
+  display: flex;
+  justify-content: space-between;
+  font-family: IntervalNextBook, sans-serif;
+  color: #224251;
+  font-size: 1.75rem;
+  margin-bottom: 24px
 }
 
 .__pricing-box__b23db .pricing-box--expanded .pricing-box__request-details span {
-    width: 20px
+  width: 20px
 }
 
 .__pricing-box__b23db .pricing-box--expanded .pricing-box__request-details span svg {
-    width: 100%
+  width: 100%
 }
 
 .__pricing-box__b23db .pricing-box--expanded .pricing-box__cell--total>span {
-    font-size: 1.75rem
+  font-size: 1.75rem
 }
 
 .__pricing-box__b23db .pricing-box--expanded .pricing-box__dates {
-    justify-content: space-between
+  justify-content: space-between
 }
 
 .__pricing-box__b23db .payment-message {
-    position: relative;
-    height: 40px
+  position: relative;
+  height: 40px
 }
 
 .__pricing-box__b23db .payment-message__text {
-    font-family: IntervalNextBook, sans-serif;
-    display: block;
-    text-align: center;
-    font-size: .875rem;
-    color: #667485;
-    transform: translateY(15px)
+  font-family: IntervalNextBook, sans-serif;
+  display: block;
+  text-align: center;
+  font-size: .875rem;
+  color: #667485;
+  transform: translateY(15px)
 }

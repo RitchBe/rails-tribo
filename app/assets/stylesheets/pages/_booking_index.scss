@@ -29,10 +29,10 @@ a:link,:hover,:active,:visited{
 }
 .booking-index-name {
   padding-left: 10px;
-  min-width: 220px;
+  min-width: 280px;
 }
 .booking-index-name h3 {
-  font-size: 13px;
+  font-size: 18px;
   margin-bottom: 0px;
 }
 .booking-index-name p {
@@ -61,12 +61,12 @@ a:link,:hover,:active,:visited{
   font-size: 14px;
   font-weight: bold;
 }
-.status.accepted {
-  color: #04A366;
+.status.paid {
+  color: $green;
 }
 .status.declined {
-  color: red;
+  color: $red;
 }
 .status.pending {
-  color: lightgrey;
+  color: $blue;
 }

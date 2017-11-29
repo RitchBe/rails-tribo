@@ -6,7 +6,7 @@ class LocationsController < ApplicationController
 	def index
     # @location = Location.all
 
-    @location = Location.geocoded
+  @location = Location.geocoded
     if params[:search].present?
       #param_geocoding = params[:in].geo
       @location = @location.near(params[:search], 50, :units => :km)
@@ -15,8 +15,6 @@ class LocationsController < ApplicationController
   @hash = Gmaps4rails.build_markers(@location) do |location, marker|
   	marker.lat location.latitude
   	marker.lng location.longitude
-
-
       marker.infowindow render_to_string(partial: "/shared/card", locals: { location: location })
       authorize @location
     end
@@ -32,7 +30,6 @@ class LocationsController < ApplicationController
       end
     end
     @locations = Location.all
-
   end
 end
 
@@ -61,11 +58,11 @@ end
 
 def show
     #@user = User.find(current_user.id)
+    set_location
     @hash = Gmaps4rails.build_markers(@location) do |location, marker|
     	marker.lat location.latitude
     	marker.lng location.longitude
     end
-    authorize @location
 end
 
 
