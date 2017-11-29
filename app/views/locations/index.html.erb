@@ -11,15 +11,15 @@
         <% data_default = params[:in] + " to "+ params[:out] %>
         <% else data_default = "" end %>
 
+
       </div>
       <input type="text" id="flatpickr-user" class="input-filter-bar text-center" placeholder="Pick a date" data-default-date="<%= data_default %>">
     </div>
   </div>
-
 <div class="cards-container">
 	<div class="row-index-show" >
 		<% @location.each do |l| %>
-		<div class="col-xs-12 col-sm-6 col-md-4">
+		<div class="col-xs-12 col-sm-6 col-md-4 Hover" id="<%= l.id %>">
 			<% if params[:in].present? %>
 			<a  href="<%= location_path(l.id) + '?in=' + params[:in] + '&out=' + params[:out]  %>">
 				<% else %>
@@ -42,9 +42,11 @@
           </div>
 			</a>
 		</div>
+
 		<% end %>
 	</div>
 	<div id="map"></div>
+
 </div>
 
 </div>
@@ -53,17 +55,57 @@
 
 
 var handler = Gmaps.build('Google');
-handler.buildMap({ internal: { id: 'map' } }, function() {
-markers = handler.addMarkers(<%= raw @hash.to_json %>);
-handler.bounds.extendWith(markers);
-handler.fitMapToBounds();
-if (markers.length == 0) {
-handler.getMap().setZoom(2);
-} else if (markers.length == 1) {
-handler.getMap().setZoom(14);
-google.maps.event.addDomListener(window, 'page:load', initialize);
-}
+newmap = handler.buildMap({ internal: { id: 'map' } }, function() {
+markers = <%= raw @hash.to_json %>
+Gmaps.store = {}
+  Gmaps.store.markers = markers.map(function(m) {
+  marker = handler.addMarker(m);
+  marker.serviceObject.set('id', m.id);
+  marker.serviceObject.set("label", {text: m.label, color: "rgba(250,250,250,0)", fontWeight: "bold", bottom: "50px"});
+  marker.serviceObject.set('icon', {url:  'data:image/svg+xml;utf-8, \
+      <svg width="42" height="42" viewBox="0 0 50 80" xmlns="http://www.w3.org/2000/svg"> \
+        <path fill="black" stroke="white" stroke-width="1.5" d="M50,10C36.19,10,25,20.09,25,35c0,5.37,2.31,12.68,4.62,17L50,90,70.38,52C72.69,47.68,75,40.37,75,35,75,20.09,63.81,10,50,10Zm0,14A11,11,0,1,1,39,35,11,11,0,0,1,50,24Z" transform="translate(-25 -10)" ></path><polyline class="cls-1" points="20.06 22.21 23.85 22.21 23.85 30.58"/><polyline class="cls-1" points="29.85 22.21 26.06 22.21 26.06 30.58"/> \
+      </svg>', labelOrigin: new google.maps.Point(40,33)});
+  return marker;
 });
+
+handler.bounds.extendWith(Gmaps.store.markers);
+handler.fitMapToBounds();
+});
+
+
+
+Gmaps.selectMarker = function(id) {
+  $.each(Gmaps.store.markers, function() {
+    if (this.serviceObject.id == id) {
+      this.panTo();
+      newmap.serviceObject.setZoom(15);
+
+
+
+    }
+    else this.serviceObject.setAnimation(-1);
+
+  });
+};
+
+let locations = document.getElementsByClassName('Hover');
+$.each(locations, function() {
+  this.addEventListener('mouseenter', function() {
+  Gmaps.selectMarker(parseInt(this.id) + 1);
+
+});
+  this.addEventListener("mouseout", function() {
+
+});
+});
+
 
 <% end %>
 <% end %>
+
+<% end %>
+  <!-- Gmaps.store.markers[this.id].serviceObject.label.color = "rgba(250,250,250,0)"; -->
+        <!-- this.serviceObject.label.color = "rgba(250,0,0,1)"; -->
+       <!-- this.serviceObject.setAnimation(google.maps.Animation.BOUNCE) -->
+
