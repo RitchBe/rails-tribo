@@ -10,6 +10,10 @@
   z-index:1000;
 }
 
+.dropdown-menu {
+  min-width:0 !important;
+}
+
 .navbar-background {
    background: rgba(0, 0, 0, 0.8);
 }
