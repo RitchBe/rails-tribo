@@ -1,18 +1,61 @@
-<!-- app/views/payments/new.html.erb -->
-<h1>Purchase of Booking <%= @booking.id %></h1>
-<%= form_tag booking_payments_path(@booking) do %>
-  <article>
-    <label class="amount">
-      <span>Amount: <%= humanized_money_with_symbol(@booking.price) %></span>
-    </label>
-  </article>
 
 
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-    data-name="My Booking"
-    data-email="<%= current_user.email %>"
-    data-description="Booking id <%= @booking.id %>"
-    data-amount="<%= @booking.price_cents %>"
-    data-currency="<%= @booking.price.currency %>"></script>
-<% end %>
+
+
+<div class="col-sm-12 col-md-6 col-md-offset-3">
+
+
+  <div class="booking-details-review" style="margin-bottom:30px; border-radius:5px;">
+  <div class="container-progressbar">
+      <ul class="progressbar">
+        <li class="active">Review</li>
+        <li class="active">Pay</li>
+        <li>Done</li>
+      </ul>
+    </div>
+    <div id="ember1582" class="ember-view __pricing-box__b23db">
+      <div class="pricing-box pricing-box--not-expanded ">
+        <div class="pricing-box__image" alt="offer-pic" style="background-image: url(<%= cl_image_path @location.photos[0].path %>)"></div>
+        <h2 class="pricing-box__request-details">Request details</h2>
+
+        <div class="pricing-box__container">
+          <h2 class="pricing-box__offer-title" style="font-weight:bold;"><%= @location.name %> </h2>
+          <div class="pricing-box__cell">
+            <span>Space</span>
+            <span>1 person</span>
+          </div>
+          <div class="pricing-box__dates">
+            <div class="pricing-box__move-in">
+              <span class="pricing-box__move-in-title">Move in</span>
+              <span class="pricing-box__move-in-date"><%= @booking.begin %></span>
+            </div>
+            <div class="pricing-box__move-out" style="text-align: right;">
+              <span class="pricing-box__move-out-title">Move out</span>
+              <span class="pricing-box__move-out-date"><%= @booking.end %></span>
+            </div>
+          </div>
+          <hr>
+          <div id="ember1648" class="ember-view __pricing-box__pricing-breakdown__d763b"><div class="pricing-breakdown ">
+            <div class="pricing-breakdown__cell pricing-breakdown__cell--total ">
+              <span>Total</span>
+              <span><%= @booking.price %> €</span>
+            </div>
+            <div style="text-align: center">
+             <%= form_tag booking_payments_path(@booking) do %>
+              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                data-name="My Booking"
+                data-email="<%= current_user.email %>"
+                data-description="Booking id <%= @booking.id %>"
+                data-amount="<%= @booking.price_cents %>"
+                data-currency="<%= @booking.price.currency %>"></script>
+            <% end %>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+</div>
+</div>
+
