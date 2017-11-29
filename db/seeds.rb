@@ -745,7 +745,7 @@ puts "Create some fake messages on chat room"
 
 message = Message.create({
   content: Faker::HitchhikersGuideToTheGalaxy.quote,
-  user_id:(0..16).sample,
+  user_id:(0..16).to_a.sample,
   location_id: 2
   })
 
@@ -753,7 +753,7 @@ message.save
 
 message = Message.create({
   content: Faker::HitchhikersGuideToTheGalaxy.quote,
-  user_id:(0..16).sample,
+  user_id:(0..16).to_a.sample,
   location_id: 2
   })
 
@@ -761,7 +761,7 @@ message.save
 
 message = Message.create({
   content: Faker::HitchhikersGuideToTheGalaxy.quote,
-  user_id:(0..16).sample,
+  user_id:(0..16).to_a.sample,
   location_id: 2
   })
 
@@ -769,7 +769,7 @@ message.save
 
 message = Message.create({
   content: Faker::HitchhikersGuideToTheGalaxy.quote,
-  user_id:(0..16).sample,
+  user_id:(0..16).to_a.sample,
   location_id: 2
   })
 
@@ -777,7 +777,7 @@ message.save
 
 message = Message.create({
   content: Faker::HitchhikersGuideToTheGalaxy.quote,
-  user_id:(0..16).sample,
+  user_id:(0..16).to_a.sample,
   location_id: 2
   })
 
@@ -785,7 +785,7 @@ message.save
 
 message = Message.create({
   content: Faker::HitchhikersGuideToTheGalaxy.quote,
-  user_id:(0..16).sample,
+  user_id:(0..16).to_a.sample,
   location_id: 4
   })
 
@@ -793,7 +793,7 @@ message.save
 
 message = Message.create({
   content: Faker::HitchhikersGuideToTheGalaxy.quote,
-  user_id:(0..16).sample,
+  user_id:(0..16).to_a.sample,
   location_id: 4
   })
 
@@ -801,7 +801,7 @@ message.save
 
 message = Message.create({
   content: Faker::HitchhikersGuideToTheGalaxy.quote,
-  user_id:(0..16).sample,
+  user_id:(0..16).to_a.sample,
   location_id: 4
   })
 
@@ -809,7 +809,7 @@ message.save
 
 message = Message.create({
   content: Faker::HitchhikersGuideToTheGalaxy.quote,
-  user_id:(0..16).sample,
+  user_id:(0..16).to_a.sample,
   location_id: 4
   })
 
@@ -817,7 +817,7 @@ message.save
 
 message = Message.create({
   content: Faker::HitchhikersGuideToTheGalaxy.quote,
-  user_id:(0..16).sample,
+  user_id:(0..16).to_a.sample,
   location_id: 4
   })
 
@@ -825,7 +825,7 @@ message.save
 
 message = Message.create({
   content: Faker::HitchhikersGuideToTheGalaxy.quote,
-  user_id:(0..16).sample,
+  user_id:(0..16).to_a.sample,
   location_id: 4
   })
 
@@ -833,7 +833,7 @@ message.save
 
 message = Message.create({
   content: Faker::HitchhikersGuideToTheGalaxy.quote,
-  user_id:(0..16).sample,
+  user_id:(0..16).to_a.sample,
   location_id: 4
   })
 
@@ -841,7 +841,7 @@ message.save
 
 message = Message.create({
   content: Faker::HitchhikersGuideToTheGalaxy.quote,
-  user_id:(0..16).sample,
+  user_id:(0..16).to_a.sample,
   location_id: 4
   })
 
