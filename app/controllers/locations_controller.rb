@@ -24,9 +24,11 @@ end
   @hash = Gmaps4rails.build_markers(@location) do |location, marker|
   	marker.lat location.latitude
   	marker.lng location.longitude
+    marker.json({ :id => location.id, label: "Week: #{(location.rate_by_week)}"})
 
 
-      marker.infowindow render_to_string(partial: "/shared/card", locals: { location: location })
+
+      # marker.infowindow render_to_string(partial: "/shared/card", locals: { location: location })
       authorize @location
     end
     @user = User.find(current_user.id)

@@ -55,6 +55,7 @@ end
 end
 
 
+
 puts "Creating 17 real locations..."
 
 location = Location.create({
@@ -536,3 +537,203 @@ puts "create 15 fake booking"
     price: (30..135).to_a.sample
     )
 end
+
+
+
+
+puts "create some Inbox messages for triboteam"
+
+conversation = Conversation.create({
+  sender_id: 1,
+  receiver_id: 16,
+  })
+conversation.save
+
+conversation = Conversation.create({
+  sender_id: 4,
+  receiver_id: 16,
+  })
+conversation.save
+
+conversation = Conversation.create({
+  sender_id: 3,
+  receiver_id: 16,
+  })
+conversation.save
+
+conversation = Conversation.create({
+  sender_id: 16,
+  receiver_id: 8,
+  })
+conversation.save
+
+
+private_message = PrivateMessage.create({
+  body:
+  conversation_id: 1
+  })
+private_message.save
+
+private_message = PrivateMessage.create({
+  body:
+  conversation_id: 2
+  })
+private_message.save
+private_message = PrivateMessage.create({
+  body:
+  conversation_id: 3
+  })
+private_message.save
+private_message = PrivateMessage.create({
+  body:
+  conversation_id: 4
+  })
+private_message.save
+private_message = PrivateMessage.create({
+  body:
+  conversation_id: 1
+  })
+private_message.save
+private_message = PrivateMessage.create({
+  body:
+  conversation_id: 2
+  })
+private_message.save
+private_message = PrivateMessage.create({
+  body:
+  conversation_id: 3
+  })
+private_message.save
+private_message = PrivateMessage.create({
+  body:
+  conversation_id: 4
+  })
+private_message.save
+private_message = PrivateMessage.create({
+  body:
+  conversation_id: 1
+  })
+private_message.save
+private_message = PrivateMessage.create({
+  body:
+  conversation_id: 2
+  })
+private_message.save
+private_message = PrivateMessage.create({
+  body:
+  conversation_id: 3
+  })
+private_message.save
+private_message = PrivateMessage.create({
+  body:
+  conversation_id: 4
+  })
+private_message.save
+
+
+
+puts "Create some fake messages on chat room"
+
+message = Message.create({
+  content:
+  user_id:(0..16).sample,
+  location_id:
+  })
+
+message.save
+
+message = Message.create({
+  content:
+  user_id:(0..16).sample,
+  location_id:
+  })
+
+message.save
+
+message = Message.create({
+  content:
+  user_id:(0..16).sample,
+  location_id:
+  })
+
+message.save
+
+message = Message.create({
+  content:
+  user_id:(0..16).sample,
+  location_id:
+  })
+
+message.save
+
+message = Message.create({
+  content:
+  user_id:(0..16).sample,
+  location_id:
+  })
+
+message.save
+
+message = Message.create({
+  content:
+  user_id:(0..16).sample,
+  location_id:
+  })
+
+message.save
+
+message = Message.create({
+  content:
+  user_id:(0..16).sample,
+  location_id:
+  })
+
+message.save
+
+message = Message.create({
+  content:
+  user_id:(0..16).sample,
+  location_id:
+  })
+
+message.save
+
+message = Message.create({
+  content:
+  user_id:(0..16).sample,
+  location_id:
+  })
+
+message.save
+
+message = Message.create({
+  content:
+  user_id:(0..16).sample,
+  location_id:
+  })
+
+message.save
+
+message = Message.create({
+  content:
+  user_id:(0..16).sample,
+  location_id:
+  })
+
+message.save
+
+message = Message.create({
+  content:
+  user_id:(0..16).sample,
+  location_id:
+  })
+
+message.save
+
+message = Message.create({
+  content:
+  user_id:(0..16).sample,
+  location_id:
+  })
+
+message.save
