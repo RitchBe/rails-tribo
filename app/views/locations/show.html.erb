@@ -1,121 +1,121 @@
 
 <div class = "wrapper">
-<div class="location-carousel">
- <div id="myCarousel" class="carousel slide" data-ride="carousel">
+	<div class="location-carousel">
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
 
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <% @location.photos.each_with_index do |p, i| %>
-    <% if i == 0 %>
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <% else %>
-    <li data-target="#myCarousel" data-slide-to="<%= i %>" ></li>
-    <% end %>
-    <% end %>
-  </ol>
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<% @location.photos.each_with_index do |p, i| %>
+				<% if i == 0 %>
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<% else %>
+				<li data-target="#myCarousel" data-slide-to="<%= i %>" ></li>
+				<% end %>
+				<% end %>
+			</ol>
 
-  <div class="carousel-inner">
-    <% @location.photos.each_with_index do |p, i| %>
-    <% if i == 0 %>
-    <div class="item active">
-      <% else %>
-      <div class="item">
-        <% end %>
-        <% if @location.photos[i] != nil  %>
-        <%= cl_image_tag @location.photos[i].path, class: "image-carousel" %>
-        <% else %>
-        <%= image_tag "landing/cowork-3.jpg", class: "image-carousel" %>
-        <% end %>
-      </div>
-      <% end %>
-    </div>
+			<div class="carousel-inner">
+				<% @location.photos.each_with_index do |p, i| %>
+				<% if i == 0 %>
+				<div class="item active">
+					<% else %>
+					<div class="item">
+						<% end %>
+						<% if @location.photos[i] != nil  %>
+						<%= cl_image_tag @location.photos[i].path, class: "image-carousel" %>
+						<% else %>
+						<%= image_tag "landing/cowork-3.jpg", class: "image-carousel" %>
+						<% end %>
+					</div>
+					<% end %>
+				</div>
 
 
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
+				<!-- Left and right controls -->
+				<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="right carousel-control" href="#myCarousel" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- END CAROUSEL - START <IN CONTAINER -->
+
+
+		<div class="container-location-show">
+			<div class="col-sm-5 col-sm-offset-1 col-md-5 col-md-offset-2">
+				<div class="show-description-container" style="padding:20px;">
+					<h2 class="pricing-box__offer-title" style="font-weight:bold;"><%= @location.name %> </h2>
+					<%= @location.address %>
+					<hr>
+					<h3>About the place</h3>
+					<p style="text-align: left;"><%= @location.description %></p>
+					<hr>
+					<h3>Opening Hours</h3>
+					<p style="text-align: left;">Monday to Saturday: <strong> 8am </strong>to <strong>5pm </strong></p>
+					<hr>
+					<h3>Features</h3>
+					<div class="wrapper">
+						<div class="features">
+							<% if @location.features.include? "High-speed Wi-Fi" %> <i class="fi flaticon-wifi"><p>Wifi</p> </i><% end %>
+							<% if @location.features.include? "Coffee&Tea" %> <i class="fi flaticon-coffee-cup"> <p>Coffee and Tea</p></i> <% end %>
+							<% if @location.features.include? "FridayBeers" %> <i class="fi flaticon-beer"><p>FridayBeers</p></i> <% end %>
+							<% if @location.features.include? "Printers" %> <i class="fi flaticon-printer"> <p>Printer</p></i><% end %>
+							<% if @location.features.include? "Outlets" %> <i class="fi flaticon-plug"><p>Outlets</p></i> <% end %>
+							<% if @location.features.include? "Host" %> <i class="fi flaticon-man"><p>Host</p></i> <% end %>
+							<% if @location.features.include? "Meeting Rooms" %> <i class="fi flaticon-meeting"><p>Meeting Rooms</p></i> <% end %>
+							<% if @location.features.include? "Bicycle Lodge" %> <i class="fi flaticon-transport"><p>Bicycle lodge</p></i> <% end %>
+							<% if @location.features.include? "Whiteboards" %> <i class="fi flaticon-board"><p>WhiteBoards</p></i> <% end %>
+							<% if @location.features.include? "Office Supplies" %> <i class="fi flaticon-paper-clip"><p>Office Supplies</p></i> <% end %>
+							<% if @location.features.include? "Events" %> <i class="fi flaticon-calendar"><p>Events</p></i><% end %>
+
+
+
+						</div>
+
+
+
+
+
+
+					</div>
+					<div id="map" style="width: 100%; height: 250px;"></div>
+				</div>
+
+
+
+				<!-- ADD AND REMOVE FROM FAVORITES -->
+				<div style="background-color: pink; padding: 50px 100px">
+					<% if  current_user.favorites.where("favoritable_id = ?", @location).count == 0 %>
+					<%= link_to "Add as favorite",  "/locations/#{@location.id}/favorite", :method=> :post %>
+					<% else %>
+					<%= link_to "Remove from favorite",  "/locations/#{@location.id}/unfavorite", :method=> :delete %>
+					<% end %>
+
+					<!-- EXEMPLE TO GET FAVORITES FROM THE CURRENT USER-->
+					<% Favorite.where("favoritor_id = ?", current_user.id).each do |favorite|    %>
+					<p><%= Location.find(favorite.favoritable_id).name %></p>
+					<% end %>
+				</div>  <!-- END OF FAVORITE, OUP OUP -->
+			</div>
+
+
+
+
+		</div>
+		<div class="col-sm-5 col-md-3 sticky" id="Booking">
+
+			<%= render "shared/booking_details" %>
+
+		</div>
+	</div>
+
 </div>
-</div>
-
-<!-- END CAROUSEL - START <IN CONTAINER -->
-
-
-  <div class="container-location-show">
-    <div class="col-sm-5 col-sm-offset-1 col-md-5 col-md-offset-2">
-      <div class="show-description-container" style="padding:20px;">
-        <h2 class="pricing-box__offer-title" style="font-weight:bold;"><%= @location.name %> </h2>
-        <%= @location.address %>
-        <hr>
-        <h3>About the place</h3>
-        <p style="text-align: left;"><%= @location.description %></p>
-        <hr>
-        <h3>Opening Hours</h3>
-        <p style="text-align: left;">Monday to Saturday: <strong> 8am </strong>to <strong>5pm </strong></p>
-        <hr>
-        <h3>Features</h3>
-        <div class="wrapper">
-         <div class="features">
-          <% if @location.features.include? "High-speed Wi-Fi" %> <i class="fi flaticon-wifi"><p>Wifi</p> </i><% end %>
-          <% if @location.features.include? "Coffee&Tea" %> <i class="fi flaticon-coffee-cup"> <p>Coffee and Tea</p></i> <% end %>
-          <% if @location.features.include? "FridayBeers" %> <i class="fi flaticon-beer"><p>FridayBeers</p></i> <% end %>
-          <% if @location.features.include? "Printers" %> <i class="fi flaticon-printer"> <p>Printer</p></i><% end %>
-          <% if @location.features.include? "Outlets" %> <i class="fi flaticon-plug"><p>Outlets</p></i> <% end %>
-          <% if @location.features.include? "Host" %> <i class="fi flaticon-man"><p>Host</p></i> <% end %>
-          <% if @location.features.include? "Meeting Rooms" %> <i class="fi flaticon-meeting"><p>Meeting Rooms</p></i> <% end %>
-          <% if @location.features.include? "Bicycle Lodge" %> <i class="fi flaticon-transport"><p>Bicycle lodge</p></i> <% end %>
-          <% if @location.features.include? "Whiteboards" %> <i class="fi flaticon-board"><p>WhiteBoards</p></i> <% end %>
-          <% if @location.features.include? "Office Supplies" %> <i class="fi flaticon-paper-clip"><p>Office Supplies</p></i> <% end %>
-          <% if @location.features.include? "Events" %> <i class="fi flaticon-calendar"><p>Events</p></i><% end %>
-
-
-
-        </div>
-
-
-
-
-
-
-      </div>
-          <div id="map" style="width: 100%; height: 250px;"></div>
-        </div>
-
-
-
-              <!-- ADD AND REMOVE FROM FAVORITES -->
-<div style="background-color: pink; padding: 50px 100px">
-<% if  current_user.favorites.where("favoritable_id = ?", @location).count == 0 %>
-<%= link_to "Add as favorite",  "/locations/#{@location.id}/favorite", :method=> :post %>
-<% else %>
-<%= link_to "Remove from favorite",  "/locations/#{@location.id}/unfavorite", :method=> :delete %>
-<% end %>
-
-<!-- EXEMPLE TO GET FAVORITES FROM THE CURRENT USER-->
-<% Favorite.where("favoritor_id = ?", current_user.id).each do |favorite|    %>
-<p><%= Location.find(favorite.favoritable_id).name %></p>
-<% end %>
- </div>  <!-- END OF FAVORITE, OUP OUP -->
-      </div>
-
-
-
-
-    </div>
-      <div class="col-sm-5 col-md-3 sticky" id="Booking">
-
-        <%= render "shared/booking_details" %>
-
-      </div>
-    </div>
-
-    </div>
 
 
 
@@ -130,35 +130,35 @@
 </script -->>
 
 <script>
-window.onscroll = function() {
-    var nav = document.getElementById('Booking');
-    if ( window.pageYOffset > 450 ) {
-        nav.classList.add("fix-search");
-        nav.classList.remove("sticky");
+	window.onscroll = function() {
+		var nav = document.getElementById('Booking');
+		if ( window.pageYOffset > 450 ) {
+			nav.classList.add("fix-search");
+			nav.classList.remove("sticky");
 
-    } else {
-        nav.classList.remove("fix-search");
-        nav.classList.add("sticky");
+		} else {
+			nav.classList.remove("fix-search");
+			nav.classList.add("sticky");
 
-    }
-};</script>
+		}
+	};</script>
 
-<% @hash =   Gmaps4rails.build_markers(@location) do |location, marker|
-      marker.lat location.latitude
-      marker.lng location.longitude
-    end %>
+	<% @hash =   Gmaps4rails.build_markers(@location) do |location, marker|
+		marker.lat location.latitude
+		marker.lng location.longitude
+		end %>
 
-<% content_for(:after_js) do %>
-<%= javascript_tag do %>
-var handler = Gmaps.build('Google');
-handler.buildMap({ internal: { id: 'map' } }, function() {
-markers = handler.addMarkers(<%= raw @hash.to_json %>);
-handler.bounds.extendWith(markers);
-handler.fitMapToBounds();
-if (markers.length == 0) {
-handler.getMap().setZoom(2);
-} else if (markers.length == 1) {
-handler.getMap().setZoom(14);
+		<% content_for(:after_js) do %>
+		<%= javascript_tag do %>
+		var handler = Gmaps.build('Google');
+		handler.buildMap({ internal: { id: 'map' } }, function() {
+		markers = handler.addMarkers(<%= raw @hash.to_json %>);
+		handler.bounds.extendWith(markers);
+		handler.fitMapToBounds();
+		if (markers.length == 0) {
+		handler.getMap().setZoom(2);
+	} else if (markers.length == 1) {
+	handler.getMap().setZoom(14);
 }
 });
 
