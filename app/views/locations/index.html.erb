@@ -2,6 +2,7 @@
 	<div class="location-filter-bar">
 		<div class="location-filter-wrap">
 			<div class="search">
+
         <div class="search">
           <%= form_tag(locations_path, :method => "get", id: "search-form", class: "input-filter-bar") do %>
           <%= text_field_tag :search, params[:search], placeholder: "Search",class: "location-search text-center" %>
@@ -16,6 +17,7 @@
       <input type="text" id="flatpickr-user" class="input-filter-bar text-center" placeholder="Pick a date" data-default-date="<%= data_default %>">
     </div>
   </div>
+
 <div class="cards-container">
 	<div class="row-index-show" >
 		<% @location.each do |l| %>

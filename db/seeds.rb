@@ -569,63 +569,63 @@ conversation.save
 
 
 private_message = PrivateMessage.create({
-  body:
+  body:  Faker::ChuckNorris.fact,
   conversation_id: 1
   })
 private_message.save
 
 private_message = PrivateMessage.create({
-  body:
+  body: Faker::ChuckNorris.fact,
   conversation_id: 2
   })
 private_message.save
 private_message = PrivateMessage.create({
-  body:
+  body: Faker::ChuckNorris.fact,
   conversation_id: 3
   })
 private_message.save
 private_message = PrivateMessage.create({
-  body:
+  body: Faker::ChuckNorris.fact,
   conversation_id: 4
   })
 private_message.save
 private_message = PrivateMessage.create({
-  body:
+  body: Faker::ChuckNorris.fact,
   conversation_id: 1
   })
 private_message.save
 private_message = PrivateMessage.create({
-  body:
+  body: Faker::ChuckNorris.fact,
   conversation_id: 2
   })
 private_message.save
 private_message = PrivateMessage.create({
-  body:
+  body: Faker::ChuckNorris.fact,
   conversation_id: 3
   })
 private_message.save
 private_message = PrivateMessage.create({
-  body:
+  body: Faker::ChuckNorris.fact,
   conversation_id: 4
   })
 private_message.save
 private_message = PrivateMessage.create({
-  body:
+  body: Faker::ChuckNorris.fact,
   conversation_id: 1
   })
 private_message.save
 private_message = PrivateMessage.create({
-  body:
+  body: Faker::ChuckNorris.fact,
   conversation_id: 2
   })
 private_message.save
 private_message = PrivateMessage.create({
-  body:
+  body: Faker::ChuckNorris.fact,
   conversation_id: 3
   })
 private_message.save
 private_message = PrivateMessage.create({
-  body:
+  body: Faker::ChuckNorris.fact,
   conversation_id: 4
   })
 private_message.save
@@ -635,105 +635,105 @@ private_message.save
 puts "Create some fake messages on chat room"
 
 message = Message.create({
-  content:
+  content: Faker::HitchhikersGuideToTheGalaxy.quote,
   user_id:(0..16).sample,
-  location_id:
+  location_id: 2
   })
 
 message.save
 
 message = Message.create({
-  content:
+  content: Faker::HitchhikersGuideToTheGalaxy.quote,
   user_id:(0..16).sample,
-  location_id:
+  location_id: 2
   })
 
 message.save
 
 message = Message.create({
-  content:
+  content: Faker::HitchhikersGuideToTheGalaxy.quote,
   user_id:(0..16).sample,
-  location_id:
+  location_id: 2
   })
 
 message.save
 
 message = Message.create({
-  content:
+  content: Faker::HitchhikersGuideToTheGalaxy.quote,
   user_id:(0..16).sample,
-  location_id:
+  location_id: 2
   })
 
 message.save
 
 message = Message.create({
-  content:
+  content: Faker::HitchhikersGuideToTheGalaxy.quote,
   user_id:(0..16).sample,
-  location_id:
+  location_id: 2
   })
 
 message.save
 
 message = Message.create({
-  content:
+  content: Faker::HitchhikersGuideToTheGalaxy.quote,
   user_id:(0..16).sample,
-  location_id:
+  location_id: 4
   })
 
 message.save
 
 message = Message.create({
-  content:
+  content: Faker::HitchhikersGuideToTheGalaxy.quote,
   user_id:(0..16).sample,
-  location_id:
+  location_id: 4
   })
 
 message.save
 
 message = Message.create({
-  content:
+  content: Faker::HitchhikersGuideToTheGalaxy.quote,
   user_id:(0..16).sample,
-  location_id:
+  location_id: 4
   })
 
 message.save
 
 message = Message.create({
-  content:
+  content: Faker::HitchhikersGuideToTheGalaxy.quote,
   user_id:(0..16).sample,
-  location_id:
+  location_id: 4
   })
 
 message.save
 
 message = Message.create({
-  content:
+  content: Faker::HitchhikersGuideToTheGalaxy.quote,
   user_id:(0..16).sample,
-  location_id:
+  location_id: 4
   })
 
 message.save
 
 message = Message.create({
-  content:
+  content: Faker::HitchhikersGuideToTheGalaxy.quote,
   user_id:(0..16).sample,
-  location_id:
+  location_id: 4
   })
 
 message.save
 
 message = Message.create({
-  content:
+  content: Faker::HitchhikersGuideToTheGalaxy.quote,
   user_id:(0..16).sample,
-  location_id:
+  location_id: 4
   })
 
 message.save
 
 message = Message.create({
-  content:
+  content: Faker::HitchhikersGuideToTheGalaxy.quote,
   user_id:(0..16).sample,
-  location_id:
+  location_id: 4
   })
 
 message.save
