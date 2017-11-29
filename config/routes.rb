@@ -8,6 +8,10 @@ Rails.application.routes.draw do
 
   get "users/favorites"
 
+  post '/locations/:id/favorite',to: "locations#favorited"
+
+  delete '/locations/:id/unfavorite', to: "locations#unfavorite"
+
 
   ActiveAdmin.routes(self)
 

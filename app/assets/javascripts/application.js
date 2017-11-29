@@ -31,13 +31,14 @@ function scrollLastMessageIntoView() {
   }
 }
 
-window.sr = ScrollReveal({ reset: true });
-sr.reveal('.gallery__image',{ duration: 1000 }, 500);
-sr.reveal('.cta', { duration: 1000 });
-sr.reveal('.lead', { duration: 1000 });
-sr.reveal('.feature', { duration: 1000 }, 200);
-sr.reveal('.boxed', { duration: 1000 });
-sr.reveal('.blog-card-landing', { duration: 1000 }, 300);
+window.sr = ScrollReveal({ reset: false });
+sr.reveal('.gallery__image_left',{ duration: 1200, distance: '600px', origin: 'left'}, 500);
+sr.reveal('.gallery__image_right',{ duration: 1200, distance: '600px', origin: 'right', delay: 300}, 300);
+// sr.reveal('.cta', { duration: 1000 });
+// sr.reveal('.lead', { duration: 1000 });
+sr.reveal('.feature', { duration: 1000 ,distance: '500px', origin: 'bottom'}, 200);
+sr.reveal('.spotlight', { duration: 1000, distance: '500px', origin: 'left' });
+sr.reveal('.btn-landing', { duration: 1000, distance: '500px', origin: 'right'});
 sr.reveal('.private-message-sender', { duration: 1000 }, 200);
 sr.reveal('.private-message-receiver', { duration: 1000 }, 200);
 

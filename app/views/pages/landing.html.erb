@@ -12,18 +12,16 @@
 				<div class="col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-0 text-center">
 					<h1 class="text-inverse">Work from unique spaces</h1>
 					<div class="col-md-8  col-md-offset-2 col-sm-10 col-sm-offset-1" style="margin-top: 12px; margin-bottom: 30px;">
-						<p class="text-inverse">Turning spaces closed during the day into a network of co-working spaces.</p>
+						<p class="text-inverse">Turning unused spaces into a network of co-working places</p>
 					</div>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-12 signup-container">
-					<a class="btn btn--sm btn--primary type--uppercase" href="">
-						<span class="btn__text">
-							TRY IT
-						</span>
-					</a>
-				</div>
+          <div class="links">
+      <button type="button" class="btn-1" data-toggle="modal" data-target="#exampleModal">
+      SIGN IN
+    </button>
+          </div>
 			</div>
 		</div>
 		<div class="text-center" style="width:100%;font-size:24px;bottom:30px;position:absolute;">
@@ -51,13 +49,13 @@
 			<div class="row">
 				<div class="gallery-1">
 					<div class="col-sm-6">
-						<div class="gallery__image" style="background: url('<%= asset_path('landing/cowork-3.jpg')%>')">
+						<div class="gallery__image gallery__image_left" style="background: url('<%= asset_path('landing/cowork-3.jpg')%>')">
 						</div>
 					</div>
 					<div class="col-sm-6">
-						<div class="gallery__image" style="background: url('<%= asset_path('landing/cowork-2.jpg')%>')">
+						<div class="gallery__image gallery__image_right" style="background: url('<%= asset_path('landing/cowork-2.jpg')%>')">
 						</div>
-						<div class="gallery__image" style="background: url('<%= asset_path('landing/cowork-1.jpg')%>')">
+						<div class="gallery__image gallery__image_right" style="background: url('<%= asset_path('landing/cowork-1.jpg')%>')">
 						</div>
 					</div>
 				</div>
@@ -72,12 +70,11 @@
 				<div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
 					<div class="cta">
 						<h2>Come work at Tribo for a day</h2>
-						<a class="btn btn--primary type--uppercase" href="">
-							<span class="btn__text">
-								Join our community
-							</span>
 
-						</a>
+              <div class="links">
+
+              <a href="#" class="btn-1 btn-black">Claim your free trial</a>
+              </div>
 						<p class="type--fine-print">or check out
 							<a href="#">pricing plans</a>
 						</p>
@@ -104,45 +101,46 @@
 			<div class="row">
 				<div class="col-sm-4">
 					<div class="feature feature-3 boxed boxed--lg boxed--border text-center">
-						<i class="fa fa-users fa-3x" style="padding:30px;"></i>
-						<h4>Space to Work
+						<i class="fi flaticon-man" style="padding:30px;"></i>
+						<h4 class="lessmargin">Space to Work
 						& Connect</h4>
 					</div>
 					<!--end feature-->
 				</div>
 				<div class="col-sm-4">
 					<div class="feature feature-3 boxed boxed--lg boxed--border text-center">
-						<i class="fa fa-coffee fa-3x" style="padding:30px;"></i>
-						<h4>Unlimited Coffee, Tea & Snacks</h4>
+						<i class="fi flaticon-coffee-cup" style="padding:30px;"></i>
+						<h4 class="lessmargin">Unlimited Coffee, Tea & Snacks</h4>
 					</div>
 					<!--end feature-->
-				</div>
-				<div class="col-sm-4">
-					<div class="feature feature-3 boxed boxed--lg boxed--border text-center">
-						<i class="fa fa-bolt fa-3x" style="padding:30px;"></i>
-						<h4>Individual Power Stations</h4>
-					</div>
-					<!--end feature-->
-				</div>
-				<div class="col-sm-4">
-					<div class="feature feature-3 boxed boxed--lg boxed--border text-center">
-						<i class="fa fa-wifi fa-3x" style="padding:30px;"></i>
-						<h4>Ultra High Speed Wifi</h4>
-					</div>
-					<!--end feature-->
-				</div>
-				<div class="col-sm-4">
-					<div class="feature feature-3 boxed boxed--lg boxed--border text-center">
-						<i class="fa fa-cutlery fa-3x" style="padding:30px;"></i>
 
-						<h4>Optional On-Site Lunch Menu</h4>
+				</div>
+				<div class="col-sm-4">
+					<div class="feature feature-3 boxed boxed--lg boxed--border text-center">
+						<i class="fi flaticon-plug " style="padding:30px;"></i>
+						<h4 class="lessmargin">Individual Power Stations</h4>
 					</div>
 					<!--end feature-->
 				</div>
 				<div class="col-sm-4">
 					<div class="feature feature-3 boxed boxed--lg boxed--border text-center">
-						<i class="fa fa-glass fa-3x" style="padding:30px;"></i>
-						<h4>Drinks after day work</h4>
+						<i class="fi flaticon-wifi" style="padding:30px;"></i>
+						<h4 class="lessmargin">Ultra High Speed Wifi</h4>
+					</div>
+					<!--end feature-->
+				</div>
+				<div class="col-sm-4">
+					<div class="feature feature-3 boxed boxed--lg boxed--border text-center">
+						<i class="fi flaticon-transport" style="padding:30px;"></i>
+
+						<h4 class="lessmargin">Bycicle Lodge</h4>
+					</div>
+					<!--end feature-->
+				</div>
+				<div class="col-sm-4">
+					<div class="feature feature-3 boxed boxed--lg boxed--border text-center">
+						<i class="fi flaticon-beer" style="padding:30px;"></i>
+						<h4 class="lessmargin">After-work</h4>
 					</div>
 					<!--end feature-->
 				</div>
@@ -155,7 +153,7 @@
 		<div class="container" >
 			<div class="row">
 				<div class="col-sm-7 col-md-5">
-					<div class="boxed boxed--lg border--round bg--white">
+					<div class="boxed boxed--lg border--round bg--white spotlight">
 						<div class="col-md-10 col-md-offset-1 col-sm-12">
 							<h3>Coworker Spotlight</h3>
 							<p class="lead">
@@ -222,7 +220,9 @@
 </div>
   <% end %>
 </div>
-
+<div class="links btn-right ">
+<a href="#" class="btn-1 btn-black btn-landing">SEE ALL</a>
+</div>
 
 			</div>
 			<!--end of row-->

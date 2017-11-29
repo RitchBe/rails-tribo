@@ -36,18 +36,19 @@
       -moz-osx-font-smoothing: grayscale;
       -webkit-font-smoothing: antialiased;
       font-smoothing: antialiased;
+      padding-bottom: 25px;
     }
 
 .flaticon-calendar:before { content: "\f100"; }
 .flaticon-board:before { content: "\f101"; }
-.flaticon-paper-clip:before { content: "\f102"; }
-.flaticon-meeting:before { content: "\f103"; }
-.flaticon-coffee-cup:before { content: "\f104"; }
-.flaticon-man:before { content: "\f105"; }
-.flaticon-printer:before { content: "\f106"; }
+.flaticon-meeting:before { content: "\f102"; }
+.flaticon-man:before { content: "\f103"; }
+.flaticon-plug:before { content: "\f104"; }
+.flaticon-printer:before { content: "\f105"; }
+.flaticon-beer:before { content: "\f106"; }
 .flaticon-wifi:before { content: "\f107"; }
-.flaticon-plug:before { content: "\f108"; }
-.flaticon-beer:before { content: "\f109"; }
+.flaticon-coffee-cup:before { content: "\f108"; }
+.flaticon-paper-clip:before { content: "\f109"; }
 .flaticon-transport:before { content: "\f10a"; }
 
     $font-Flaticon-calendar: "\f100";

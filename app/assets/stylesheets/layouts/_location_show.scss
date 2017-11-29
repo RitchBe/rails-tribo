@@ -214,3 +214,16 @@ div.booking-card {
   display: flex;
 
 }
+
+
+div.sticky {
+  position: sticky !important;
+  top: 70px;
+}
+
+div.fix-search {
+  position: fixed;
+right: 17%;
+top: 70px
+
+}

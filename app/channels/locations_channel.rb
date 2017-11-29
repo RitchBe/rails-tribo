@@ -8,4 +8,5 @@ class LocationsChannel < ApplicationCable::Channel
   def unsubscribed
     # Any cleanup needed when channel is unsubscribed
   end
+
 end
