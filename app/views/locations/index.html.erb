@@ -25,23 +25,21 @@
 				<% else %>
 				<a href="<%= location_path(l.id) %>" class="link-to-location">
 					<% end %>
-					<div class="blog-card spring-fever" style="background-image: linear-gradient(rgba(250,250,250,0.2), rgba(200,200,200,0.1)),
-					url('<%= cl_image_path l.photos[0].path %>')">
+					<div class="blog-card spring-fever" style="background-image: url('<%= cl_image_path l.photos[0].path %>')">
 					<div class="title-content">
 						<h3><%= l.name %></h3>
 						<hr class="card-hr">
 						<!--  <div class="intro">Yllamco laboris nisi ut aliquip ex ea commodo.</div> -->
 					</div>
-					<div class="blog-card-footer">
-						<div class="utility-info">
-							<ul class="utility-list">
-								<p><%= l.capacity %> spaces</p>
-								<p><%= l.rate_by_week %>€ / week</p>
-							</ul>
-						</div><!-- /.utility-info -->
-
-					</div>
 				</div>
+        <div class="blog-card-footer">
+            <div class="utility-info">
+              <ul class="utility-list">
+                <p><%= l.capacity %> spaces</p>
+                <p><%= number_to_currency(l.rate_by_week, :unit => "", precision: 0) %>€ / week</p>
+              </ul>
+            </div><!-- /.utility-info -->
+          </div>
 			</a>
 		</div>
 		<% end %>
