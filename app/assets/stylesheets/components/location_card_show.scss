@@ -11,6 +11,114 @@
   position:relative;
   border-radius: 5px 5px 0 0;
 }
+.show-title-container {
+  display: flex;
+}
+.show-title-row {
+  width: 90%;
+}
+.wrap-icons-show {
+  display:flex;
+  width: 10%;
+  margin-right: 30px;
+}
+
+.favourite-icon, .favourite-icon-active {
+  background: $gray2;
+  mask-image: image-url('icons/favourites.svg');
+  height:35px;
+  width:35px;
+  color:black;
+  margin:5px;
+  max-height: 100%;
+}
+
+.favourite-icon:hover {
+  background: linear-gradient(270deg, #f31c1c, #b01b1b, #f75a5a);
+  background-size: 600% 600%;
+
+  -webkit-animation: AnimationName 30s ease infinite;
+  -moz-animation: AnimationName 30s ease infinite;
+  animation: AnimationName 30s ease infinite;
+
+  @-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+  @-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+  @keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+}
+
+.favourite-icon-active {
+  background: linear-gradient(270deg, #f31c1c, #b01b1b, #f75a5a);
+  background-size: 600% 600%;
+
+  -webkit-animation: AnimationName 30s ease infinite;
+  -moz-animation: AnimationName 30s ease infinite;
+  animation: AnimationName 30s ease infinite;
+
+  @-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+  @-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+  @keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+}
+
+
+.contact-icon {
+  background: $gray2;
+  mask-image: image-url('icons/contact.svg');
+  height:35px;
+  width:35px;
+  color:black;
+  margin:5px;
+}
+
+.contact-icon:hover {
+  background: linear-gradient(270deg, #20a1ea, #73c0ec, #2b759f);
+  background-size: 600% 600%;
+
+  -webkit-animation: AnimationName 30s ease infinite;
+  -moz-animation: AnimationName 30s ease infinite;
+  animation: AnimationName 30s ease infinite;
+
+  @-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+  @-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+  @keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+}
+
+
 .checkmark-icon-container {
   text-align:center;
   width:100%;
