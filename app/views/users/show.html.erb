@@ -1,6 +1,29 @@
 
 <!-- EXEMPLE TO GET FAVORITES FROM THE CURRENT USER-->
-<% Favorite.where("favoritor_id = ?", current_user.id).each do |favorite|    %>
-<p><%= Location.find(favorite.favoritable_id).name %></p>
-<% end %>
- </div>  <!-- END OF FAVORITE, OUP OUP -->
+
+<!-- END OF FAVORITE, OUP OUP -->
+<div class="container-favourites-profile" style="margin-top:100px;">
+<div class="col-md-8 col-md-offset-2">
+    <% Favorite.where("favoritor_id = ?", current_user.id).each do |l|    %>
+    <div class="col-xs-12 col-sm-6 col-md-4" >
+        <a href="<%= location_path(Location.find(l.favoritable_id)) %>" class="link-to-location">
+          <div class="blog-card spring-fever Hover" id="<%= Location.find(l.favoritable_id).id %>" style="background-image: url('<%= cl_image_path Location.find(l.favoritable_id).photos[0].path %>')">
+          <div class="title-content">
+            <h3><%= Location.find(l.favoritable_id).name %></h3>
+            <hr class="card-hr">
+            <!--  <div class="intro">Yllamco laboris nisi ut aliquip ex ea commodo.</div> -->
+          </div>
+        </div>
+        <div class="blog-card-footer">
+            <div class="utility-info">
+              <ul class="utility-list">
+                <p><%= Location.find(l.favoritable_id).capacity %> spaces</p>
+                <p><%= number_to_currency(Location.find(l.favoritable_id).rate_by_week, :unit => "", precision: 0) %>€ / week</p>
+              </ul>
+            </div><!-- /.utility-info -->
+          </div>
+      </a>
+      </div>
+      <% end %>
+</div>
+</div>

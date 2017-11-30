@@ -1,0 +1,5 @@
+<!-- EXEMPLE TO GET FAVORITES FROM THE CURRENT USER-->
+<% Favorite.where("favoritor_id = ?", current_user.id).each do |favorite|    %>
+<p><%= Location.find(favorite.favoritable_id).name %></p>
+<% end %>
+ </div>  <!-- END OF FAVORITE, OUP OUP -->
