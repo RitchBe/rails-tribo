@@ -15,7 +15,7 @@
   display: flex;
 }
 .show-title-row {
-  width: 90%;
+  width: 75%;
 }
 .wrap-icons-show {
   display:flex;
@@ -33,6 +33,39 @@
   max-height: 100%;
 }
 
+.chat-icon {
+  background: $gray2;
+  mask-image: image-url('icons/chat.svg');
+  height:35px;
+  width:35px;
+  color:black;
+  margin:5px;
+}
+
+.chat-icon:hover {
+ background: linear-gradient(270deg, #fffa00, #f2ee31, #f9f791);
+background-size: 600% 600%;
+
+-webkit-animation: AnimationName 30s ease infinite;
+-moz-animation: AnimationName 30s ease infinite;
+animation: AnimationName 30s ease infinite;
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+}
 .favourite-icon:hover {
   background: linear-gradient(270deg, #f31c1c, #b01b1b, #f75a5a);
   background-size: 600% 600%;
