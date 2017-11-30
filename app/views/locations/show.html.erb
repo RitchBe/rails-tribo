@@ -1,5 +1,6 @@
 
 <div class = "wrapper">
+
   <div class="location-carousel">
    <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
@@ -62,7 +63,14 @@
             <a rel="nofollow" data-method="delete" href="/locations/<%= @location.id %>/unfavorite"><div class="favourite-icon-active" ></div></a>
             <% end %>
 
-            <a href=""><div class="contact-icon"></div></a>
+
+               <%= link_to conversations_path(sender_id: current_user.id, receiver_id: @location.user_id), method: :post  do %>
+                    <div class="contact-icon"></div>
+                    <% end %>
+
+
+<!--
+            <a href="nofollow" data-method="post" href=""><div class="contact-icon"></div></a> -->
           </div>
         </div>
         <%= @location.address %>
@@ -100,6 +108,7 @@
 </div>
 </div>
 
+
 </div>
 
 
@@ -115,6 +124,7 @@
 </script -->
 
 <script>
+
   window.onscroll = function() {
     var nav = document.getElementById('Booking');
     if ( window.pageYOffset > 450 ) {
@@ -144,6 +154,7 @@
     handler.getMap().setZoom(2);
   } else if (markers.length == 1) {
   handler.getMap().setZoom(14);
+
 }
 });
 
