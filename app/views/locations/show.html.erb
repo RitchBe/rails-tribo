@@ -1,3 +1,7 @@
+<!-- Dynamic Titles app/views/offers/show.html.erb -->
+<% content_for :meta_title, "#{@location.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @location.description %>
+<% content_for :meta_image, cl_image_path(@location.photo.path) %>
 
 <div class = "wrapper">
 
