@@ -52,9 +52,11 @@ user =  User.create({
     birth_date: Faker::Date.birthday(18, 50),
     rating: (1..5).to_a.sample
 
+
     })
 user.avatar_url = "https://scontent.flis5-1.fna.fbcdn.net/v/t31.0-8/20626573_10155773499743109_2156786739631634358_o.jpg?oh=4b1096754adf1a110a54e2a30feaa41d&oe=5A9C5189"
 user.save
+
 user = User.create({
     email: "diego@gmail.com",
     password: "password",
@@ -80,11 +82,12 @@ user = User.create({
     })
 user.avatar_url = "https://scontent.flis5-1.fna.fbcdn.net/v/t1.0-9/1917545_10156322895615058_8975658654226488310_n.jpg?oh=80dd80e56a5160c3a69dbebf2849f93e&oe=5AD7C00A"
 user.save
+
 puts "Creating 21 locations..."
 
 location = Location.create({
   user_id: User.all.sample.id,
-  name: "The Good and The bad",
+  name: "The good",
   email: "info@obomomaueovilao.com",
   address: "R. do Alecrim 21, 1200-014 Lisboa",
   phone: "+351 96 453 1423",
@@ -165,7 +168,7 @@ location.save
 
 location = Location.create({
   user_id: User.all.sample.id,
-  name: "Kukas everywhere",
+  name: "Kuck cowork",
   email: "kuki@gmail..com",
   address: "Calle de Arturo Soria, 175, 28043 Madrid, España",
   phone: "914 96 453 142",
@@ -192,7 +195,7 @@ location.save
 
 location = Location.create({
   user_id: User.all.sample.id,
-  name: "Ritch Beee in da House",
+  name: "Ritch Place",
   email: "ritchbeindahouse@gmail.com",
   address:"R. Rodrigues de Faria 103, 1300 - 501 Lisboa",
   phone: "+351 22 132 44 43",
@@ -277,7 +280,7 @@ location = Location.create({
   user_id: User.all.sample.id,
   name: "Shaiwon",
   email: "Shaiwon@gmail.com",
-  address: "Calle de Atocha, 14, Madrid",
+  address: "Avenida Complutense, 50, Madrid, Spain",
   phone: "914 96 453 142",
   description: "Shaiwon is a coworking home located in the Embajadores area (Madrid). It has 300m2 and capacity
   for more than 20 people. In addition, they have spaces of use; one Meeting Rooms (for six people), a Multipurpose Room (up to 5 people),
@@ -291,11 +294,10 @@ location = Location.create({
   rules: RULES.sample(2),
   open_hour: 9,
   close_hour: 21,
-  latitude:  40.4142904,
-  longitude: -3.704224,
+  latitude: 40.456323,
+  longitude: -3.729347,
   })
 location.photo_urls = [
-  'https://es.habcdn.com/photos/project/big/utopic-us-928349.jpg',
   'http://laguaridacreativa.es/wp-content/uploads/2015/11/La_Guarida_Creativa_Fuenlabrada_por_Miguel_Onieva_Fotografo_09.jpg',
   'http://coworkingenfuenlabrada.es/wp-content/uploads/2015/11/La_Guarida_Creativa_Fuenlabrada_por_Miguel_Onieva_Fotografo_37.jpg',
   'http://www.laindustrialservicios.com/uploads/1/4/0/0/14002785/9604387_orig.jpg',
@@ -360,7 +362,7 @@ location.save
 
 location = Location.create({
   user_id: User.all.sample.id,
-  name: "Shubaduba",
+  name: "Ron´s Place",
   email: "ashubaduba@gmail.com",
   address: "Praça Duque da Terceira 24, 1200-014 Lisboa",
   phone: " +251 218 8 42 00",
@@ -415,7 +417,7 @@ location.save
 
 location = Location.create({
  user_id: User.all.sample.id,
- name: "Double9",
+ name: "BBD",
  email: "double9@gmail.com",
  address: "Hotel Mercy, Rua da Misericórdia, 76, Chiado, Lisboa",
  phone: "221 2481480",
@@ -522,7 +524,7 @@ location.save
 
 location = Location.create({
   user_id: User.all.sample.id,
-  name: "IsaYa Lounge",
+  name: "Isaya Lounge",
   email: "Isahias@yahoo.com",
   address: "Gran Vía, 12, 28013 Madrid, España",
   phone: "91 5773322",
@@ -576,7 +578,7 @@ location.save
 
 location = Location.create({
   user_id: User.all.sample.id,
-  name: "#MOIST",
+  name: "Moist",
   email: "moist@gmail.com",
   address: "Calle San Lucas, 13, 28004 Madrid, España",
   phone: "+34 915 13 54 66",
@@ -619,7 +621,7 @@ location = Location.create({
   rules: RULES.sample(2),
   open_hour: 9,
   close_hour: 21,
-        latitude:  40.467590,
+  latitude:  40.467590,
   longitude: -3.681164
   })
 location.photo_urls = [
