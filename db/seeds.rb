@@ -41,19 +41,45 @@ puts 'Creating 15 fake users'
     )
 end
 
-1.times do
-  User.create(
-    email: "triboteam@gmail.com",
+user =  User.create({
+    email: "hugo@gmail.com",
     password: "password",
     nick_name: Faker::Twitter.screen_name,
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
+
+    first_name: "Hugo",
+    last_name: "Rosa",
     activity: ACTIVITY.sample,
     birth_date: Faker::Date.birthday(18, 50),
     rating: (1..5).to_a.sample
-    )
-end
 
+    })
+user.avatar_url = "https://scontent.flis5-1.fna.fbcdn.net/v/t31.0-8/20626573_10155773499743109_2156786739631634358_o.jpg?oh=4b1096754adf1a110a54e2a30feaa41d&oe=5A9C5189"
+user.save
+user = User.create({
+    email: "diego@gmail.com",
+    password: "password",
+    nick_name: Faker::Twitter.screen_name,
+    first_name: "Diego",
+    last_name: "S. Mezquiriz",
+    activity: ACTIVITY.sample,
+    birth_date: Faker::Date.birthday(18, 50),
+    rating: (1..5).to_a.sample
+    })
+user.avatar_url = "https://scontent.flis5-1.fna.fbcdn.net/v/t15.0-10/24028855_10159914241210352_2375245390044725248_n.jpg?oh=cfa6cdbacfdfe08a6487f3b77798e2f8&oe=5A8D36E9"
+user.save
+
+user = User.create({
+    email: "gon@gmail.com",
+    password: "password",
+    nick_name: Faker::Twitter.screen_name,
+    first_name: "Gonzalo",
+    last_name: "Fdez-Victorio",
+    activity: ACTIVITY.sample,
+    birth_date: Faker::Date.birthday(18, 50),
+    rating: (1..5).to_a.sample
+    })
+user.avatar_url = "https://scontent.flis5-1.fna.fbcdn.net/v/t1.0-9/1917545_10156322895615058_8975658654226488310_n.jpg?oh=80dd80e56a5160c3a69dbebf2849f93e&oe=5AD7C00A"
+user.save
 puts "Creating 21 locations..."
 
 location = Location.create({
@@ -84,7 +110,7 @@ location.photo_urls = [
 location.save
 
 location = Location.create({
-  user_id: User.all.sample.id,
+  user_id: User.find_by(email: "diego@gmail.com"),
   name: "Industrial Minds",
   email: "industrial@minds.com",
   address: "Campo Grande 7, 1700-087 Lisboa",
@@ -522,8 +548,8 @@ location.photo_urls = [
 location.save
 
 location = Location.create({
-  user_id: User.all.sample.id,
-  name: "Mikes Place",
+  user_id: User.find_by(email: "gon@gmail.com"),
+  name: "Gonzalo's Space",
   email: "mike@gmail.com",
   address: "Av. de Pío XII, 25, 28016 Madrid, España",
   phone: "+34 913 53 07 80",
@@ -845,4 +871,4 @@ message = Message.create({
   location_id: 4
   })
 
-message.save
+
