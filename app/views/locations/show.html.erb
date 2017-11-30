@@ -43,7 +43,7 @@
             <% else %>
             <a rel="nofollow" data-method="delete" href="/locations/<%= @location.id %>/unfavorite"><div class="favourite-icon-active" ></div></a>
             <% end %>
-            
+
                <%= link_to conversations_path(sender_id: current_user.id, receiver_id: @location.user_id), method: :post  do %>
                     <div class="contact-icon"></div>
                     <% end %>
@@ -80,7 +80,7 @@
           <% if @location.features.include? "Events" %> <i class="fi flaticon-calendar"><p>Events</p></i><% end %>
         </div>
       </div>
-      <div id="map" style="width: 100%; height: 250px;"></div>
+      <div id="map" style="width: 100%; height: 300px !important;"></div>
     </div>
   </div>
 </div>
@@ -149,7 +149,7 @@ markers = <%= raw @hash.to_json %>
 <!-- style maps -->
 var mapElement = document.getElementById('map');
 var mapOptions = {
-                    zoom: 11,
+                    zoom: 7,
 
                     // The latitude and longitude to center the map (always required)
                     center: new google.maps.LatLng(40.6700, -73.9400), // New York
@@ -164,6 +164,7 @@ Gmaps.store = {}
   marker = handler.addMarker(m);
   marker.serviceObject.set('id', m.id);
   marker.serviceObject.set("label", {text: m.label, color: "rgba(250,250,250,0)", fontWeight: "bold", bottom: "50px"});
+
   marker.serviceObject.set('icon', {url:  'data:image/svg+xml;utf-8, \
       <svg width="42" height="42" viewBox="0 0 50 80" xmlns="http://www.w3.org/2000/svg"> \
         <path fill="black" stroke="white" stroke-width="1.5" d="M50,10C36.19,10,25,20.09,25,35c0,5.37,2.31,12.68,4.62,17L50,90,70.38,52C72.69,47.68,75,40.37,75,35,75,20.09,63.81,10,50,10Zm0,14A11,11,0,1,1,39,35,11,11,0,0,1,50,24Z" transform="translate(-25 -10)" ></path><polyline class="cls-1" points="20.06 22.21 23.85 22.21 23.85 30.58"/><polyline class="cls-1" points="29.85 22.21 26.06 22.21 26.06 30.58"/> \
@@ -174,5 +175,6 @@ Gmaps.store = {}
 handler.fitMapToBounds();
 
 });
+<% end %>
 <% end %>
 <% end %>
