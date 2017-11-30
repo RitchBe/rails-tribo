@@ -1,9 +1,13 @@
+<div class="profile-container">
+  <div class="profile-row">
 
-<!-- EXEMPLE TO GET FAVORITES FROM THE CURRENT USER-->
+  </div>
+</div>
 
 <!-- END OF FAVORITE, OUP OUP -->
 <div class="container-favourites-profile" style="margin-top:100px;">
 <div class="col-md-8 col-md-offset-2">
+  <div style="width:100%">
     <% Favorite.where("favoritor_id = ?", current_user.id).each do |l|    %>
     <div class="col-xs-12 col-sm-6 col-md-4" >
         <a href="<%= location_path(Location.find(l.favoritable_id)) %>" class="link-to-location">
@@ -25,5 +29,6 @@
       </a>
       </div>
       <% end %>
+    </div>
 </div>
 </div>
