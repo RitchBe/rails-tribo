@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>The page you were looking for doesn't exist (500)</title>
+	<title>The page you were looking for doesn't exist (404)</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<style>
 	@import url('https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed|Raleway');
@@ -10,6 +10,7 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		height: 100vh;
 	}
 
 	.error-content{
@@ -25,23 +26,17 @@
 </head>
 
 <body class="rails-default-error-page">
-	<!-- This file lives in public/404.html -->
+	<!-- This file lives in public/500.html -->
 	<div class="error-container">
 
 		<div class="error-content">
 			<div class="text-jumbo center">
-				<h1>Sorry, you don't have access to this page!</h1>
-
+				<h1>{ 500 } Sorry, you don't have access to this page!</h1>
 			</div>
 		</div>
 		<div class="error-images">
-			<img src="https://media.giphy.com/media/7erBV7JsTvPuU/giphy.gif" width="313" height="428" class="hide-sm" >
+			<img src="https://a0.muscache.com/airbnb/static/error_pages/404-Airbnb_final-d652ff855b1335dd3eedc3baa8dc8b69.gif" width="313" height="428" class="hide-sm" >
 		</div>
-		<div class="error-content">
-			<div class="text-jumbo center">
-				<h2>It's maybe time for a good coffee and to share with your coworkers!</h2>
-			</div>
-			
-		</div>
-	</body>
-	</html>
+	</div>
+</body>
+</html>
