@@ -25,10 +25,13 @@
           }
             if (data.current_user_id == <%= current_user.id %>) {
             const messagesContainer = document.getElementById('messages');
+            const messageInput = document.querySelector(".emoji-wysiwyg-editor");
             const child = document.createElement('div');
             child.className += "self-messages";
             child.insertAdjacentHTML('beforeend', data.message_partial);
             messagesContainer.appendChild(child);
+            messageInput.innerHTML = "" ;
+            console.log("gg");
             scrollLastMessageIntoView();
           }
         }

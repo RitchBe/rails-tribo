@@ -10,7 +10,7 @@ class PrivateMessagesController < ApplicationController
 
     @messages.where("user_id != ? AND read = ?", current_user.id, false).update_all(read: true)
 
-    @message = @conversation.private_messages.new
+
   end
 
   def create

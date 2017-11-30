@@ -31,6 +31,15 @@ function scrollLastMessageIntoView() {
   }
 }
 
+function scrollLastPrivateMessageIntoView() {
+  const messages = document.querySelectorAll('.private-message-author');
+  const lastMessage = messages[messages.length - 1];
+
+  if (lastMessage !== undefined) {
+    lastMessage.scrollIntoView();
+  }
+}
+
 window.sr = ScrollReveal({ reset: false });
 sr.reveal('.gallery__image_left',{ duration: 1200, distance: '600px', origin: 'left'}, 500);
 sr.reveal('.gallery__image_right',{ duration: 1200, distance: '600px', origin: 'right', delay: 300}, 300);
