@@ -1,5 +1,5 @@
 meta_product_name: "Tribo"
 meta_title: "Work wherever you want - Connect"
 meta_description: "Tribo is a collective of like-minded creatives working together with the freedom of having multiple private and shared spaces with all the conveniences of a modern creative environment."
-meta_image: "img_for_og_metatags.png"                       # should exist in `app/assets/images/`
+meta_image: "tribo-fb-image.png"                       # should exist in `app/assets/images/`
 
