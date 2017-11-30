@@ -47,6 +47,10 @@
                <%= link_to conversations_path(sender_id: current_user.id, receiver_id: @location.user_id), method: :post  do %>
                     <div class="contact-icon"></div>
                     <% end %>
+
+                <%= link_to location_messages_path(@location.id)  do %>
+                    <div class="contact-icon"></div>
+                    <% end %>
                     <% end %>
 
 
@@ -137,7 +141,7 @@
     end %>
 
 
-<% content_for(:after_js) do %>
+
 <%= javascript_tag do %>
 
 <!-- .Map(mapElement, mapOptions) -->
@@ -177,4 +181,4 @@ handler.fitMapToBounds();
 });
 <% end %>
 <% end %>
-<% end %>
+
