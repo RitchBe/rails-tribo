@@ -19,7 +19,7 @@
   </div>
 
 <div class="cards-container">
-	<div class="row-index-show" >
+	<div class="row-index-show" style="height: 80vh; overflow-y: auto" >
 		<% @location.each do |l| %>
 		<div class="col-xs-12 col-sm-6 col-md-4" >
 			<% if params[:in].present? %>
@@ -47,7 +47,7 @@
 
 		<% end %>
 	</div>
-	<div id="map"></div>
+	<div id="map" style="height: 80vh"></div>
 
 </div>
 
