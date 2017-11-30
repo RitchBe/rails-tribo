@@ -1,9 +1,11 @@
 const newPrivateMessageForm = document.getElementById('new_private_message');
 const messageList = document.getElementsByClassName("private-message-list");
+const privateMessageInput = document.getElementById("private_message_body");
 
 <% if @message.errors.any? %>
   newPrivateMessageForm.innerHTML = "<%= j render 'form', conversation: @conversation, private_message: @message %>";
 messageList[0].lastElementChild.scrollIntoView({block: "end", behavior: "smooth"})
+
 
 
 <% else %>
@@ -11,5 +13,6 @@ messageList[0].lastElementChild.scrollIntoView({block: "end", behavior: "smooth"
   messages.insertAdjacentHTML("beforeend", "<%= j render  @message %>");
 messageList[0].lastElementChild.scrollIntoView({block: "end", behavior: "smooth"})
 
+privateMessageInput.value = ""
   // newPrivateMessageForm.innerHTML = "<%= j render 'form', conversation: @conversation, private_message: Message.new %>";
 <% end %>
