@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   delete '/locations/:id/unfavorite', to: "locations#unfavorite"
 
 
+  get '/users/:id/favourites', to: "users#favourite"
+
   ActiveAdmin.routes(self)
 
   devise_for :users, controllers: { sessions: 'sessions', omniauth_callbacks: 'users/omniauth_callbacks' }
