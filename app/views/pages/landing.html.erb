@@ -228,4 +228,15 @@
       <i id="cover-arrow-up" class="fa fa-chevron-up" ></i>
     </a>
   </div>
-
+<script>
+window.onload = function() {
+  setTimeout(function() {
+    // preload image
+    new Image().src = "<%= asset_path('landing/cowork-3.jpg')%>";
+  }, 100);
+  new Image().src = "<%= asset_path('landing/cowork-2.jpg')%>";
+  }, 100);
+new Image().src = "<%= asset_path('landing/cowork-1.jpg')%>";
+  }, 100);
+};
+</script>

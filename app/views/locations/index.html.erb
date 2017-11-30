@@ -55,14 +55,13 @@
 <% content_for(:after_js) do %>
 <%= javascript_tag do %>
 
-
+<!-- .Map(mapElement, mapOptions) -->
 var handler = Gmaps.build('Google');
-newmap = handler.buildMap({ internal: { id: 'map' } }, function() {
+newmap = handler.buildMap({ internal: { id: 'map' }, }, function() {
 markers = <%= raw @hash.to_json %>
 <!-- style maps -->
 var mapElement = document.getElementById('map');
 var mapOptions = {
-                    // How zoomed in you want the map to start at (always required)
                     zoom: 11,
 
                     // The latitude and longitude to center the map (always required)
@@ -95,7 +94,7 @@ Gmaps.selectMarker = function(id) {
   $.each(Gmaps.store.markers, function() {
     if (this.serviceObject.id == id) {
       this.panTo();
-      newmap.serviceObject.setZoom(15);
+
       this.serviceObject.setAnimation(google.maps.Animation.BOUNCE);
     }
     else {
