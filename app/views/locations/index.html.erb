@@ -126,10 +126,12 @@ Gmaps.selectMarker = function(id) {
 
 $.each(locations, function() {
   this.addEventListener('mouseenter', function() {
-  Gmaps.selectMarker(parseInt(this.id) + 1);
+  Gmaps.selectMarker(parseInt(this.id));
 
 });
   this.addEventListener("mouseout", function() {
+  Gmaps.selectMarker(0);
+
 
 });
 });
