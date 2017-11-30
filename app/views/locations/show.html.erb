@@ -1,3 +1,7 @@
+<!-- Dynamic Titles app/views/offers/show.html.erb -->
+<% content_for :meta_title, "#{@location.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @location.description %>
+<% content_for :meta_image, cl_image_path(@location.photos[0].path) %>
 
 <div class = "wrapper">
 <div class="col-sm-5 col-sm-offset-1 col-md-8 col-md-offset-2">
@@ -31,6 +35,7 @@
           <div class="show-title-row">
             <h2 class="pricing-box__offer-title" style="font-weight:bold;"><%= @location.name %> </h2>
           </div>
+          <% if current_user  %>
           <div class="wrap-icons-show">
             <% if  current_user.favorites.where("favoritable_id = ?", @location).count == 0 %>
 
@@ -38,8 +43,17 @@
             <% else %>
             <a rel="nofollow" data-method="delete" href="/locations/<%= @location.id %>/unfavorite"><div class="favourite-icon-active" ></div></a>
             <% end %>
+            
+               <%= link_to conversations_path(sender_id: current_user.id, receiver_id: @location.user_id), method: :post  do %>
+                    <div class="contact-icon"></div>
+                    <% end %>
+                    <% end %>
 
-            <a href=""><div class="contact-icon"></div></a>
+
+
+<!--
+            <a href="nofollow" data-method="post" href=""><div class="contact-icon"></div></a> -->
+
           </div>
         </div>
         <%= @location.address %>
@@ -123,18 +137,42 @@
     end %>
 
 
-    <%= javascript_tag do %>
-    var handler = Gmaps.build('Google');
-    handler.buildMap({ internal: { id: 'map' } }, function() {
-    markers = handler.addMarkers(<%= raw @hash.to_json %>);
-    handler.bounds.extendWith(markers);
-    handler.fitMapToBounds();
-    if (markers.length == 0) {
-    handler.getMap().setZoom(2);
-  } else if (markers.length == 1) {
-  handler.getMap().setZoom(14);
-}
-});
+<% content_for(:after_js) do %>
+<%= javascript_tag do %>
 
+<!-- .Map(mapElement, mapOptions) -->
+var handler = Gmaps.build('Google');
+let locations = document.getElementsByClassName('Hover');
+
+newmap = handler.buildMap({ internal: { id: 'map' }, }, function() {
+markers = <%= raw @hash.to_json %>
+<!-- style maps -->
+var mapElement = document.getElementById('map');
+var mapOptions = {
+                    zoom: 11,
+
+                    // The latitude and longitude to center the map (always required)
+                    center: new google.maps.LatLng(40.6700, -73.9400), // New York
+
+                    // How you would like to style the map.
+                    // This is where you would paste any style found on Snazzy Maps.
+                    styles: [{"featureType":"all","elementType":"geometry.fill","stylers":[{"weight":"2.00"}]},{"featureType":"all","elementType":"geometry.stroke","stylers":[{"color":"#9c9c9c"}]},{"featureType":"all","elementType":"labels.text","stylers":[{"visibility":"on"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"landscape.man_made","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#eeeeee"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#7b7b7b"}]},{"featureType":"road","elementType":"labels.text.stroke","stylers":[{"color":"#ffffff"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#c8d7d4"}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"color":"#070707"}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"color":"#ffffff"}]}]
+                };
+<!-- end map style -->
+Gmaps.store = {}
+  Gmaps.store.markers = markers.map(function(m) {
+  marker = handler.addMarker(m);
+  marker.serviceObject.set('id', m.id);
+  marker.serviceObject.set("label", {text: m.label, color: "rgba(250,250,250,0)", fontWeight: "bold", bottom: "50px"});
+  marker.serviceObject.set('icon', {url:  'data:image/svg+xml;utf-8, \
+      <svg width="42" height="42" viewBox="0 0 50 80" xmlns="http://www.w3.org/2000/svg"> \
+        <path fill="black" stroke="white" stroke-width="1.5" d="M50,10C36.19,10,25,20.09,25,35c0,5.37,2.31,12.68,4.62,17L50,90,70.38,52C72.69,47.68,75,40.37,75,35,75,20.09,63.81,10,50,10Zm0,14A11,11,0,1,1,39,35,11,11,0,0,1,50,24Z" transform="translate(-25 -10)" ></path><polyline class="cls-1" points="20.06 22.21 23.85 22.21 23.85 30.58"/><polyline class="cls-1" points="29.85 22.21 26.06 22.21 26.06 30.58"/> \
+      </svg>', labelOrigin: new google.maps.Point(40,33)});
+  return marker;
+});
+  handler.bounds.extendWith(Gmaps.store.markers);
+handler.fitMapToBounds();
+
+});
 <% end %>
 <% end %>

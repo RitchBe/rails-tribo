@@ -54,9 +54,7 @@ end
     )
 end
 
-
-
-puts "Creating 17 real locations..."
+puts "Creating 21 locations..."
 
 location = Location.create({
   user_id: User.all.sample.id,
@@ -87,6 +85,33 @@ location.save
 
 location = Location.create({
   user_id: User.all.sample.id,
+  name: "Industrial Minds",
+  email: "industrial@minds.com",
+  address: "Campo Grande 7, 1700-087 Lisboa",
+  phone: "+351 96 453 1423",
+  description: "Situated on the north side of the city you´ll find a refurbished 1000 sq metres for collaboration and co-creation. Well communicated
+  by the green line and with all the facilities closed to the place",
+  capacity: 40,
+  rate_by_hour: 2,
+  rate_by_day: 5,
+  rate_by_week: 10,
+  features: FEATURES.sample(5),
+  tags: TAGS.sample(3),
+  rules: RULES.sample(2),
+  open_hour: 9,
+  close_hour: 19,
+  latitude:  38.7487537,
+  longitude: -9.1495751
+  })
+location.photo_urls = [
+  'https://polonium209.com/wp-content/uploads/2017/01/MG_0086-POLONIUM_V_IMPRIMIR-copia.jpg',
+  'https://images.adsttc.com/media/images/5006/e66b/28ba/0d41/4800/031f/large_jpg/stringio.jpg?1414440025',
+  'https://images.adsttc.com/media/images/5006/e65a/28ba/0d41/4800/031a/large_jpg/stringio.jpg?1414440014'
+]
+location.save
+
+location = Location.create({
+  user_id: User.all.sample.id,
   name: "The Insólito",
   email: "insolito@hotmail.com",
   address:"Rua de São Pedro de Alcântara, 83, Bairro Alto, Lisboa 1250-238",
@@ -111,31 +136,31 @@ location.photo_urls = [
 ]
 location.save
 
+
 location = Location.create({
   user_id: User.all.sample.id,
-  name: "Shanghai Penthouse",
-  email: "penthouse@gmail.com",
-  address:"Paseo de la Castellana, 2, 28046 Madrid, España",
-  phone: "+351 21 130 33 43",
-  description: "Spacious and confortable desks to work with all the supplies of a co-working space plus 3 meeting rooms. At the same time you´ll have the
-  opportunity to co-work with one of the best coder community of the city",
-  capacity: 10,
-  rate_by_hour: 4,
-  rate_by_day: 11,
-  rate_by_week: 35,
+  name: "Kukas everywhere",
+  email: "kuki@gmail..com",
+  address: "Calle de Arturo Soria, 175, 28043 Madrid, España",
+  phone: "914 96 453 142",
+  description: "Kukaas everywhere is the most beloved place for a friday coworking day. Best digital kukaas of the city get
+  their toDos kicked at this spot. At the very west side of Madrid, it´s the perfect place to work and start a good friday",
+  capacity: 24,
+  rate_by_hour: 5,
+  rate_by_day:10,
+  rate_by_week: 25,
   features: FEATURES.sample(4),
-  tags: "#Roomy, #Developers #Social",
-  rules: RULES.sample(3),
+  tags: TAGS.sample(1),
+  rules: RULES.sample(2),
   open_hour: 9,
   close_hour: 21,
-  latitude:  40.426306,
-  longitude: -3.689672
-
+  latitude: 40.4573679,
+  longitude: -3.6583037,
   })
 location.photo_urls = [
-  'http://retaildesignblog.net/wp-content/uploads/2016/12/WeWork-Yanping-Lu-Coworking-Office-by-Linehouse-Shanghai-China05-1.jpg',
-  'https://www.hospitalitydesign.com/wp-content/uploads/Linehouse_Herschel.png',
-  'https://i.pinimg.com/originals/cd/40/7a/cd407ad0eb29dd583f86001c2aa61cb6.jpg'
+  'https://cdn-images-1.medium.com/max/2000/1*tzK_94Kop8eMfV8R8WRlsg.jpeg',
+  'https://thespaces.com/wp-content/uploads/2017/04/London-coworking-spaces-forge-co.jpg',
+  'https://cdn.theculturetrip.com/wp-content/uploads/2016/02/lomi.jpg',
 ]
 location.save
 
@@ -192,6 +217,62 @@ location.photo_urls = [
   'http://www.insidelisbon.com/wp-content/uploads/2016/11/IL_nightlife_drink_casa-independente.jpg',
   'http://cdn.maxima.pt/images/2017-10/img_974x632$2017_10_10_14_22_33_328688.png',
   'https://cdn.betakit.com/wp-content/uploads/2016/08/rndmwrk-web.jpg'
+]
+location.save
+
+location = Location.create({
+  user_id: User.all.sample.id,
+  name: "Monica",
+  email: "monica@gmail..com",
+  address: "Calle de Atocha, 14, Madrid",
+  phone: "914 96 453 142",
+  description: "Situated on the north side of the city you´ll find a refurbished 1000 sq metres for collaboration and co-creation. Well communicated
+  by the green line and with all the facilities closed to the place",
+  capacity: 40,
+  rate_by_hour: 2,
+  rate_by_day: 5,
+  rate_by_week: 10,
+  features: FEATURES.sample(4),
+  tags: TAGS.sample(1),
+  rules: RULES.sample(2),
+  open_hour: 9,
+  close_hour: 21,
+  latitude:  40.4142904,
+  longitude: -3.704224,
+  })
+location.photo_urls = [
+  'https://infonegocios.info/uploads/worka-1.jpg',
+  'https://www.muypymes.com/wp-content/uploads/2016/11/cafeteria.jpg',
+  'https://assets.entrepreneur.com/content/3x2/1300/20170626001727-shutterstock-525266194.jpeg'
+]
+location.save
+
+location = Location.create({
+  user_id: User.all.sample.id,
+  name: "Shaiwon",
+  email: "Shaiwon@gmail.com",
+  address: "Calle de Atocha, 14, Madrid",
+  phone: "914 96 453 142",
+  description: "Shaiwon is a coworking home located in the Embajadores area (Madrid). It has 300m2 and capacity
+  for more than 20 people. In addition, they have spaces of use; one Meeting Rooms (for six people), a Multipurpose Room (up to 5 people),
+  a Common Space (for event organization), and an Office-Kitchen area",
+  capacity: 24,
+  rate_by_hour: 6,
+  rate_by_day:105,
+  rate_by_week: 30,
+  features: FEATURES.sample(4),
+  tags: TAGS.sample(1),
+  rules: RULES.sample(2),
+  open_hour: 9,
+  close_hour: 21,
+  latitude:  40.4142904,
+  longitude: -3.704224,
+  })
+location.photo_urls = [
+  'https://es.habcdn.com/photos/project/big/utopic-us-928349.jpg',
+  'http://laguaridacreativa.es/wp-content/uploads/2015/11/La_Guarida_Creativa_Fuenlabrada_por_Miguel_Onieva_Fotografo_09.jpg',
+  'http://coworkingenfuenlabrada.es/wp-content/uploads/2015/11/La_Guarida_Creativa_Fuenlabrada_por_Miguel_Onieva_Fotografo_37.jpg',
+  'http://www.laindustrialservicios.com/uploads/1/4/0/0/14002785/9604387_orig.jpg',
 ]
 location.save
 
@@ -522,6 +603,34 @@ location.photo_urls = [
 ]
 location.save
 
+location = Location.create({
+  user_id: User.all.sample.id,
+  name: "Shanghai Penthouse",
+  email: "penthouse@gmail.com",
+  address:"Paseo de la Castellana, 2, 28046 Madrid, España",
+  phone: "+351 21 130 33 43",
+  description: "Spacious and confortable desks to work with all the supplies of a co-working space plus 3 meeting rooms. At the same time you´ll have the
+  opportunity to co-work with one of the best coder community of the city",
+  capacity: 10,
+  rate_by_hour: 4,
+  rate_by_day: 11,
+  rate_by_week: 35,
+  features: FEATURES.sample(4),
+  tags: "#Roomy, #Developers #Social",
+  rules: RULES.sample(3),
+  open_hour: 9,
+  close_hour: 21,
+  latitude:  40.426306,
+  longitude: -3.689672
+
+  })
+location.photo_urls = [
+  'http://retaildesignblog.net/wp-content/uploads/2016/12/WeWork-Yanping-Lu-Coworking-Office-by-Linehouse-Shanghai-China05-1.jpg',
+  'https://www.hospitalitydesign.com/wp-content/uploads/Linehouse_Herschel.png',
+  'https://i.pinimg.com/originals/cd/40/7a/cd407ad0eb29dd583f86001c2aa61cb6.jpg'
+]
+location.save
+
 puts "create 15 fake booking"
 
 15.times do
@@ -636,7 +745,7 @@ puts "Create some fake messages on chat room"
 
 message = Message.create({
   content: Faker::HitchhikersGuideToTheGalaxy.quote,
-  user_id:(0..16).sample,
+  user_id:(0..16).to_a.sample,
   location_id: 2
   })
 
@@ -644,7 +753,7 @@ message.save
 
 message = Message.create({
   content: Faker::HitchhikersGuideToTheGalaxy.quote,
-  user_id:(0..16).sample,
+  user_id:(0..16).to_a.sample,
   location_id: 2
   })
 
@@ -652,7 +761,7 @@ message.save
 
 message = Message.create({
   content: Faker::HitchhikersGuideToTheGalaxy.quote,
-  user_id:(0..16).sample,
+  user_id:(0..16).to_a.sample,
   location_id: 2
   })
 
@@ -660,7 +769,7 @@ message.save
 
 message = Message.create({
   content: Faker::HitchhikersGuideToTheGalaxy.quote,
-  user_id:(0..16).sample,
+  user_id:(0..16).to_a.sample,
   location_id: 2
   })
 
@@ -668,7 +777,7 @@ message.save
 
 message = Message.create({
   content: Faker::HitchhikersGuideToTheGalaxy.quote,
-  user_id:(0..16).sample,
+  user_id:(0..16).to_a.sample,
   location_id: 2
   })
 
@@ -676,7 +785,7 @@ message.save
 
 message = Message.create({
   content: Faker::HitchhikersGuideToTheGalaxy.quote,
-  user_id:(0..16).sample,
+  user_id:(0..16).to_a.sample,
   location_id: 4
   })
 
@@ -684,7 +793,7 @@ message.save
 
 message = Message.create({
   content: Faker::HitchhikersGuideToTheGalaxy.quote,
-  user_id:(0..16).sample,
+  user_id:(0..16).to_a.sample,
   location_id: 4
   })
 
@@ -692,7 +801,7 @@ message.save
 
 message = Message.create({
   content: Faker::HitchhikersGuideToTheGalaxy.quote,
-  user_id:(0..16).sample,
+  user_id:(0..16).to_a.sample,
   location_id: 4
   })
 
@@ -700,7 +809,7 @@ message.save
 
 message = Message.create({
   content: Faker::HitchhikersGuideToTheGalaxy.quote,
-  user_id:(0..16).sample,
+  user_id:(0..16).to_a.sample,
   location_id: 4
   })
 
@@ -708,7 +817,7 @@ message.save
 
 message = Message.create({
   content: Faker::HitchhikersGuideToTheGalaxy.quote,
-  user_id:(0..16).sample,
+  user_id:(0..16).to_a.sample,
   location_id: 4
   })
 
@@ -716,7 +825,7 @@ message.save
 
 message = Message.create({
   content: Faker::HitchhikersGuideToTheGalaxy.quote,
-  user_id:(0..16).sample,
+  user_id:(0..16).to_a.sample,
   location_id: 4
   })
 
@@ -724,7 +833,7 @@ message.save
 
 message = Message.create({
   content: Faker::HitchhikersGuideToTheGalaxy.quote,
-  user_id:(0..16).sample,
+  user_id:(0..16).to_a.sample,
   location_id: 4
   })
 
@@ -732,7 +841,7 @@ message.save
 
 message = Message.create({
   content: Faker::HitchhikersGuideToTheGalaxy.quote,
-  user_id:(0..16).sample,
+  user_id:(0..16).to_a.sample,
   location_id: 4
   })
 

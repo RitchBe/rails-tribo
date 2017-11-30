@@ -1,0 +1,7 @@
+<%= form_for [@conversation, @conversation.private_messages.new], remote: true do |f| %>
+  <div class="private-message-field">
+    <%= f.text_area :body, placeholder: "Your message" %>
+  </div>
+
+  <%= f.submit "Send" , class: "send-private-message-btn"%>
+<% end %>

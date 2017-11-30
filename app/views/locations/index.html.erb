@@ -19,15 +19,15 @@
   </div>
 
 <div class="cards-container">
-	<div class="row-index-show" >
+	<div class="row-index-show" style="height: 80vh; overflow-y: auto" >
 		<% @location.each do |l| %>
-		<div class="col-xs-12 col-sm-6 col-md-4 Hover" id="<%= l.id %>">
+		<div class="col-xs-12 col-sm-6 col-md-4" >
 			<% if params[:in].present? %>
 			<a  href="<%= location_path(l.id) + '?in=' + params[:in] + '&out=' + params[:out]  %>">
 				<% else %>
 				<a href="<%= location_path(l.id) %>" class="link-to-location">
 					<% end %>
-					<div class="blog-card spring-fever" style="background-image: url('<%= cl_image_path l.photos[0].path %>')">
+					<div class="blog-card spring-fever Hover" id="<%= l.id %>" style="background-image: url('<%= cl_image_path l.photos[0].path %>')">
 					<div class="title-content">
 						<h3><%= l.name %></h3>
 						<hr class="card-hr">
@@ -47,7 +47,7 @@
 
 		<% end %>
 	</div>
-	<div id="map"></div>
+	<div id="map" style="height: 80vh"></div>
 
 </div>
 
@@ -57,6 +57,9 @@
 
 <!-- .Map(mapElement, mapOptions) -->
 var handler = Gmaps.build('Google');
+
+let locations = document.getElementsByClassName('Hover');
+
 newmap = handler.buildMap({ internal: { id: 'map' }, }, function() {
 markers = <%= raw @hash.to_json %>
 <!-- style maps -->
@@ -84,6 +87,25 @@ Gmaps.store = {}
   return marker;
 });
 
+$.each(Gmaps.store.markers, function() {
+  this.serviceObject.addListener('mouseover', function() {
+  locations[this.id].classList.add("marker-hover");
+  locations[this.id].style.transform = "translateY(-20px)";
+  locations[this.id].style.boxShadow = "0 0 10px gray";
+  locations[this.id].scrollIntoView({behavior: "smooth", block: "end", inline: "center"});
+
+  console.log('in');
+});
+  this.serviceObject.addListener('mouseout', function() {
+  locations[this.id].classList.remove("marker-hover")
+  locations[this.id].style.transform = "translateY(0px)";
+  locations[this.id].style.boxShadow = "none";
+
+
+  console.log("out")
+})
+});
+
 handler.bounds.extendWith(Gmaps.store.markers);
 handler.fitMapToBounds();
 });
@@ -109,16 +131,18 @@ Gmaps.selectMarker = function(id) {
   });
 };
 
-let locations = document.getElementsByClassName('Hover');
 $.each(locations, function() {
   this.addEventListener('mouseenter', function() {
-  Gmaps.selectMarker(parseInt(this.id) + 1);
+  Gmaps.selectMarker(parseInt(this.id));
 
 });
   this.addEventListener("mouseout", function() {
+  Gmaps.selectMarker(0);
+
 
 });
 });
+
 
 
 <% end %>

@@ -247,3 +247,8 @@ div.blog-card-footer {
 .link-to-location {
   color: white;
 }
+
+.marker-hover {
+  transform: translateY(-25px) !important;
+  box-shadow: 0  0 35px black !important;
+}

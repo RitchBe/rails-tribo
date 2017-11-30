@@ -1,7 +1,7 @@
 
 <div class="inbox-container">
   <div class="inbox-messages">
-<h2>Your Inb<o>o</o>x</h2>
+<h2>Your Inbox</h2>
 
 
 
@@ -19,9 +19,9 @@
       <% end %>
      <p class="private_message_author text-left"><strong> <%=  "#{conversation.recipient(current_user).first_name} #{conversation.recipient(current_user).last_name}" %></strong></p>
 
-<!--
-     <ink_to "Delete", "#", method: "delete"  %> -->
+    <% if conversation.private_messages.last %>
       <p class="private_message_body text-left">  <%= conversation.private_messages.last.body %></p>
+      <% end %>
   </div>
 
 <% end %>

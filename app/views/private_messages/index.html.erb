@@ -4,7 +4,6 @@
   <!-- INFORMATION ABOUT THE RECEIVER -->
   <div class="private-user-info-wrapper">
     <div class="private-user-info">
-
       <% if @conversation.receiver.id == current_user.id %>
         <% avatar_url = @conversation.sender.facebook_picture_url || "http://s3.amazonaws.com/nvest/Blank_Club_Website_Avatar_Gray.jpg" %>
       <%= image_tag avatar_url, class: "private-message-avatar private-message-avatar-lg " %>
@@ -29,31 +28,19 @@
 <div class="private-message-container">
   <div class="private-message-wrapper">
 <ul class="private-message-list" id="private-message-list">
-  <% @messages.each do |message| %>
-    <% if message.body %>
-
-
-      <li class= <%= if current_user.id === message.user_id then "private-message-sender" else "private-message-receiver" end %>>
-        <h4 class="private-message-author"><%= message.user.first_name %> <%= message.user.last_name %> | <i><%= message.user.email %></i></h4>
-        <p><%= message.body %></p>
-           <% avatar_url = message.user.facebook_picture_url || "http://s3.amazonaws.com/nvest/Blank_Club_Website_Avatar_Gray.jpg" %>
-            <%= image_tag avatar_url, class: "private-message-avatar" %>
-      </li>
-  <hr>
-
-    <% end %>
-  <% end %>
+  <%= render @messages %>
 </ul>
-<%= form_for [@conversation, @message] do |f| %>
-  <div class="private-message-field">
-    <%= f.text_area :body, placeholder: "Your message" %>
-  </div>
+<%= render 'form' %>
+</div>
+</div>
 
-  <%= f.submit "Send" , class: "send-private-message-btn"%>
+
+
+</div>
+
+<% content_for(:after_js) do %>
+<%= javascript_tag do %>
+const messageList = document.getElementsByClassName("private-message-list");
+messageList[0].lastElementChild.scrollIntoView({block: "end"})
 <% end %>
-</div>
-</div>
-
-
-
-</div>
+<% end %>
