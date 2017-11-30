@@ -1,7 +1,7 @@
 <div class="message-input">
   <%= simple_form_for [@location, Message.new], remote: true do |f| %>
   <p class="emoji-picker-container">
-    <%= f.text_area :content, data: {emojiable: true} %>
+    <%= f.text_area :content, data: {emojiable: true}, id: "message_input" %>
   </p>
 <div class="links btn-right">
 

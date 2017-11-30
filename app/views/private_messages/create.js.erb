@@ -1,0 +1,11 @@
+const newPrivateMessageForm = document.getElementById('new_private_message');
+<% if @message.errors.any? %>
+  newPrivateMessageForm.innerHTML = "<%= j render 'form', conversation: @conversation, private_message: @message %>";
+  scrollLastPrivateMessageIntoView()
+
+<% else %>
+  const messages = document.getElementById('private-message-list');
+  messages.insertAdjacentHTML("beforeend", "<%= j render  @message %>");
+  scrollLastPrivateMessageIntoView()
+  // newPrivateMessageForm.innerHTML = "<%= j render 'form', conversation: @conversation, private_message: Message.new %>";
+<% end %>
