@@ -1,0 +1,8 @@
+const newPrivateMessageForm = document.getElementById('new_private_message');
+<% if @message.errors.any? %>
+  newPrivateMessageForm.innerHTML = "<%= j render 'form', conversation: @conversation, private_message: @message %>";
+<% else %>
+  const messages = document.getElementById('private-message-list');
+  messages.insertAdjacentHTML("beforeend", "<%= j render 'index', private_message: @message %>");
+  newPrivateMessageForm.innerHTML = "<%= j render 'form', conversation: @conversation, private_message: Message.new %>";
+<% end %>

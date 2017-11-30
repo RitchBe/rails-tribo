@@ -44,13 +44,7 @@
     <% end %>
   <% end %>
 </ul>
-<%= form_for [@conversation, @message] do |f| %>
-  <div class="private-message-field">
-    <%= f.text_area :body, placeholder: "Your message" %>
-  </div>
-
-  <%= f.submit "Send" , class: "send-private-message-btn"%>
-<% end %>
+<%= render 'form', conversation: @conversation, private_message: @message %>
 </div>
 </div>
 
