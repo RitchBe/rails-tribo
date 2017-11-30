@@ -1,3 +1,5 @@
+
+
 .banner-location {
   height: 50vh;
   background-size: cover;
@@ -176,12 +178,50 @@ div.features > i {
 /* CAROUSEL */
 
 
-#myCarousel, .carousel-inner {
-  width: 100vw;
+#myCarousel,  {
+  width: 100%;
   height: 300px;
+  overflow: hidden;
 }
 
+.carousel-inner .item {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
 
+.slider .single-item{
+  width: 100% !important;
+}
+
+.slick-dots {
+  top: 250px !important;
+  z-index: 1 !important;
+  color:white !important;
+}
+
+.slick-prev {
+    left: 25px !important;
+    top: 150px !important;
+    z-index: 1 !important;
+}
+.slick-next {
+    right: 25px !important;
+    top: 150px !important;
+    z-index: 1 !important;
+}
+.image-carousel {
+ width:100%;
+}
 
 ol li:not(:last-child) {
   margin: 0 !important ;
@@ -199,6 +239,16 @@ ol li:not(:last-child) {
 .location-carousel {
   display: flex;
   justify-content: space-around;
+  margin-top: 100px;
+  width: 100%;
+}
+
+.slick-slide img {
+  display: block;
+  border-top-left-radius: 5px !important;
+  border-top-right-radius: 5px !important;
+  width: 100%;
+  margin-bottom:25%;
 }
 
 div.booking-card {

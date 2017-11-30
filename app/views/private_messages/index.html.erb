@@ -4,17 +4,32 @@
   <!-- INFORMATION ABOUT THE RECEIVER -->
   <div class="private-user-info-wrapper">
     <div class="private-user-info">
-
       <% if @conversation.receiver.id == current_user.id %>
+       <% if current_user.avatar %>
+
+
+              <%= cl_image_tag current_user.avatar.path,class: "private-message-avatar"%>
+        <% else %>
         <% avatar_url = @conversation.sender.facebook_picture_url || "http://s3.amazonaws.com/nvest/Blank_Club_Website_Avatar_Gray.jpg" %>
-      <%= image_tag avatar_url, class: "private-message-avatar private-message-avatar-lg " %>
+        <%= image_tag avatar_url, class: "private-message-avatar private-message-avatar-lg " %>
+        <% end %>
+
+
     <h3 class="text-left conversation-user" style="width: 100%;"> <%= @conversation.sender.first_name %> <%= @conversation.sender.last_name %></h3>
     <h4 class="text-left" style="width: 100%;"> <%= @conversation.sender.email %></h4>
     <h4 class="text-left" style="width: 100%;"> <%= @conversation.sender.activity %></h4>
     <h4 class="text-left" style="width: 100%;"> <%= "☆" * @conversation.sender.rating %></h4>
     <% else %>
-            <% avatar_url = @conversation.receiver.facebook_picture_url || "http://s3.amazonaws.com/nvest/Blank_Club_Website_Avatar_Gray.jpg" %>
-      <%= image_tag avatar_url, class: "private-message-avatar private-message-avatar-lg " %>
+
+
+       <% if current_user.avatar %>
+              <%= cl_image_tag current_user.avatar.path,class: "private-message-avatar"%>
+        <% else %>
+        <% avatar_url = @conversation.sender.facebook_picture_url || "http://s3.amazonaws.com/nvest/Blank_Club_Website_Avatar_Gray.jpg" %>
+        <%= image_tag avatar_url, class: "private-message-avatar private-message-avatar-lg " %>
+        <% end %>
+
+
     <h3 class="text-left conversation-user" style="width: 100%;"> <%= @conversation.receiver.first_name %> <%= @conversation.receiver.last_name %></h3>
     <h4 class="text-left" style="width: 100%;"> <%= @conversation.receiver.email %></h4>
     <h4 class="text-left" style="width: 100%;"><%= @conversation.receiver.activity %></h4>
@@ -38,3 +53,10 @@
 
 
 </div>
+
+<% content_for(:after_js) do %>
+<%= javascript_tag do %>
+const messageList = document.getElementsByClassName("private-message-list");
+messageList[0].lastElementChild.scrollIntoView({block: "end"})
+<% end %>
+<% end %>

@@ -4,58 +4,34 @@
 <% content_for :meta_image, cl_image_path(@location.photos[0].path) %>
 
 <div class = "wrapper">
-
+<div class="col-sm-5 col-sm-offset-1 col-md-8 col-md-offset-2">
   <div class="location-carousel">
-   <div id="myCarousel" class="carousel slide" data-ride="carousel">
-
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <% @location.photos.each_with_index do |p, i| %>
-      <% if i == 0 %>
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <% else %>
-      <li data-target="#myCarousel" data-slide-to="<%= i %>" ></li>
-      <% end %>
-      <% end %>
-    </ol>
-
-    <div class="carousel-inner">
-      <% @location.photos.each_with_index do |p, i| %>
-      <% if i == 0 %>
-      <div class="item active">
-        <% else %>
-        <div class="item">
-          <% end %>
-          <% if @location.photos[i] != nil  %>
-          <%= cl_image_tag @location.photos[i].path, class: "image-carousel" %>
-          <% else %>
-          <%= image_tag "landing/cowork-3.jpg", class: "image-carousel" %>
-          <% end %>
+   <div id="myCarousel" class="carousel slide" style="border-top-left-radius: 5px;
+    border-top-right-radius: 5px;">
+        <div class="slider single-item">
+          <% @location.photos.each_with_index do |p, i| %>
+          <div>
+              <% if @location.photos[i] != nil  %>
+              <%= cl_image_tag @location.photos[i].path %>
+              <% else %>
+              <%= image_tag "landing/cowork-3.jpg" %>
+              <% end %>
+            </div>
+            <% end %>
         </div>
-        <% end %>
-      </div>
-
-
-      <!-- Left and right controls -->
-      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#myCarousel" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right"></span>
-        <span class="sr-only">Next</span>
-      </a>
     </div>
   </div>
+
 </div>
 
+</div>
 <!-- END CAROUSEL - START <IN CONTAINER -->
 
 
   <div class="container-location-show">
     <div class="col-sm-5 col-sm-offset-1 col-md-5 col-md-offset-2">
       <div class="show-description-container" style="padding:20px;">
-        <div class="show-title-container">
+        <div class="show-title-container" >
           <div class="show-title-row">
             <h2 class="pricing-box__offer-title" style="font-weight:bold;"><%= @location.name %> </h2>
           </div>
@@ -68,10 +44,12 @@
             <a rel="nofollow" data-method="delete" href="/locations/<%= @location.id %>/unfavorite"><div class="favourite-icon-active" ></div></a>
             <% end %>
 
-
-
                <%= link_to conversations_path(sender_id: current_user.id, receiver_id: @location.user_id), method: :post  do %>
                     <div class="contact-icon"></div>
+                    <% end %>
+
+                <%= link_to location_messages_path(@location.id)  do %>
+                    <div class="chat-icon"></div>
                     <% end %>
                     <% end %>
 
@@ -79,6 +57,7 @@
 
 <!--
             <a href="nofollow" data-method="post" href=""><div class="contact-icon"></div></a> -->
+
           </div>
         </div>
         <%= @location.address %>
@@ -105,7 +84,7 @@
           <% if @location.features.include? "Events" %> <i class="fi flaticon-calendar"><p>Events</p></i><% end %>
         </div>
       </div>
-      <div id="map" style="width: 100%; height: 250px;"></div>
+      <div id="map" style="width: 100%; height: 300px !important;"></div>
     </div>
   </div>
 </div>
@@ -115,7 +94,6 @@
 
 </div>
 </div>
-
 
 </div>
 
@@ -130,8 +108,15 @@
     current_user.favorite @location %>
   })
 </script -->
-
+<% content_for(:after_js) do %>
 <script>
+  $(document).ready(function(){
+      $('.single-item').slick({
+         interval: false,
+         dots: true,
+         arrows: true
+      });
+    });
 
   window.onscroll = function() {
     var nav = document.getElementById('Booking');
@@ -144,14 +129,19 @@
       nav.classList.add("sticky");
 
     }
-  };</script>
+  };
+
+
+
+</script>
 
   <% @hash =   Gmaps4rails.build_markers(@location) do |location, marker|
     marker.lat location.latitude
     marker.lng location.longitude
     end %>
 
-<% content_for(:after_js) do %>
+
+
 <%= javascript_tag do %>
 
 <!-- .Map(mapElement, mapOptions) -->
@@ -163,7 +153,7 @@ markers = <%= raw @hash.to_json %>
 <!-- style maps -->
 var mapElement = document.getElementById('map');
 var mapOptions = {
-                    zoom: 11,
+                    zoom: 7,
 
                     // The latitude and longitude to center the map (always required)
                     center: new google.maps.LatLng(40.6700, -73.9400), // New York
@@ -178,6 +168,7 @@ Gmaps.store = {}
   marker = handler.addMarker(m);
   marker.serviceObject.set('id', m.id);
   marker.serviceObject.set("label", {text: m.label, color: "rgba(250,250,250,0)", fontWeight: "bold", bottom: "50px"});
+
   marker.serviceObject.set('icon', {url:  'data:image/svg+xml;utf-8, \
       <svg width="42" height="42" viewBox="0 0 50 80" xmlns="http://www.w3.org/2000/svg"> \
         <path fill="black" stroke="white" stroke-width="1.5" d="M50,10C36.19,10,25,20.09,25,35c0,5.37,2.31,12.68,4.62,17L50,90,70.38,52C72.69,47.68,75,40.37,75,35,75,20.09,63.81,10,50,10Zm0,14A11,11,0,1,1,39,35,11,11,0,0,1,50,24Z" transform="translate(-25 -10)" ></path><polyline class="cls-1" points="20.06 22.21 23.85 22.21 23.85 30.58"/><polyline class="cls-1" points="29.85 22.21 26.06 22.21 26.06 30.58"/> \
@@ -186,6 +177,8 @@ Gmaps.store = {}
 });
   handler.bounds.extendWith(Gmaps.store.markers);
 handler.fitMapToBounds();
+handler.getMap().setZoom(13);
 });
 <% end %>
 <% end %>
+

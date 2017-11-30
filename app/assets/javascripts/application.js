@@ -4,12 +4,13 @@
 //= require underscore
 //= require flatpickr
 //= require gmaps/google
-
 //= require jquery-fileupload/basic
 //= require cloudinary/jquery.cloudinary
 //= require rails_emoji_picker
 //= require attachinary
 //= require_tree ./app
+//= require jquery.slick
+
 
 
 
@@ -32,13 +33,11 @@ function scrollLastMessageIntoView() {
 }
 
 function scrollLastPrivateMessageIntoView() {
-  const messages = document.querySelectorAll('.private-message-author');
-  const lastMessage = messages[messages.length - 1];
-
-  if (lastMessage !== undefined) {
-    lastMessage.scrollIntoView();
+  console.log('in')
+const messageList = document.getElementsByClassName(".private-message-list");
+messageList[0].lastElementChild.scrollIntoView({block: "end", behavior: "smooth"})
   }
-}
+
 
 window.sr = ScrollReveal({ reset: false });
 sr.reveal('.gallery__image_left',{ duration: 1200, distance: '600px', origin: 'left'}, 500);
@@ -48,8 +47,6 @@ sr.reveal('.gallery__image_right',{ duration: 1200, distance: '600px', origin: '
 sr.reveal('.feature', { duration: 1000 ,distance: '500px', origin: 'bottom'}, 200);
 sr.reveal('.spotlight', { duration: 1000, distance: '500px', origin: 'left' });
 sr.reveal('.btn-landing', { duration: 1000, distance: '500px', origin: 'right'});
-sr.reveal('.private-message-sender', { duration: 1000 }, 200);
-sr.reveal('.private-message-receiver', { duration: 1000 }, 200);
 
 
 

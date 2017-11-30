@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   mount Attachinary::Engine => "/attachinary"
+  mount ActionCable.server => "/cable"
 
   get 'private_messages/index'
 
@@ -12,6 +13,8 @@ Rails.application.routes.draw do
 
   delete '/locations/:id/unfavorite', to: "locations#unfavorite"
 
+
+  get '/users/:id/favourites', to: "users#favourite"
 
   ActiveAdmin.routes(self)
 

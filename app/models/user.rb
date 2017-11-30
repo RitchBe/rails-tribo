@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :locations
   has_many :bookings
   has_many :messages
+    has_attachment  :avatar, accept: [:jpg, :png, :gif]
 acts_as_favoritable
   acts_as_favoritor
   private
