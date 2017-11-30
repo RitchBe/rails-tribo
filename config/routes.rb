@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   mount Attachinary::Engine => "/attachinary"
+  mount ActionCable.server => "/cable"
 
   get 'private_messages/index'
 
