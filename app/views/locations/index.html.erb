@@ -88,6 +88,11 @@ handler.bounds.extendWith(Gmaps.store.markers);
 handler.fitMapToBounds();
 });
 
+function stopAnimation(marker) {
+    setTimeout(function () {
+        marker.setAnimation(null);
+    }, 1000);
+}
 
 
 Gmaps.selectMarker = function(id) {
@@ -96,6 +101,7 @@ Gmaps.selectMarker = function(id) {
       this.panTo();
 
       this.serviceObject.setAnimation(google.maps.Animation.BOUNCE);
+      stopAnimation(this.serviceObject)
     }
     else {
     this.serviceObject.setAnimation(-1);
