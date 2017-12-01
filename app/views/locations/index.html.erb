@@ -89,17 +89,17 @@ Gmaps.store = {}
 
 $.each(Gmaps.store.markers, function() {
   this.serviceObject.addListener('mouseover', function() {
-  locations[this.id].classList.add("marker-hover");
-  locations[this.id].style.transform = "translateY(-20px)";
-  locations[this.id].style.boxShadow = "0 0 10px gray";
-  locations[this.id].scrollIntoView({behavior: "smooth", block: "end", inline: "center"});
+  locations.namedItem(this.id).classList.add("marker-hover");
+  locations.namedItem(this.id).style.transform = "translateY(-20px)";
+  locations.namedItem(this.id).style.boxShadow = "0 0 10px gray";
+  locations.namedItem(this.id).scrollIntoView({behavior: "smooth", block: "end", inline: "center"});
 
   console.log('in');
 });
   this.serviceObject.addListener('mouseout', function() {
-  locations[this.id].classList.remove("marker-hover")
-  locations[this.id].style.transform = "translateY(0px)";
-  locations[this.id].style.boxShadow = "none";
+  locations.namedItem(this.id).classList.remove("marker-hover")
+  locations.namedItem(this.id).style.transform = "translateY(0px)";
+  locations.namedItem(this.id).style.boxShadow = "none";
 
 
   console.log("out")
