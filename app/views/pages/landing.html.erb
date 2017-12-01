@@ -12,7 +12,7 @@
 				<div class="col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-0 text-center">
 					<h1 class="text-inverse" style="font-weight:bold;">Co-Work from anywhere</h1>
 					<div class="col-md-8  col-md-offset-2 col-sm-10 col-sm-offset-1" style="margin-top: -10px; margin-bottom: 50px;">
-						<p class="text-inverse">Turning unused spaces into a network of co-working places</p>
+						<p class="text-inverse">Find easily your place to work, and make yours profitable</p>
 					</div>
 				</div>
 			</div>
@@ -40,7 +40,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-					<h2>Coworking in the heart of historic Lisbon</h2>
+					<h2>Flexible co-working around the globe</h2>
 					<p class="lead">
 						Tribo is a collective of like-minded creatives working together with the freedom of having multiple private and shared spaces with all the conveniences of a modern creative environment.
 					</p>
@@ -162,7 +162,7 @@
 				<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
 					<h2>Some of our locations</h2>
 					<p class="lead">
-						Whether you're looking for a full-time workspace or are just visiting Lisbon, we've got an option for everyone
+						Whether you're looking for a full-time workspace or are just visiting a new city, we've got an option for everyone
 					</p>
 				</div>
 			</div>
@@ -206,9 +206,8 @@
   <% end %>
 </div>
 <div class="links btn-right ">
-  <% if user_signed_in? %>
-  <button type="button" class="btn-1" data-toggle="modal"><a href="<%= locations_path %>" style="color:black;">
-      SEE MORE</a>
+  <% if current_user%>
+  <button type="button" class="btn-1"><a href="<%= locations_path %>" style="color:black;">SEE MORE</a>
   </button>
   <% else %>
   <button type="button" class="btn-1" data-toggle="modal" data-target="#exampleModal">
