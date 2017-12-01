@@ -23,6 +23,10 @@ div.private-user-info {
   align-items: left;
   // box-shadow: 10px 0px 5px rgba(200,200,200,0.5)
 }
+.private-user-info-wrapper{
+  margin-left: 100px;
+}
+
 
 
 
@@ -33,9 +37,9 @@ div.private-message-wrapper {
 
 }
 #private_message_body {  //THIS IS FOR THE TEXT AREA
-  width: 100%;
-  padding: 15px;
+  width: 95%;
   margin-bottom: 10px;
+  padding: 10px;
 }
 
 
@@ -78,8 +82,6 @@ li.private-message-sender > p {
 }
 
 .conversation-user {
-  border-left: 5px solid $red;
-  padding-left: 10px;
   white-space: pre;
 }
 
@@ -106,6 +108,7 @@ li.private-message-receiver {
 .private-message-avatar-lg {
   width: 80px;
   height: 80px;
+  margin-left: 33%;
 }
 
 li.private-message-sender > .private-message-avatar {
@@ -128,6 +131,7 @@ li.private-message-sender > .private-message-avatar {
     margin-top: 10px;
     height: 50px;
   }
+  margin-bottom: 15px !important;
 }
 
 .send-private-message-btn {
