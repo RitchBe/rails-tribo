@@ -5,10 +5,10 @@
   <div class="private-user-info-wrapper">
     <div class="private-user-info">
       <% if @conversation.receiver.id == current_user.id %>
-       <% if current_user.avatar %>
+       <% if @conversation.sender.avatar %>
 
 
-              <%= cl_image_tag current_user.avatar.path,class: "private-message-avatar"%>
+              <%= cl_image_tag @conversation.sender.avatar.path,class: "private-message-avatar"%>
         <% else %>
         <% avatar_url = @conversation.sender.facebook_picture_url || "http://s3.amazonaws.com/nvest/Blank_Club_Website_Avatar_Gray.jpg" %>
         <%= image_tag avatar_url, class: "private-message-avatar private-message-avatar-lg " %>
@@ -22,8 +22,8 @@
     <% else %>
 
 
-       <% if current_user.avatar %>
-              <%= cl_image_tag current_user.avatar.path,class: "private-message-avatar"%>
+       <% if @conversation.receiver.avatar %>
+              <%= cl_image_tag @conversation.receiver.avatar.path,class: "private-message-avatar"%>
         <% else %>
         <% avatar_url = @conversation.sender.facebook_picture_url || "http://s3.amazonaws.com/nvest/Blank_Club_Website_Avatar_Gray.jpg" %>
         <%= image_tag avatar_url, class: "private-message-avatar private-message-avatar-lg " %>
