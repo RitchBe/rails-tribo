@@ -2,16 +2,14 @@
 
 
       <li class= <%= if current_user.id === private_message.user_id then "private-message-sender" else "private-message-receiver" end %>>
-        <h4 class="private-message-author"><%= private_message.user.first_name %> <%= private_message.user.last_name %> | <i><%= private_message.user.email %></i></h4>
-        <p><%= private_message.body %></p>
-           <% if @conversation.sender.avatar %>
-
-
+        <h4 class="private-message-author"><%= private_message.user.first_name %> <%= private_message.user.last_name %><% if @conversation.sender.avatar %>
               <%= cl_image_tag @conversation.sender.avatar.path,class: "private-message-avatar"%>
         <% else %>
         <% avatar_url = @conversation.sender.facebook_picture_url || "http://s3.amazonaws.com/nvest/Blank_Club_Website_Avatar_Gray.jpg" %>
         <%= image_tag avatar_url, class: "private-message-avatar private-message-avatar-lg " %>
-        <% end %>
+        <% end %></h4>
+        <p><%= private_message.body %></p>
+
       </li>
   <hr>
 

@@ -1,41 +1,72 @@
 
 <h2 class="chat-room-title text-center"><%= @location.name %>'s Chat Room</h2>
 <div class="message-wr">
-  <%= render 'messages' %>
-  <%= render 'message_form' %>
+  <div id="messages" class="messages">
+    <div id="messages-table" class="messages-table">
+      <% if @messages.any? %>
+      <% @messages.each do |mes| %>
+      <% if current_user.id == mes.user_id %>
+      <div class="self-messages ">
+        <%= render mes %>
+        <!-- <hr style="padding: 0 50px;"> -->
+      </div>
+      <% else %>
+      <div class="other-messages">
+        <%= render mes %>
+        <!-- </hr style="padding: 0 50px;"> -->
+      </div>
+      <% end %>
+      <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="message-input">
+   <div class="message-enter-text">
+      <%= simple_form_for [@location, Message.new], remote: true do |f| %>
+      <p class="emoji-picker-container">
+        <%= f.text_area :content, data: {emojiable: true}, id: "message_input" %>
+      </p>
+    </div>
+    <div class="message-send-button">
+      <div class="links btn-right">
+        <button class="btn-1 btn-black btn-1-small" name="button" type="submit">Send</button>
+      </div>
+      <% end %>
+    </div>
+  </div>
 
 </div>
 
 <% content_for :after_js do %>
-  <script>
-    scrollLastMessageIntoView();
-    App['location_<%= @location.id %>'] = App.cable.subscriptions.create(
-      { channel: 'LocationsChannel', location_id: <%= @location.id %> },
-      {
-        received: (data) => {
-          console.log(data)
-          if (data.current_user_id !== <%= current_user.id %>) {
-            const messagesContainer = document.querySelector('.messages');
-            const child = document.createElement('div');
-            child.className += "other-messages";
-            child.insertAdjacentHTML('beforeend', data.message_partial);
-            messagesContainer.appendChild(child);
-            scrollLastMessageIntoView();
+<script>
+  scrollLastMessageIntoView();
+  App['location_<%= @location.id %>'] = App.cable.subscriptions.create(
+    { channel: 'LocationsChannel', location_id: <%= @location.id %> },
+    {
+      received: (data) => {
+        console.log(data)
+        if (data.current_user_id !== <%= current_user.id %>) {
+          const messagesContainer = document.querySelector('.messages');
+          const child = document.createElement('div');
+          child.className += "other-messages";
+          child.insertAdjacentHTML('beforeend', data.message_partial);
+          messagesContainer.appendChild(child);
+          scrollLastMessageIntoView();
 
-          }
-            if (data.current_user_id == <%= current_user.id %>) {
-            const messagesContainer = document.getElementById('messages');
-            const messageInput = document.querySelector(".emoji-wysiwyg-editor");
-            const child = document.createElement('div');
-            child.className += "self-messages";
-            child.insertAdjacentHTML('beforeend', data.message_partial);
-            messagesContainer.appendChild(child);
-            messageInput.innerHTML = "" ;
-            console.log("gg");
-            scrollLastMessageIntoView();
-          }
+        }
+        if (data.current_user_id == <%= current_user.id %>) {
+          const messagesContainer = document.getElementById('messages');
+          const messageInput = document.querySelector(".emoji-wysiwyg-editor");
+          const child = document.createElement('div');
+          child.className += "self-messages";
+          child.insertAdjacentHTML('beforeend', data.message_partial);
+          messagesContainer.appendChild(child);
+          messageInput.innerHTML = "" ;
+          console.log("gg");
+          scrollLastMessageIntoView();
         }
       }
+    }
     )
   </script>
-<% end %>
+  <% end %>

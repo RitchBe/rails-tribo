@@ -35,8 +35,8 @@ end
       authorize @location
     end
     @user = User.find(current_user.id)
-    place_coordinates
-    coordinates
+    # place_coordinates
+    # coordinates
 
     respond_to do |format|
       if request.xhr?
