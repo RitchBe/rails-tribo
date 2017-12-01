@@ -40,13 +40,12 @@ messageList[0].lastElementChild.scrollIntoView({block: "end", behavior: "smooth"
 
 
 window.sr = ScrollReveal({ reset: false });
-sr.reveal('.gallery__image_left',{ duration: 1200, distance: '600px', origin: 'left'}, 500);
-sr.reveal('.gallery__image_right',{ duration: 1200, distance: '600px', origin: 'right', delay: 300}, 300);
+sr.reveal('.gallery__image_left',{ duration: 1000, distance: '600px', origin: 'left'}, 500);
+sr.reveal('.gallery__image_right',{ duration: 1000, distance: '600px', origin: 'right', delay: 300}, 300);
 // sr.reveal('.cta', { duration: 1000 });
 // sr.reveal('.lead', { duration: 1000 });
 sr.reveal('.feature', { duration: 1000 ,distance: '500px', origin: 'bottom'}, 200);
 sr.reveal('.spotlight', { duration: 1000, distance: '500px', origin: 'left' });
-sr.reveal('.btn-landing', { duration: 1000, distance: '500px', origin: 'right'});
 
 
 
