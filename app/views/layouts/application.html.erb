@@ -20,6 +20,7 @@
     <%= action_cable_meta_tag %>
     <link href='https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.css' rel='stylesheet' />
     <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= analytics_init if GoogleAnalytics.valid_tracker? %>
   </head>
   <body data-spy="scroll" data-target=".navbar" data-offset="50">
     <%= render "shared/sign_modal" %>

@@ -33,6 +33,7 @@ gem 'stripe'
 gem 'acts_as_favoritor'
 gem 'mapbox-rails'
 gem "jquery-slick-rails"
+gem 'google-analytics-rails'
 
 gem 'cloudinary', '1.1.7'
 gem 'attachinary', github: 'assembler/attachinary'
